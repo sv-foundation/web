@@ -1,0 +1,91 @@
+@import "~scss/variables";
+
+.Component {
+  margin-top: 100px;
+
+  @include ipad {
+    margin-top: 72px;
+  }
+
+  @include tablet {
+    margin-top: 60px;
+  }
+
+  @include landscape {
+    position: relative;
+    margin-top: 40px;
+    height: calc(100vh - 80px); // header height
+  }
+}
+
+.Content {
+  position: relative;
+  padding: 40px;
+
+  @include landscape {
+    position: static;
+    padding: 40px 0;
+  }
+}
+
+.Details {
+  padding: 40px;
+  border-radius: 24px;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+  background: $color-white;
+
+  @include landscape {
+    padding: 24px;
+    width: 100%;
+  }
+}
+
+.Title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: -0.04em;
+  color: $color-black;
+  margin: 0 0 16px;
+}
+
+.Description {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+  white-space: pre-wrap;
+}
+
+.Contacts {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  & > * {
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.Map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  border-radius: 24px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+  @include landscape {
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+  }
+}

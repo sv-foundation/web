@@ -1,0 +1,149 @@
+// COLORS
+@import "./colors";
+@import "./breakpoints";
+
+$header-height: 62px;
+$header-height-landscape: 50px;
+
+// 	Z-INDEX VARIABLES
+$z-index-header: 100;
+$z-index-sidebar: $z-index-header + 1;
+
+$ff-marnope: "Manrope", sans-serif;
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin disableScrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin absolute($size: 100%) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include size($size);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%container {
+  max-width: 1440px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 60px;
+  padding-left: 60px;
+
+  @include laptop {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  @include tablet {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  @include landscape {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin dropdownContent {
+  background: $color-white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.06);
+  border-radius: 15px;
+  transition: 0.2s;
+  overflow: hidden;
+  z-index: 5;
+
+  &:not([data-open]) {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  li {
+    display: block;
+    border-bottom: 1px solid $color-light;
+    width: 100%;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+
+    a, 
+    button {
+      width: 100%;
+      display: block;
+
+      &>span {
+        display: flex;
+        align-items: center;
+        padding: 14px;
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color-text;
+        outline: none;
+        transition: inherit;
+        background-color: $color-white;
+      }
+
+      &:focus>span {
+        background-color: $color-very-light;
+      }
+
+      @include hover {
+        &>span {
+          background: $color-very-light;
+        }
+      }
+
+      &:active>span {
+        background: $color-very-light;
+        color: $color-black;
+      }
+
+      &[data-active]>span {
+        background-color: $color-white;
+        cursor: default;
+        color: rgba($color-text, 0.3);
+
+      }
+    }
+  }
+}
+
+@mixin iconColor($color) {
+  path {
+    &[fill] {
+      fill: $color;
+    }
+
+    &[stroke] {
+      stroke: $color;
+    }
+  }
+}

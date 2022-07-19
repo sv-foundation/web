@@ -1,0 +1,127 @@
+@import "~scss/variables";
+
+$transition: 0.2s;
+
+.Btn {
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+  padding: 0;
+
+  & > span {
+    display: inherit;
+    align-items: inherit;
+    outline: none;
+    transition: $transition;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+  }
+
+  svg {
+    display: inline-block;
+    @include size(16px);
+    transition: $transition;
+
+    &:first-child {
+      margin-right: 8px;
+    }
+
+    &:last-child {
+      margin-left: 8px;
+    }
+
+    path {
+      transition: $transition;
+    }
+  }
+}
+
+/* FONT WEIGHT */
+
+.medium > span {
+  font-weight: 500;
+}
+
+.bold > span {
+  font-weight: 700;
+}
+
+/* COLOR SCHEME */
+.dark {
+  & > span {
+    color: $color-text;
+  }
+
+  svg {
+    @include iconColor($color-text);
+  }
+
+  &:focus {
+    & > span {
+      color: $color-green;
+    }
+
+    svg {
+      @include iconColor($color-green);
+    }
+  }
+
+  @include hover {
+    & > span {
+      color: $color-green;
+    }
+
+    svg {
+      @include iconColor($color-green);
+    }
+  }
+
+  &:active > span {
+    color: $color-black;
+
+    svg {
+      @include iconColor($color-black);
+    }
+  }
+}
+
+.green {
+  & > span {
+    color: $color-green;
+  }
+
+  svg {
+    @include iconColor($color-green);
+  }
+
+  &:focus {
+    & > span {
+      color: $color-black;
+    }
+
+    svg {
+      @include iconColor($color-black);
+    }
+  }
+
+  @include hover {
+    & > span {
+      color: $color-black;
+    }
+
+    svg {
+      @include iconColor($color-black);
+    }
+  }
+
+  &:active > span {
+    color: $color-text;
+
+    svg {
+      @include iconColor($color-text);
+    }
+  }
+}

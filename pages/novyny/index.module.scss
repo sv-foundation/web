@@ -1,0 +1,61 @@
+@import "~scss/variables";
+
+.Page {
+  flex-grow: 1;
+  padding-top: 24px;
+  padding-bottom: 60px;
+}
+
+.Title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: $color-black;
+  margin: 0 0 24px;
+}
+
+.Tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+
+  @include landscape {
+    justify-content: flex-start;
+  }
+
+  & > * {
+    margin-right: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+
+
+    & > span {
+      padding: 8px 12px;
+      min-height: unset;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.NewsList {
+  display: grid;
+  grid-gap: 32px 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  margin-bottom: 40px;
+
+  @include landscape {
+    grid-gap: 20px;
+  }
+}
+
+.Pagination {
+  justify-content: center;
+}

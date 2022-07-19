@@ -1,0 +1,118 @@
+@import "~scss/variables";
+
+.Component {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.Field {
+  position: relative;
+  border: 1px solid $color-light;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  transition: border-color 0.2s;
+  cursor: pointer;
+  height: 114px;
+
+  @include hover {
+    border-color: $color-text;
+  }
+
+  &.focused {
+    border-color: $color-text;
+  }
+
+  &:active {
+    border-color: $color-green;
+
+    .Label {
+      color: $color-green;
+    }
+  }
+
+  &.error {
+    border-color: $color-red;
+
+    &.filled {
+      .Label {
+        color: $color-red;
+      }
+    }
+  }
+
+  &.focused,
+  &.filled {
+    .Label {
+      font-size: 10px;
+	  transform: translate(16px, 4px);
+      top: 2px;
+      pointer-events: none;
+      color: $color-text;
+    }
+  }
+
+  textarea {
+    min-height: 40px;
+    border-radius: 0;
+    border: none;
+    margin: 0;
+    padding: 20px 16px 5px;
+    flex-grow: 1;
+
+    min-width: 0;
+    width: 0;
+
+    background: transparent;
+
+	resize: none;
+    color: $color-black;
+    font-family: $ff-marnope;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+
+    transition: color 0.2s;
+    outline: none;
+    display: block;
+    -webkit-appearance: none;
+  }
+
+  &.no-label input {
+    padding: 5px 16px;
+  }
+}
+
+
+.InputWrapper {
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+}
+
+.Label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: $color-black;
+  display: block;
+  white-space: nowrap;
+  position: absolute;
+  transition: 0.2s;
+  top: 0;
+  left: 0;
+  transform: translate(16px, 16px);
+}
+
+.TextError {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: $color-red;
+  margin: 4px 0 0;
+}

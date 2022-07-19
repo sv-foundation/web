@@ -1,0 +1,318 @@
+@import "~scss/variables";
+
+$transition: 0.2s ease-in-out;
+
+@mixin disabled {
+  &:disabled {
+    & > span {
+      background-color: $color-light;
+      border-color: $color-light;
+      color: rgba($color-text, 0.3);
+
+      .Icon {
+        @include iconColor(rgba($color-text, 0.3));
+      }
+    }
+  }
+}
+
+.Btn {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.04em;
+  text-align: center;
+
+  transition: $transition;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+
+  &:not(.iconOnly) {
+    .Icon.left {
+      margin-right: 6px;
+    }
+    .Icon.right {
+      margin-left: 6px;
+    }
+  }
+
+  &.iconOnly {
+    justify-content: center;
+
+    & > span {
+      padding-right: 4px;
+      padding-left: 4px;
+    }
+  }
+
+  & > span {
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+    border-radius: inherit;
+    outline: none;
+    transition: inherit;
+    background-clip: padding-box;
+    width: 100%;
+
+    min-height: 48px;
+    min-width: 48px;
+    padding: 11px 17px;
+
+    border-width: 1px;
+    border-style: solid;
+  }
+}
+
+.Icon {
+  @include size(16px);
+  @include flex-center;
+  & > svg,
+  & > img {
+    width: inherit;
+    height: inherit;
+    transition: $transition;
+
+    path {
+      transition: $transition;
+    }
+  }
+}
+
+.primary {
+  & > span {
+    background-color: $color-green;
+    border-color: $color-green;
+    color: $color-white;
+
+    .Icon {
+      @include iconColor($color-white);
+    }
+  }
+
+  @mixin hoverAndFocus {
+    border-color: $color-text;
+    background-color: $color-text;
+    color: $color-white;
+
+    .Icon {
+      @include iconColor($color-white);
+    }
+  }
+
+  &:focus > span {
+    @include hoverAndFocus;
+  }
+
+  @include hover {
+    & > span {
+      @include hoverAndFocus;
+    }
+  }
+
+  &:active,
+  &.active {
+    & > span {
+      background-color: $color-black;
+      border-color: $color-black;
+      color: $color-white;
+
+      .Icon {
+        @include iconColor($color-white);
+      }
+    }
+  }
+
+  @include disabled;
+}
+
+.primary-outline {
+  & > span {
+    background-color: transparent;
+    border-color: $color-green;
+    color: $color-green;
+
+    .Icon {
+      @include iconColor($color-green);
+    }
+  }
+
+  @mixin hoverAndFocus {
+    border-color: $color-green;
+    background-color: $color-green;
+    color: $color-white;
+
+    .Icon {
+      @include iconColor($color-white);
+    }
+  }
+
+  &:focus > span {
+    @include hoverAndFocus;
+  }
+
+  @include hover {
+    & > span {
+      @include hoverAndFocus;
+    }
+  }
+
+  &:active,
+  &.active {
+    & > span {
+      background-color: $color-black;
+      border-color: $color-black;
+      color: $color-white;
+
+      .Icon {
+        @include iconColor($color-white);
+      }
+    }
+  }
+
+  @include disabled;
+}
+
+.secondary {
+  & > span {
+    background-color: $color-white;
+    border-color: $color-white;
+    color: $color-green;
+
+    .Icon {
+      @include iconColor($color-green);
+    }
+  }
+
+  @mixin hoverAndFocus {
+    border-color: $color-green;
+    background-color: $color-green;
+    color: $color-white;
+
+    .Icon {
+      @include iconColor($color-white);
+    }
+  }
+
+  &:focus > span {
+    @include hoverAndFocus;
+  }
+
+  @include hover {
+    & > span {
+      @include hoverAndFocus;
+    }
+  }
+
+  &:active,
+  &.active {
+    & > span {
+      background-color: $color-black;
+      border-color: $color-black;
+      color: $color-white;
+
+      .Icon {
+        @include iconColor($color-white);
+      }
+    }
+  }
+
+  @include disabled;
+}
+
+.sand {
+  & > span {
+    background-color: $color-very-light;
+    border-color: $color-very-light;
+    color: $color-green;
+
+    .Icon {
+      @include iconColor($color-green);
+    }
+  }
+
+  @mixin hoverAndFocus {
+    border-color: $color-green;
+    background-color: $color-green;
+    color: $color-white;
+
+    .Icon {
+      @include iconColor($color-white);
+    }
+  }
+
+  &:focus > span {
+    @include hoverAndFocus;
+  }
+
+  @include hover {
+    & > span {
+      @include hoverAndFocus;
+    }
+  }
+
+  &:active,
+  &.active {
+    & > span {
+      background-color: $color-black;
+      border-color: $color-black;
+      color: $color-white;
+
+      .Icon {
+        @include iconColor($color-white);
+      }
+    }
+  }
+
+  @include disabled;
+}
+
+.grey {
+  & > span {
+    background-color: $color-light;
+    border-color: $color-light;
+    color: $color-green;
+
+    .Icon {
+      @include iconColor($color-green);
+    }
+  }
+
+  @mixin hoverAndFocus {
+    border-color: $color-text;
+    background-color: $color-text;
+    color: $color-white;
+
+    .Icon {
+      @include iconColor($color-white);
+    }
+  }
+
+  &:focus > span {
+    @include hoverAndFocus;
+  }
+
+  @include hover {
+    & > span {
+      @include hoverAndFocus;
+    }
+  }
+
+  &:active,
+  &.active {
+    & > span {
+      background-color: $color-black;
+      border-color: $color-black;
+      color: $color-white;
+
+      .Icon {
+        @include iconColor($color-white);
+      }
+    }
+  }
+
+  @include disabled;
+}

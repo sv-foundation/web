@@ -1,0 +1,47 @@
+@import "~scss/variables";
+
+.Component {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  grid-area: contact;
+
+  @include laptop {
+    justify-content: flex-end;
+  }
+
+  @include tablet {
+    justify-content: flex-start;
+  }
+
+  @include phone {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  & > * {
+    margin-right: 40px;
+
+    @include phone {
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+  .Address {
+    display: block;
+    font-style: normal;
+    white-space: pre-wrap;
+  
+    & > * {
+      align-items: flex-start;
+    }
+  }
+}
+

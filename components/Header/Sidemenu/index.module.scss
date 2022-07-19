@@ -1,0 +1,65 @@
+@import "~scss/variables";
+
+.Sidebar {
+  flex-basis: 320px !important;
+
+  &Header {
+    padding: 16px 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &BtnClose {
+    @include size(24px);
+    display: flex;
+
+    svg {
+      @include size(100%);
+      @include iconColor($color-text);
+    }
+  }
+
+  &Main {
+    flex-grow: 1;
+    overflow: auto;
+    padding: 0 16px;
+    nav {
+      & > * {
+        margin-bottom: 24px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+        & > a {
+          span {
+            font-size: 26px;
+          }
+
+          &:global(.active) span {
+            color: $color-green;
+          }
+        }
+      }
+    }
+  }
+
+  &SubLinks {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    & > * {
+      margin-top: 16px;
+    }
+  }
+
+  &Footer {
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.LanguageSwitcher { 
+    margin-bottom: 40px;
+}

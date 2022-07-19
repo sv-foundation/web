@@ -1,0 +1,228 @@
+@import "~scss/variables";
+
+.Component {
+  display: grid;
+  grid-template-columns: auto 760px;
+  grid-gap: 40px;
+  align-items: center;
+
+  @include ipad {
+    grid-template-columns: auto 580px;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+
+  @include landscape {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    grid-gap: 32px;
+
+    &.isIntroPage {
+      background: $color-light;
+
+      .Form {
+        padding: 16px;
+      }
+    }
+  }
+}
+
+.Details {
+  h1,
+  h2 {
+    margin: 0 0 24px;
+
+    @include landscape {
+      margin-bottom: 16px;
+    }
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+}
+
+.Contacts {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  & > * {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.FormContainer {
+  background: $color-light;
+  border-radius: 16px;
+  padding: 60px;
+  align-self: center;
+
+  @include ipad {
+    padding: 40px;
+  }
+
+  @include landscape {
+    padding: 0;
+  }
+}
+
+.Form {
+  border-radius: 16px;
+  padding: 32px;
+  background: $color-white;
+  position: relative;
+
+  @include landscape {
+    padding: 0;
+  }
+
+  &BtnSubmit {
+    @include landscape {
+      width: 100%;
+    }
+  }
+}
+
+.FieldRow {
+  display: flex;
+
+  @include landscape {
+    flex-direction: column;
+  }
+
+  & > * {
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin-right: 16px;
+
+    @include landscape {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.FileField {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  cursor: pointer;
+
+  &DragHint {
+    @include flex-center;
+    @include absolute;
+    margin: 0;
+    border-radius: 16px;
+    z-index: -1;
+    background: rgba($color-white, 0.9);
+    border: 2px dashed $color-green;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $color-black;
+    opacity: 0;
+    transition: 0.2s;
+
+    &.isDragActive {
+      opacity: 1;
+      z-index: 5;
+    }
+  }
+
+  &Icon {
+    flex-shrink: 0;
+    @include flex-center;
+    @include size(44px);
+    background: $color-light;
+    border-radius: 10px;
+    margin-right: 12px;
+
+    svg {
+      @include iconColor($color-green);
+      @include size(20px);
+    }
+  }
+
+  &Label {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $color-black;
+    margin: 0;
+  }
+
+  &Description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+}
+
+.Attachment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &Icon {
+    flex-shrink: 0;
+    @include flex-center;
+    @include size(44px);
+    background: $color-light;
+    border-radius: 10px;
+    margin-right: 12px;
+
+    svg {
+      @include iconColor($color-black);
+      @include size(20px);
+    }
+  }
+
+  &Main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  &Name {
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    flex-grow: 1;
+    color: $color-black;
+    word-break: break-word;
+  }
+
+  &Actions {
+    display: flex;
+    margin-left: 12px;
+  }
+
+  &List {
+    margin-bottom: 16px;
+  }
+}

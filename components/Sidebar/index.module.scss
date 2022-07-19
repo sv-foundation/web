@@ -1,0 +1,72 @@
+@import '~scss/variables';
+
+$transition: 0.2s linear;
+
+.Wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	display: flex;
+	transition: $transition;
+	z-index: $z-index-sidebar;
+	pointer-events: none;
+
+	&.top {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: stretch;
+		.Component {
+			transform: translateY(-100%);
+		}
+	}
+
+	&.bottom {
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: stretch;
+		.Component {
+			transform: translateY(100%);
+		}
+	}
+
+	&.left {
+		justify-content: flex-start;
+		align-items: stretch;
+
+		.Component {
+			transform: translateX(-100%);
+			flex-basis: 460px;
+		}
+	}
+
+	&.right {
+		justify-content: flex-end;
+		align-items: stretch;
+		.Component {
+			transform: translateX(100%);
+			flex-basis: 460px;
+		}
+	}
+
+	&.isOpen {
+		pointer-events: initial;
+		background: rgba($color-black, 0.8);
+		.Component {
+			transform: none;
+		}
+	}
+}
+
+.Component {
+	display: flex;
+	flex-direction: column;
+	transition: inherit;
+	background: $color-white;
+
+	@include landscape {
+		flex-grow: 1;
+	}
+}

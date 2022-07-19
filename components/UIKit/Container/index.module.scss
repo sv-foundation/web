@@ -1,0 +1,6 @@
+@import '~scss/variables';
+
+
+.Component { 
+    @extend %container;
+}
