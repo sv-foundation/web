@@ -26,7 +26,7 @@ const makePayment = async ({
     formdata.append("amount", amount);
     formdata.append("currency", currency);
 
-    const res = await fetch(`${API}/make_fondy_payment`, {
+    const res = await fetch(`${API}/make_fondy_payment/`, {
       method: "post",
       body: formdata,
       headers: {
