@@ -15,7 +15,7 @@ const DocumentsAndReports = ({ data }: { data: GetFundsDocumentsResponse }) => {
         <Title tag="h2">{t("documentsAndReports.title")}</Title>
 
         <ul className={cx("Files")}>
-          {data.map(({ name, file }) => {
+          {data?.map(({ name, file }) => {
             return (
               <li key={file}>
                 <a href={file} target="_blank">
