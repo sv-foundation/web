@@ -257,18 +257,36 @@ const News = ({ news }: Pick<Props, "news">) => {
           </Button>
         </div>
 
-        {isLandscapeOrLess ? (
-          <Swiper
-            className={cx("NewsCardSlider")}
-            slidesPerView="auto"
-            loop
-            spaceBetween={8}
-            centeredSlides={true}
-          >
-            {news.results.map((post) => {
-              return (
-                <SwiperSlide key={post.id} className={cx("NewsCardSlide")}>
+        {!!news?.results?.length &&
+          (isLandscapeOrLess ? (
+            <Swiper
+              className={cx("NewsCardSlider")}
+              slidesPerView="auto"
+              loop
+              spaceBetween={8}
+              centeredSlides={true}
+            >
+              {news.results.map((post) => {
+                return (
+                  <SwiperSlide key={post.id} className={cx("NewsCardSlide")}>
+                    <NewsCard
+                      tag="div"
+                      title={post.title}
+                      text={post.annotation}
+                      preview={post.preview_photo}
+                      slug={post.slug}
+                      date={post.publication_date}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          ) : (
+            <ul className={cx("NewsItemList")}>
+              {news.results.map((post) => {
+                return (
                   <NewsCard
+                    key={post.id}
                     tag="div"
                     title={post.title}
                     text={post.annotation}
@@ -276,27 +294,10 @@ const News = ({ news }: Pick<Props, "news">) => {
                     slug={post.slug}
                     date={post.publication_date}
                   />
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        ) : (
-          <ul className={cx("NewsItemList")}>
-            {news.results.map((post) => {
-              return (
-                <NewsCard
-                  key={post.id}
-                  tag="div"
-                  title={post.title}
-                  text={post.annotation}
-                  preview={post.preview_photo}
-                  slug={post.slug}
-                  date={post.publication_date}
-                />
-              );
-            })}
-          </ul>
-        )}
+                );
+              })}
+            </ul>
+          ))}
 
         <Button
           className={cx("NewsBtnMoreMobile")}
