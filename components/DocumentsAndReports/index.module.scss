@@ -1,0 +1,72 @@
+@import "~scss/variables";
+
+.Component {
+  padding-top: 100px;
+
+  @include ipad {
+    padding-top: 72px;
+  }
+
+  @include tablet {
+    padding-top: 60px;
+  }
+
+  @include landscape {
+    padding-top: 40px;
+  }
+}
+
+.Container {
+}
+
+.Files {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+
+  @include ipad {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include landscape {
+    grid-template-columns: 1fr;
+  }
+
+  li {
+    border-radius: 16px;
+    background-color: $color-light;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 16px;
+
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+
+    i {
+      display: inline-flex;
+      svg {
+        @include size(24px);
+        @include iconColor($color-black);
+      }
+    }
+
+    span {
+      margin-top: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.02em;
+      word-break: break-word;
+      color: $color-black;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import "~scss/variables";
+
+.Component {
+  h5 {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+    letter-spacing: -0.04em;
+    color: $color-black;
+    margin: 0 0 8px;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $color-text;
+    margin: 0;
+  }
+
+  time {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $color-text;
+
+    svg {
+      margin-right: 8px;
+      @include size(16px);
+      @include iconColor($color-text);
+    }
+  }
+}
+
+.Preview {
+  position: relative;
+  margin-bottom: 16px;
+  height: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  img {
+    @include absolute;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,12 @@
+@import "~scss/variables";
+
+.Page {
+  flex-grow: 1;
+  padding-top: 0;
+  padding-bottom: 74px;
+
+
+  @include landscape {
+    padding: 0;
+  }
+}

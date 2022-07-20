@@ -1,0 +1,258 @@
+@import "~scss/variables";
+
+.Component {
+  flex-grow: 1;
+  padding-top: 0;
+  padding-bottom: 100px;
+
+  @include ipad {
+    padding-bottom: 60px;
+  }
+
+  @include landscape {
+    padding-bottom: 40px;
+  }
+
+  .IntroContainer {
+    @include tablet {
+      padding: 0;
+    }
+  }
+}
+
+.Section {
+  padding-top: 100px;
+
+  @include ipad {
+    padding-top: 72px;
+  }
+
+  @include tablet {
+    padding-top: 60px;
+  }
+
+  @include landscape {
+    padding-top: 40px;
+  }
+}
+
+.Intro {
+  padding: 74px 100px;
+  border-radius: 24px;
+  background: url("/images/about_foundation_intro@2x.png") top left no-repeat,
+    linear-gradient(
+      180deg,
+      #f3f6fb 0%,
+      #f0f8fb 38.02%,
+      #f7fbfe 48.44%,
+      #fdfdff 58.33%,
+      #f6fbfe 76.04%,
+      #f8fcff 100%
+    );
+  background-size: contain, auto 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  @include ipad {
+    padding: 40px;
+    background-size: cover;
+    background-position: center left;
+  }
+
+  @include tablet {
+    border-radius: 0;
+    padding: 24px 20px;
+    background: url("/images/about_foundation_intro-phone@2x.png") top right
+        no-repeat,
+      linear-gradient(180deg, #f2f2f2 0%, rgba(242, 242, 242, 0) 102.89%);
+
+    background-size: 290px auto, cover;
+    justify-content: flex-start;
+  }
+
+  @include landscape {
+    background-size: 160px auto, cover;
+    padding: 40px 16px;
+  }
+
+  &BtnGroup {
+    display: flex;
+    align-items: flex-start;
+
+    @include landscape {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    & > * {
+      margin-right: 8px;
+
+      @include landscape {
+        margin-right: 0;
+        margin-bottom: 8px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 110.9%;
+    letter-spacing: -0.04em;
+    color: $color-black;
+    margin: 0 0 24px;
+    white-space: pre-wrap;
+
+    @include tablet {
+      font-size: 40px;
+    }
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+    max-width: 460px;
+  }
+}
+
+.Activity {
+  .Title {
+    text-align: center;
+    white-space: pre-wrap;
+  }
+
+  &Items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+
+    @include ipad {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include landscape {
+      grid-template-columns: 1fr;
+    }
+
+    & > li {
+      background: $color-light;
+      border-radius: 24px;
+      padding: 32px;
+
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include landscape {
+        padding: 24px;
+      }
+
+      i {
+        @include flex-center;
+        @include size(64px);
+        border-radius: 50%;
+        background: $color-green;
+        margin-bottom: 24px;
+
+        svg {
+          @include iconColor($color-white);
+        }
+      }
+
+      h3 {
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 140%;
+        letter-spacing: -0.04em;
+        color: $color-black;
+        margin: 0 0 8px;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        margin: 0 0 20px;
+      }
+
+      a,
+      button {
+        @include landscape {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.Team {
+  .Title {
+    text-align: center;
+  }
+
+  &Members {
+    display: grid;
+    grid-gap: 40px 20px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include ipadOnly {
+      grid-template-columns: repeat(6, 1fr);
+
+      li {
+        grid-column: span 2;
+      }
+
+      li:nth-last-child(2) {
+        grid-column: 2 / span 2;
+      }
+
+      li:nth-last-child(1) {
+        grid-column: 4 / span 2;
+      }
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include landscape {
+      grid-template-columns: minmax(auto, 320px);
+      justify-content: center;
+      grid-gap: 20px;
+    }
+
+    li {
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+      }
+
+      h3 {
+        margin: 16px 0 0;
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 140%;
+        letter-spacing: -0.04em;
+        color: $color-black;
+      }
+
+      p {
+        margin: 0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        color: $color-text;
+      }
+    }
+  }
+}

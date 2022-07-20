@@ -1,0 +1,101 @@
+@import "~scss/variables";
+
+.Page {
+  flex-grow: 1;
+  padding-top: 24px;
+  padding-bottom: 60px;
+}
+
+.Container {
+  max-width: 874px;
+}
+
+.BtnBackIcon {
+  transform: rotate(90deg);
+}
+
+.Actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Post {
+  margin-top: 24px;
+  margin-bottom: 60px;
+}
+
+.Datetime {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: $color-text;
+  margin-bottom: 4px;
+
+  svg {
+    margin-right: 8px;
+    @include size(16px);
+    @include iconColor($color-text);
+  }
+}
+
+.Title {
+  margin-bottom: 24px;
+}
+
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+
+  & > * {
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: $color-text;
+
+    padding: 4px 8px;
+    border-radius: 10px;
+    background-color: $color-light;
+  }
+}
+
+.CoverImage {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 60px;
+  border-radius: 16px;
+}
+
+.Content {
+  p {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $color-text;
+    margin: 0 0 40px;
+
+    @include landscape {
+      font-size: 16px;
+    }
+  }
+}
+
+.Share {
+  display: flex;
+  &> * {
+    margin-left: 8px;
+  }
+}

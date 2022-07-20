@@ -1,0 +1,165 @@
+@import "~scss/variables";
+
+.Component {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.Field {
+  position: relative;
+  border: 1px solid $color-light;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  transition: border-color 0.2s;
+  cursor: pointer;
+  height: 54px;
+
+  @include hover {
+    border-color: $color-text;
+  }
+
+  &.focused {
+    border-color: $color-text;
+  }
+
+  &:active {
+    border-color: $color-green;
+
+    .Label {
+      color: $color-green;
+    }
+  }
+
+  &.error {
+    border-color: $color-red;
+
+    &.filled {
+      .Label {
+        color: $color-red;
+      }
+    }
+  }
+
+  &.focused,
+  &.filled {
+    .Label {
+      font-size: 10px;
+      transform: translateY(0);
+      top: 2px;
+      pointer-events: none;
+      color: $color-text;
+    }
+  }
+
+  input {
+    min-height: 40px;
+    border-radius: 0;
+    border: none;
+    margin: 0;
+    padding: 20px 16px 5px;
+    flex-grow: 1;
+
+    min-width: 0;
+    width: 0;
+
+    background: transparent;
+
+    color: $color-black;
+    font-family: $ff-marnope;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+
+    transition: color 0.2s;
+    outline: none;
+    display: block;
+    -webkit-appearance: none;
+
+    &::-ms-reveal,
+    &::-ms-clear {
+      display: none;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &::-webkit-contacts-auto-fill-button,
+    &::-webkit-credentials-auto-fill-button {
+      visibility: hidden;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+    }
+
+    /* Firefox */
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+
+  &.no-label input {
+    padding: 5px 16px;
+  }
+}
+
+.LeftControl {
+  &:not(:empty) {
+    padding-left: 16px;
+  }
+
+  & > * {
+    margin-right: 4px;
+  }
+}
+
+.InputWrapper {
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+}
+
+.Label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: $color-black;
+  display: block;
+  white-space: nowrap;
+  position: absolute;
+  transition: 0.2s;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.RightControl {
+  &:not(:empty) {
+    padding-right: 16px;
+  }
+
+  & > * {
+    margin-left: 4px;
+  }
+}
+
+.LeftControl,
+.RightControl {
+  @include flex-center;
+}
+
+.TextError {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: $color-red;
+  margin: 4px 0 0;
+}

@@ -1,0 +1,61 @@
+@import "~scss/variables";
+
+.Component {
+  display: flex;
+  margin: 0 auto;
+}
+
+.BtnPage {
+  display: block;
+  border-radius: 12px;
+  @include size(36px);
+  border: 2px solid transparent;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: $color-text;
+  margin-right: 4px;
+  transition: 0.2s;
+
+  svg {
+    @include size(16px);
+    path {
+      fill: $color-text;
+    }
+  }
+
+  & > * {
+    @include flex-center;
+    @include size(100%);
+  }
+
+  @include hover {
+    border-color: $color-light;
+  }
+
+  &:active {
+    border-color: $color-light;
+    background: $color-light;
+  }
+
+  &.active {
+    border-color: $color-green;
+    background: $color-green;
+    color: $color-white;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.BtnPrevious {
+  margin-right: 8px;
+  transform: rotate(90deg);
+}
+.BtnNext {
+  transform: rotate(-90deg);
+  margin-left: 4px;
+}

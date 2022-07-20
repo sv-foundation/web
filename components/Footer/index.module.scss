@@ -1,0 +1,87 @@
+@import "~scss/variables";
+
+
+.Component {
+    padding-top: 40px;
+    padding-bottom: 32px;
+    border-top: 1px solid $color-light;
+}
+
+.Container {
+    @extend %container;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-areas:
+        "logo contact help"
+        "copyright copyright copyright";
+
+
+    @include laptop {
+        grid-template-areas:
+            "logo contact"
+            "copyright help";
+    }
+
+    @include tablet {
+        grid-template-areas:
+            "logo help"
+            "contact contact"
+            "copyright copyright";
+    }
+
+    @include phone {
+        grid-gap: 8px;
+        grid-template-areas:
+            "help"
+            "logo"
+            "copyright"
+            "contact";
+    }
+}
+
+.Logo {
+    grid-area: logo;
+
+    img {
+        height: 60px;
+        width: auto;
+
+        @include phone {
+            height: 48px;
+        }
+    }
+}
+
+.Copyright {
+    flex-basis: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    grid-area: copyright;
+    margin: 0;
+
+    @include laptop {
+        flex-basis: unset;
+        margin-bottom: 24px;
+    }
+
+    @include phone {
+        font-size: 14px;
+    }
+}
+
+.HelpBtnContainer {
+    grid-area: help;
+    justify-self: flex-end;
+
+    @include phone {
+        margin-bottom: 24px;
+        width: 100%;
+        display: flex;
+
+        &>* {
+            flex-grow: 1;
+        }
+    }
+}

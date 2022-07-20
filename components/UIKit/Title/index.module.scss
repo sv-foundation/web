@@ -1,0 +1,25 @@
+@import "~scss/variables";
+
+
+.Component {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  letter-spacing: -0.04em;
+  color: $color-black;
+  white-space: pre-wrap;
+  margin: 0 0 44px;
+
+  @include ipad {
+    font-size: 34px;
+    margin-bottom: 32px;
+  }
+
+  @include tablet {
+    margin-bottom: 20px;
+  }
+
+  @include landscape {
+    font-size: 24px;
+  }
+}

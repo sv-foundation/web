@@ -1,0 +1,11 @@
+@import '~scss/variables';
+
+.Control {
+	&.active .IconArrow {
+		transform: rotate(180deg);
+	}
+}
+
+.Content {
+	@include dropdownContent;
+}

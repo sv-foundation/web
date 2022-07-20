@@ -1,0 +1,286 @@
+@import "~scss/variables";
+
+.Page {
+  flex-grow: 1;
+  margin-bottom: 60px;
+
+  .FormSectionContainer {
+    @include landscape {
+      padding: 0;
+    }
+  }
+}
+
+.FormSection {
+  border-radius: 24px;
+  background: $color-light;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px;
+
+  @include ipad {
+    padding: 48px 48px 48px 60px;
+    margin-bottom: 60px;
+  }
+
+  @include tablet {
+    padding: 32px;
+  }
+
+  @include landscape {
+    padding: 40px 16px;
+    border-radius: 0;
+    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: stretch;
+
+  }
+
+  &Details,
+  &AdditionalDetails {
+    flex-grow: 1;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &Details {
+    @include ipad {
+      padding: 0;
+      align-items: flex-start;
+      margin-right: 32px;
+    }
+
+    @include landscape {
+      margin-bottom: 24px;
+      margin-right: 0;
+    }
+
+    p {
+      display: none;
+
+      @include ipad {
+        display: block;
+      }
+    }
+  }
+
+  &AdditionalDetails {
+    @include ipad {
+      display: none;
+    }
+  }
+
+  &Title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 120%;
+    letter-spacing: -0.04em;
+    color: $color-black;
+    margin: 0;
+    white-space: pre-wrap;
+
+    @include ipad {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    @include landscape {
+      font-size: 24px;
+      margin-bottom: 8px;
+      white-space: unset;
+    }
+  }
+
+  &Description {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $color-text;
+    margin: 0;
+    white-space: pre-wrap;
+
+
+    @include landscape {
+      white-space: unset;
+    }
+  }
+}
+
+.DonateForm {
+  flex-basis: 380px;
+  flex-shrink: 0;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+
+  @include landscape {
+    flex-basis: unset;
+    padding: 20px;
+  }
+
+  &Title {
+    margin: 0 0 24px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $color-black;
+  }
+
+  &Submit {
+    margin-top: 8px;
+  }
+
+  &Currency {
+    &Control {
+      &.active .IconArrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    &Content {
+      @include dropdownContent;
+    }
+  }
+}
+
+.AdditionalContainer {
+  padding-left: 100px;
+  padding-right: 100px;
+
+  @include laptop {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.Requisites {
+  &Title {
+    margin: 0 0 16px;
+
+    @include tablet {
+      margin: 0 32px 0 0;
+    }
+
+    @include landscape {
+      margin: 0 0 8px;
+    }
+  }
+
+  &Description {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $color-text;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  &Header {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-start;
+
+    @include tablet {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    &Main {
+      flex-grow: 1;
+      margin-right: 24px;
+
+      @include tablet {
+        margin-right: 0;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      @include landscape {
+        display: block;
+      }
+    }
+  }
+
+  &CurrencyList {
+    display: flex;
+    align-items: flex-start;
+
+    @include tablet {
+      width: 100%;
+    }
+
+    & > * {
+      margin-right: 8px;
+      @include tablet {
+        flex-grow: 1;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &Main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px 64px;
+
+    @include laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include landscape {
+      grid-template-columns: 1fr;
+      grid-gap: 16px;
+    }
+  }
+
+  &Item {
+    button {
+      text-align: left;
+    }
+
+    &Name {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: -0.02em;
+      color: $color-green;
+    }
+
+    &Value {
+      display: flex;
+      align-items: flex-start;
+
+      b {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        color: $color-black;
+        margin-right: 24px;
+        word-break: break-word;
+      }
+
+      i {
+        display: flex;
+        svg {
+          @include size(16px);
+          @include iconColor($color-text);
+        }
+      }
+    }
+  }
+}

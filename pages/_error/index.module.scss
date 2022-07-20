@@ -1,0 +1,57 @@
+@import "~scss/variables";
+
+.Page {
+  display: flex;
+  flex-grow: 1;
+  padding: 20px 0;
+  align-items: center;
+}
+
+.Container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+
+  @include phone { 
+    align-items: flex-start;
+    text-align: left;
+    justify-content: flex-start;
+
+    a {
+        width: 100%;
+    }
+  }
+}
+
+.Code {
+  font-weight: 800;
+  font-size: 120px;
+  line-height: 140%;
+  letter-spacing: -0.04em;
+  color: rgba($color: $color-text, $alpha: 0.3);
+  margin: 0 0 32px;
+
+  @include phone {
+    text-align: center;
+    flex-grow: 1;
+  }
+}
+
+.Title {
+  margin-bottom: 8px;
+}
+
+.Description {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: $color-text;
+  white-space: pre-wrap;
+  margin: 0 0 24px;
+
+  @include phone {
+    white-space: unset;
+  }
+}
