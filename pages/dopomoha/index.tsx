@@ -71,7 +71,7 @@ const PageDonate = ({ docs, paymentDetails, paymentSystemFondy }: Props) => {
 const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
   const [t] = useTranslation();
   const amount = useFormField("");
-  const currency = useFormField(data.currencies[0].name);
+  const currency = useFormField(data?.currencies?.[0]?.name);
   const { locale } = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -149,7 +149,7 @@ const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
               className={cx("DonateFormCurrencyContent")}
               data-open={dropdown.open || undefined}
             >
-              {data.currencies.map(({ name: item }) => {
+              {data?.currencies?.map(({ name: item }) => {
                 const isSelected = item === currency.value;
                 return (
                   <li key={item}>
@@ -191,9 +191,9 @@ const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
 const Requisites = ({ data }: { data: GetPaymentDetailsResponse }) => {
   const [t] = useTranslation();
   const [selectedCurrency, setSelectedCurrency] = useState(
-    data[0].currency_code
+    data?.[0]?.currency_code
   );
-  const selectedPaymentMethod = data.find(
+  const selectedPaymentMethod = data?.find(
     ({ currency_code }) => currency_code === selectedCurrency
   );
 
@@ -224,7 +224,7 @@ const Requisites = ({ data }: { data: GetPaymentDetailsResponse }) => {
         </div>
 
         <ul className={cx("RequisitesMain")}>
-          {selectedPaymentMethod.fields.map(({ name, value }) => (
+          {selectedPaymentMethod?.fields?.map(({ name, value }) => (
             <RequisitesItem name={name} value={value} key={name} />
           ))}
         </ul>
@@ -258,6 +258,7 @@ export const getServerSideProps: GetServerSideProps<{
   paymentSystemFondy?: null | GetPaymentSystemFondyResponse;
   paymentDetails?: null | GetPaymentDetailsResponse;
 }> = async ({ locale }) => {
+  console.log(locale)
   const docsData = await getFundDocuments({
     locale,
   });
