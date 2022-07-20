@@ -22,12 +22,15 @@ import Container from "components/UIKit/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useWidthCondition } from "helpers";
-import Image from "next/image";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import getNews, { GetNewsResponse } from "api/getNews";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 
 const cx = classNames.bind(styles);
 
-const Home = () => {
+type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
+
+const Home = ({ news }: Props) => {
   const { t } = useTranslation();
   const isTablet = useWidthCondition(
     (w) => w < BREAKPOINT_TABLET && w >= BREAKPOINT_LANDSCAPE
@@ -137,13 +140,27 @@ const Home = () => {
             </ul>
           </div>
           <div className={cx("ResourcesImage")}>
-            <img src={isTablet ? "/images/home_resources-long.svg" : "/images/home_resources.svg"} alt="" />
+            <img
+              src={
+                isTablet
+                  ? "/images/home_resources-long.svg"
+                  : "/images/home_resources.svg"
+              }
+              alt=""
+            />
           </div>
         </section>
 
         <section className={cx("Section", "Donate")}>
           <div className={cx("DonateImage")}>
-            <img src={isTablet ? "/images/home_donate-long.svg" : "/images/home_donate.svg"} alt="" />
+            <img
+              src={
+                isTablet
+                  ? "/images/home_donate-long.svg"
+                  : "/images/home_donate.svg"
+              }
+              alt=""
+            />
           </div>
 
           <div className={cx("DonateMain")}>
@@ -211,15 +228,17 @@ const Home = () => {
         </section>
       </Container>
 
-      <News />
+      <News news={news} />
       <FormNeedHelp isIntroPage />
     </main>
   );
 };
 
-const News = () => {
+const News = ({ news }: Pick<Props, "news">) => {
   const [t] = useTranslation();
   const isLandscapeOrLess = useWidthCondition((w) => w < BREAKPOINT_LANDSCAPE);
+
+  if (!news) return null;
 
   return (
     <section className={cx("Section", "News")}>
@@ -246,60 +265,36 @@ const News = () => {
             spaceBetween={8}
             centeredSlides={true}
           >
-            <SwiperSlide className={cx("NewsCardSlide")}>
-              <NewsCard
-                tag="div"
-                title="title"
-                text="text"
-                preview="/images/home_donate.svg"
-                slug="21233"
-                date={new Date().toISOString()}
-              />
-            </SwiperSlide>
-            <SwiperSlide className={cx("NewsCardSlide")}>
-              <NewsCard
-                tag="div"
-                title="title"
-                text="text"
-                preview="/images/home_donate.svg"
-                slug="21233"
-                date={new Date().toISOString()}
-              />
-            </SwiperSlide>
-            <SwiperSlide className={cx("NewsCardSlide")}>
-              <NewsCard
-                tag="div"
-                title="title"
-                text="text"
-                preview="/images/home_donate.svg"
-                slug="21233"
-                date={new Date().toISOString()}
-              />
-            </SwiperSlide>
+            {news.results.map((post) => {
+              return (
+                <SwiperSlide key={post.id} className={cx("NewsCardSlide")}>
+                  <NewsCard
+                    tag="div"
+                    title={post.title}
+                    text={post.annotation}
+                    preview={post.preview_photo}
+                    slug={post.slug}
+                    date={post.publication_date}
+                  />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         ) : (
           <ul className={cx("NewsItemList")}>
-            <NewsCard
-              title="title"
-              text="text"
-              preview="/images/home_donate.svg"
-              slug="21233"
-              date={new Date().toISOString()}
-            />
-            <NewsCard
-              title="title"
-              text="text"
-              preview="/images/home_donate.svg"
-              slug="21233"
-              date={new Date().toISOString()}
-            />
-            <NewsCard
-              title="title"
-              text="text"
-              preview="/images/home_donate.svg"
-              slug="21233"
-              date={new Date().toISOString()}
-            />
+            {news.results.map((post) => {
+              return (
+                <NewsCard
+                  key={post.id}
+                  tag="div"
+                  title={post.title}
+                  text={post.annotation}
+                  preview={post.preview_photo}
+                  slug={post.slug}
+                  date={post.publication_date}
+                />
+              );
+            })}
           </ul>
         )}
 
@@ -316,12 +311,21 @@ const News = () => {
   );
 };
 
-export async function getStaticProps({ locale }) {
+export const getServerSideProps: GetServerSideProps<{
+  news: GetNewsResponse | null;
+}> = async ({ locale }) => {
+  const newsData = await getNews({
+    locale,
+    offset: 0,
+    limit: 3,
+  });
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
+      news: newsData.error || !newsData.data ? null : newsData.data,
     },
   };
-}
+};
 
 export default Home;

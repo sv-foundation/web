@@ -12,9 +12,12 @@ import { useRouter } from "next/router";
 import styles from "./index.module.scss";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import SEO from "components/SEO";
+import getFundDocuments, { GetFundsDocumentsResponse } from "api/getFundDocuments";
+import { InferGetServerSidePropsType, GetServerSideProps } from "next";
 const cx = classNames.bind(styles);
+type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 
-const PageAboutFoundation = () => {
+const PageAboutFoundation = ({ docs}: Props) => {
   const { t } = useTranslation();
   const { pathname } = useRouter();
   const hash = useMemo(() => pathname.split("#")[1], [pathname]);
@@ -196,17 +199,24 @@ const PageAboutFoundation = () => {
         </section>
       </Container>
       <ContactsWithMap />
-      <DocumentsAndReports />
+      <DocumentsAndReports data={docs} />
     </main>
   );
 };
 
-export async function getStaticProps({ locale }) {
+
+export const getServerSideProps: GetServerSideProps<{
+  docs?: null | GetFundsDocumentsResponse
+}> = async ({ locale,}) => {
+  const docsData = await getFundDocuments({
+    locale,
+  });
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
+      docs: docsData.error || !docsData.data ? null : docsData.data,
     },
   };
-}
-
+};
 export default PageAboutFoundation;

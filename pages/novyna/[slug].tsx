@@ -15,10 +15,35 @@ import Image from "next/image";
 import Title from "components/UIKit/Title";
 import SEO from "components/SEO";
 import { useWidthCondition } from "helpers";
+import getNewsBySlug, { GetNewsBySlugResponse } from "api/getNewsBySlug";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { useMemo } from "react";
 const cx = classNames.bind(styles);
 
-const PageNews = () => {
-  const [t] = useTranslation();
+type Props = {
+  newsPostData: GetNewsBySlugResponse;
+};
+
+const PageNews = ({
+  newsPostData: {
+    title,
+    annotation,
+    content,
+    publication_date,
+    preview_photo,
+    tags,
+  },
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const {
+    i18n: { language },
+  } = useTranslation();
+  const formattedDate = useMemo(() => {
+    return new Intl.DateTimeFormat(language, {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }).format(new Date(publication_date));
+  }, [publication_date, language]);
 
   const Actions = (
     <div className={cx("Actions")}>
@@ -29,49 +54,38 @@ const PageNews = () => {
         linkProps={{ href: URL_MAP.news }}
       />
 
-      <Share />
+      <Share title={title} />
     </div>
   );
 
   return (
     <main className={cx("Page")}>
-      <SEO
-        title="Custom title"
-        description="Custom description"
-        ogImage="image"
-      />
+      <SEO title={title} description={annotation} ogImage={preview_photo} />
 
       <Container className={cx("Container")}>
         {Actions}
         <div className={cx("Post")}>
           <time className={cx("Datetime")}>
-            <IconTime /> 12 Січ 2022
+            <IconTime /> {formattedDate}
           </time>
 
           <Title className={cx("Title")}>Title</Title>
 
           <ul className={cx("Tags")}>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
+            {tags.map((tag, i) => (
+              <li key={i}>{tag.name}</li>
+            ))}
           </ul>
 
-          <img className={cx("CoverImage")} alt="" />
-          {/* <Image className={cx("CoverImage")} src="https://example.com" layout="fill" /> */}
+          <img
+            className={cx("CoverImage")}
+            src={preview_photo}
+          />
 
-          <div className={cx("Content")}>
-            <p>
-              Отримали чудовий подарунок від Євгена Хаїрова — Nissan Navara i
-              Nissan Pathfinder, повністю обслужені та доглянуті. Завдяки тому,
-              що автівки були отримані після ТО, ми мали змогу пофарбувати та
-              підготувати їх для передачі нашим захисникам максимально швидко.
-              Navara поїхав на Харківщину, буде працювати під кордоном.
-              Pathfinder передано контррозвідувальникам на півдні від Курахово.
-            </p>
-          </div>
+          <div
+            className={cx("Content")}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </div>
         {Actions}
       </Container>
@@ -110,12 +124,27 @@ const Share = ({ title = "" }) => {
   );
 };
 
-export async function getServerSideProps({ locale }) {
+export const getServerSideProps: GetServerSideProps<
+  Props,
+  { slug: string }
+> = async ({ locale, params: { slug } }) => {
+  const newsPostData = await getNewsBySlug({
+    locale: locale,
+    slug,
+  });
+
+  if (newsPostData.error || !newsPostData.data) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
+      newsPostData: newsPostData.data,
     },
   };
-}
+};
 
 export default PageNews;

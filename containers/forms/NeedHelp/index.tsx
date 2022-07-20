@@ -8,10 +8,19 @@ import { FC, FormEventHandler, useCallback, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { useDropzone, DropzoneOptions } from "react-dropzone";
 import styles from "./index.module.scss";
-import { IconAttach, IconDoc, IconTrash } from "components/Icons";
+import {
+  IconAttach,
+  IconCheck,
+  IconClose,
+  IconDoc,
+  IconTrash,
+} from "components/Icons";
 import ButtonLink from "components/UIKit/ButtonLink";
 import Title from "components/UIKit/Title";
 import Container from "components/UIKit/Container";
+import makeHelpRequest from "api/makeHelpRequest";
+import { useRouter } from "next/router";
+import Loader from "assets/loader.svg";
 const cx = classNames.bind(styles);
 
 type Attachment = {
@@ -20,6 +29,10 @@ type Attachment = {
 
 const FormNeedHelp: FC<{ isIntroPage?: boolean }> = ({ isIntroPage }) => {
   const { t } = useTranslation();
+  const { locale } = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
   const fullName = useFormField("");
   const organization = useFormField("");
   const email = useFormField("");
@@ -47,8 +60,51 @@ const FormNeedHelp: FC<{ isIntroPage?: boolean }> = ({ isIntroPage }) => {
     setAttachments(attachments.filter((_, i) => i !== index));
   };
 
-  const onSubmit: FormEventHandler<HTMLFormElement> = (e) => {
+  const onSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
+
+    setLoading(true);
+
+    const response = await makeHelpRequest({
+      locale,
+      full_name: fullName.value,
+      organization_name: organization.value,
+      email: email.value,
+      phone_number: phone.value,
+      message: message.value,
+      file: attachments.map(({ file }) => file),
+    });
+
+    if (response.error) {
+      setError(response.error.message);
+    } else if (!response.data) {
+      setError(t("formNeedHelp.error.description"));
+    } else {
+      if ("id" in response.data) {
+        setIsSuccess(true);
+      } else {
+        if (response.data.full_name) {
+          fullName.changeError(response.data.full_name[0]);
+        }
+        if (response.data.organization_name) {
+          organization.changeError(response.data.organization_name[0]);
+        }
+        if (response.data.email) {
+          email.changeError(response.data.email[0]);
+        }
+        if (response.data.phone_number) {
+          phone.changeError(response.data.phone_number[0]);
+        }
+        if (response.data.message) {
+          message.changeError(response.data.message[0]);
+        }
+        if (response.data.file) {
+          setError(response.data.file[0]);
+        }
+      }
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -148,6 +204,46 @@ const FormNeedHelp: FC<{ isIntroPage?: boolean }> = ({ isIntroPage }) => {
           <Button type="submit" className={cx("FormBtnSubmit")} color="primary">
             {t("formNeedHelp.btnSubmit")}
           </Button>
+
+          {loading && (
+            <div className={cx("Loader")}>
+              <Loader />
+            </div>
+          )}
+
+          {isSuccess && (
+            <div className={cx("SuccessScreen")}>
+              <i>
+                <IconCheck />
+              </i>
+
+              <p>
+                <b>{t("formNeedHelp.success.title")}</b>
+              </p>
+              <p>{t("formNeedHelp.success.description")}</p>
+            </div>
+          )}
+
+          {error && (
+            <div className={cx("ErrorScreen")}>
+              <i>
+                <IconClose />
+              </i>
+
+              <p>
+                <b>{t("formNeedHelp.error.title")}</b>
+              </p>
+              <p>{error}</p>
+
+              <Button
+                type="button"
+                color="primary"
+                onClick={() => setError("")}
+              >
+                {t("formNeedHelp.error.btn")}
+              </Button>
+            </div>
+          )}
         </form>
       </div>
     </Container>

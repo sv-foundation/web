@@ -226,3 +226,90 @@
     margin-bottom: 16px;
   }
 }
+
+.Loader {
+  @include absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($color-white, 0.9);
+  border-radius: inherit;
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  img,
+  svg {
+    @include size(66px);
+    animation: loading 1.5s infinite;
+  }
+}
+
+.ErrorScreen,
+.SuccessScreen {
+  @include absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: rgba($color-white, 0.9);
+  border-radius: inherit;
+
+  i {
+    @include size(82px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      @include size(32px);
+      @include iconColor($color-white);
+
+      rect {
+        fill: $color-white;
+      }
+    }
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $color-text;
+    margin: 16px 0 0;
+
+    b {
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 140%;
+      letter-spacing: -0.04em;
+      color: $color-black;
+    }
+  }
+
+  button {
+    margin-top: 24px;
+  }
+}
+
+.SuccessScreen {
+  i {
+    background: $color-green;
+  }
+}
+
+.ErrorScreen {
+  i {
+    background: $color-red;
+  }
+}

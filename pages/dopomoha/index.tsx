@@ -8,14 +8,28 @@ import Container from "components/UIKit/Container";
 import TextField from "components/UIKit/TextField";
 import Title from "components/UIKit/Title";
 import { useCopy, useDropdown, useFormField } from "helpers";
-import { FC, useState } from "react";
+import { FC, FormEventHandler, useState } from "react";
 import { useTranslation } from "next-i18next";
 import styles from "./index.module.scss";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import SEO from "components/SEO";
+import { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import getFundDocuments, {
+  GetFundsDocumentsResponse,
+} from "api/getFundDocuments";
+import makePayment from "api/makePayment";
+import { useRouter } from "next/router";
+import getPaymentSystemFondy, {
+  GetPaymentSystemFondyResponse,
+} from "api/getPaymentSystemFondy";
+import getPaymentDetails, {
+  GetPaymentDetailsResponse,
+} from "api/getPaymentDetails";
 const cx = classNames.bind(styles);
 
-const PageDonate = () => {
+type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
+
+const PageDonate = ({ docs, paymentDetails, paymentSystemFondy }: Props) => {
   const [t] = useTranslation();
 
   return (
@@ -36,7 +50,7 @@ const PageDonate = () => {
               {t("pageDonate.donate.description")}
             </p>
           </div>
-          <DonateForm />
+          <DonateForm data={paymentSystemFondy} />
           <div className={cx("FormSectionAdditionalDetails")}>
             <p className={cx("FormSectionDescription")}>
               {t("pageDonate.donate.description")}
@@ -46,27 +60,60 @@ const PageDonate = () => {
       </Container>
 
       <Container className={cx("AdditionalContainer")}>
-        <Requisites />
+        <Requisites data={paymentDetails} />
         <ContactsWithMap />
-        <DocumentsAndReports />
+        <DocumentsAndReports data={docs} />
       </Container>
     </main>
   );
 };
 
-const CURRENCIES = ["UAH", "USD", "EUR"];
-
-const DonateForm = () => {
+const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
   const [t] = useTranslation();
   const amount = useFormField("");
-  const currency = useFormField("UAH");
+  const currency = useFormField(data.currencies[0].name);
+  const { locale } = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const dropdown = useDropdown({
     popperOptions: { placement: "bottom-end" },
   });
 
+  const onSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    const response = await makePayment({
+      locale,
+      amount: Number(amount.value.replace(",", ".")).toFixed(2),
+      currency: currency.value,
+    });
+
+    if (response.error) {
+      amount.changeError(response.error.message);
+    } else if (!response.data) {
+      amount.changeError(t("pageDonate.donate.form.errors.globalError"));
+    } else {
+      if ("checkout_url" in response.data) {
+        if (!response.data.checkout_url) {
+          amount.changeError(t("pageDonate.donate.form.errors.globalError"));
+        } else {
+          document.location.assign(response.data.checkout_url);
+        }
+      } else {
+        const error = response.data.amount[0] || response.data.currency[0];
+        amount.changeError(
+          t([`pageDonate.donate.form.errors.${error}`, error])
+        );
+      }
+    }
+
+    setLoading(false);
+  };
+
   return (
-    <form className={cx("DonateForm")}>
+    <form onSubmit={onSubmit} className={cx("DonateForm")}>
       <h6 className={cx("DonateFormTitle")}>
         {t("pageDonate.donate.form.title")}
       </h6>
@@ -102,7 +149,7 @@ const DonateForm = () => {
               className={cx("DonateFormCurrencyContent")}
               data-open={dropdown.open || undefined}
             >
-              {CURRENCIES.map((item) => {
+              {data.currencies.map(({ name: item }) => {
                 const isSelected = item === currency.value;
                 return (
                   <li key={item}>
@@ -126,7 +173,12 @@ const DonateForm = () => {
         }
       />
 
-      <Button className={cx("DonateFormSubmit")} color="primary" type="submit">
+      <Button
+        disabled={loading}
+        className={cx("DonateFormSubmit")}
+        color="primary"
+        type="submit"
+      >
         {t("pageDonate.donate.form.submit", {
           amount: amount.value || 0,
           currency: currency.value,
@@ -136,9 +188,14 @@ const DonateForm = () => {
   );
 };
 
-const Requisites = () => {
+const Requisites = ({ data }: { data: GetPaymentDetailsResponse }) => {
   const [t] = useTranslation();
-  const [selectedCurrency, setSelectedCurrency] = useState(CURRENCIES[0]);
+  const [selectedCurrency, setSelectedCurrency] = useState(
+    data[0].currency_code
+  );
+  const selectedPaymentMethod = data.find(
+    ({ currency_code }) => currency_code === selectedCurrency
+  );
 
   return (
     <section className={cx("Requisites")}>
@@ -154,29 +211,22 @@ const Requisites = () => {
           </div>
 
           <div className={cx("RequisitesCurrencyList")}>
-            {CURRENCIES.map((code) => (
+            {data.map(({ currency_code }) => (
               <Button
-                key={code}
-                color={code === selectedCurrency ? "primary" : "grey"}
-                onClick={() => setSelectedCurrency(code)}
+                key={currency_code}
+                color={currency_code === selectedCurrency ? "primary" : "grey"}
+                onClick={() => setSelectedCurrency(currency_code)}
               >
-                {t(`global.currency.${code}`)}
+                {currency_code}
               </Button>
             ))}
           </div>
         </div>
 
         <ul className={cx("RequisitesMain")}>
-          <RequisitesItem name="Name" value="Value" />
-          <RequisitesItem name="Name" value="Value" />
-          <RequisitesItem name="Name" value="Value" />
-          <RequisitesItem name="Name" value="Value" />
-          <RequisitesItem name="Name" value="Value" />
-          <RequisitesItem name="Name" value="Value" />
-          <RequisitesItem name="Name" value="Value" />
-          <RequisitesItem name="Name" value="Value" />
-          <RequisitesItem name="Name" value="Value" />
-          <RequisitesItem name="Name" value="Value" />
+          {selectedPaymentMethod.fields.map(({ name, value }) => (
+            <RequisitesItem name={name} value={value} key={name} />
+          ))}
         </ul>
       </Container>
     </section>
@@ -203,12 +253,32 @@ const RequisitesItem: FC<{ value: string; name?: string }> = ({
   );
 };
 
-export async function getStaticProps({ locale }) {
+export const getServerSideProps: GetServerSideProps<{
+  docs?: null | GetFundsDocumentsResponse;
+  paymentSystemFondy?: null | GetPaymentSystemFondyResponse;
+  paymentDetails?: null | GetPaymentDetailsResponse;
+}> = async ({ locale }) => {
+  const docsData = await getFundDocuments({
+    locale,
+  });
+
+  const paymentSystemFondyData = await getPaymentSystemFondy({ locale });
+  const paymentDetailsData = await getPaymentDetails({ locale });
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
+      docs: docsData.error || !docsData.data ? null : docsData.data,
+      paymentSystemFondy:
+        paymentSystemFondyData.error || !paymentSystemFondyData.data
+          ? null
+          : paymentSystemFondyData.data,
+      paymentDetails:
+        paymentDetailsData.error || !paymentDetailsData.data
+          ? null
+          : paymentDetailsData.data,
     },
   };
-}
+};
 
 export default PageDonate;
