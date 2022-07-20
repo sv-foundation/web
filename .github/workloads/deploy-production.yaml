@@ -1,0 +1,22 @@
+name: deploy-production
+on:
+  push:
+    branches: [ "main" ]
+  #pull_request:
+  #  branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy-production:
+    runs-on: self-hosted
+    environment: production
+    steps:
+      - uses: actions/checkout@v3
+      - name: docker build
+        run: docker build -t web .
+      #- name: docker stop web
+        #run: docker stop web
+      - name: docker run web
+        run: docker run -p 3000:3000 web
