@@ -1,0 +1,74 @@
+@import '~scss/variables';
+
+.Component {
+	position: fixed;
+	top: 0;
+	left: 0;
+	@include size(100%);
+	z-index: 10000;
+	background: #000;
+	display: flex;
+	flex-direction: column;
+}
+
+.Header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 24px;
+	width: 100%;
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.Main {
+	flex-grow: 1;
+	display: flex;
+	overflow: hidden;
+}
+
+.Slider {
+	width: 100%;
+	&Slide {
+		position: relative;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			object-fit: contain;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+}
+
+.Footer {
+	flex-shrink: 0;
+	padding: 24px 0;
+	display: flex;
+	justify-content: center;
+
+	@include landscape {
+		display: none;
+	}
+}
+
+.SliderThumbs {
+	padding-left: 24px;
+	padding-right: 24px;
+	& > * {
+		&::after {
+			content: '';
+			width: 24px;
+			flex-shrink: 0;
+			height: 1px;
+		}
+	}
+}

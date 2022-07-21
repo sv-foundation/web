@@ -1,0 +1,27 @@
+@import "~scss/variables";
+
+.BtnControl {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+
+  @include landscape {
+    display: none;
+  }
+
+  &.prev {
+    left: 24px;
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  &.next {
+    right: 24px;
+
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+}

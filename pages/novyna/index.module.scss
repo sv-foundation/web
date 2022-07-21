@@ -109,6 +109,37 @@
     max-width: 100%;
     height: auto;
   }
+
+  :global(.gallery) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+
+    & > * {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 210px;
+      margin: 0;
+
+      @include phone {
+        height: 230px;
+      }
+
+      img {
+        @include absolute;
+        object-fit: cover;
+      }
+    }
+
+    @include landscape {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include phone {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 .Share {

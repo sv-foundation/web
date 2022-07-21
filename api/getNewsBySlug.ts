@@ -33,7 +33,6 @@ const getNewsBySlug = async ({ slug, locale }: GetNewsBySlugArguments) => {
       data,
     };
   } catch (error) {
-    console.log(error);
     return {
       error,
     };
