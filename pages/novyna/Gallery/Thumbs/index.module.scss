@@ -1,0 +1,67 @@
+@import "~scss/variables";
+
+.SliderThumbs {
+  overflow: auto;
+  flex-shrink: 1;
+  @include disableScrollbar;
+
+  &List {
+    display: flex;
+  }
+
+  &Slide {
+    font-size: 0;
+    opacity: 0.6;
+    transition: 0.2s;
+
+    @include hover {
+      opacity: 0.9;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+
+    &.active {
+      opacity: 1;
+      button::after {
+        opacity: 1;
+      }
+    }
+
+    &:last-child button {
+      margin-right: 0;
+    }
+
+    button {
+      display: inline-flex;
+      width: 96px;
+      height: 76px;
+      background: $color-very-light center no-repeat;
+      background-size: 24px;
+      position: relative;
+      padding: 0;
+      border-radius: 12px;
+      margin-right: 16px;
+
+      &::after {
+        content: "";
+        width: 92px;
+        height: 72px;
+        border-radius: inherit;
+        border: 2px solid $color-green;
+		opacity: 0;
+		transition: inherit;
+		position: absolute;
+		top: 0;
+		left: 0;
+      }
+    }
+
+    img {
+      border-radius: inherit;
+      @include absolute;
+      object-fit: cover;
+    }
+  }
+}

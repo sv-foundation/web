@@ -300,7 +300,6 @@ export const getServerSideProps: GetServerSideProps<{
   paymentSystemFondy?: null | GetPaymentSystemFondyResponse;
   paymentDetails?: null | GetPaymentDetailsResponse;
 }> = async ({ locale }) => {
-  console.log(locale);
   const docsData = await getFundDocuments({
     locale: locale as string,
   });

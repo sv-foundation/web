@@ -11,14 +11,14 @@ import { BREAKPOINT_LANDSCAPE, URL_MAP } from "constant";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styles from "./index.module.scss";
-import Image from "next/image";
 import Title from "components/UIKit/Title";
 import SEO from "components/SEO";
 import { useWidthCondition } from "helpers";
 import getNewsBySlug, { GetNewsBySlugResponse } from "api/getNewsBySlug";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import { useMemo } from "react";
+import { MouseEventHandler, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/router";
+import Gallery from "./Gallery";
 const cx = classNames.bind(styles);
 
 type Props = {
@@ -48,6 +48,11 @@ const PageNews = ({
     }).format(new Date(publication_date));
   }, [publication_date, language]);
 
+  const [postImages, setPostImages] = useState<HTMLElement[]>([]);
+  const [postImagesSrc, setPostImagesSrc] = useState<string[]>([]);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [gallery, setGallery] = useState({ show: false, index: 0 });
+
   const Actions = (
     <div className={cx("Actions")}>
       <Button
@@ -60,6 +65,32 @@ const PageNews = ({
       <Share title={title} />
     </div>
   );
+
+  useEffect(() => {
+    if (contentRef.current) {
+      const imagesQuery = contentRef.current.querySelectorAll("img");
+      const images: HTMLElement[] = [];
+      const imagesSrc: string[] = [];
+
+      imagesQuery.forEach((img) => {
+        images.push(img);
+        imagesSrc.push(img.src);
+      });
+
+      setPostImages(images);
+      setPostImagesSrc(imagesSrc);
+    }
+  }, []);
+
+  const onClickContent: MouseEventHandler<HTMLDivElement> = (e) => {
+    if (e.target && (e.target as HTMLElement).tagName === "IMG") {
+      const index = postImages.indexOf(e.target as HTMLElement);
+      setGallery({
+        show: true,
+        index,
+      });
+    }
+  };
 
   return (
     <main className={cx("Page")}>
@@ -85,11 +116,21 @@ const PageNews = ({
           </div>
 
           <div
+            ref={contentRef}
+            onClick={onClickContent}
             className={cx("Content")}
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </div>
         {Actions}
+
+        {gallery.show && (
+          <Gallery
+            initialSlide={gallery.index}
+            close={() => setGallery({ show: false, index: 0 })}
+            photos={postImagesSrc}
+          />
+        )}
       </Container>
     </main>
   );
