@@ -185,13 +185,14 @@ export function useDropdown({
 export const useWidthCondition = (conditionFn: (width: number) => boolean) => {
   const check = () => conditionFn(typeof window !== 'undefined' ? window.innerWidth : 0);
 
-  const [condition, setCondition] = useState(check());
+  const [condition, setCondition] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setCondition(check);
     };
 
+    handleResize()
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);

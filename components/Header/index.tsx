@@ -84,7 +84,7 @@ const Nav = () => {
           linkProps={{ href: URL_MAP.home }}
           className={cx("NavLink", { activeLink: isActivePage(URL_MAP.home) })}
         >
-          {t("header.nav.home")}
+          <span>{t("header.nav.home")}</span>
         </ButtonLink>
       </div>
       <div
@@ -152,7 +152,7 @@ const Nav = () => {
           tag="link"
           linkProps={{ href: URL_MAP.needHelp }}
         >
-          {t("header.nav.needHelp")}
+          <span>{t("header.nav.needHelp")}</span>
         </ButtonLink>
       </div>
       <div>
@@ -161,7 +161,7 @@ const Nav = () => {
           tag="link"
           linkProps={{ href: URL_MAP.news }}
         >
-          {t("header.nav.news")}
+          <span>{t("header.nav.news")}</span>
         </ButtonLink>
       </div>
       <div>
@@ -172,7 +172,7 @@ const Nav = () => {
           tag="link"
           linkProps={{ href: URL_MAP.contacts }}
         >
-          {t("header.nav.contacts")}
+          <span>{t("header.nav.contacts")}</span>
         </ButtonLink>
       </div>
     </nav>

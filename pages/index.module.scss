@@ -67,6 +67,7 @@
       linear-gradient(180deg, #f2f2f2 0%, rgba(242, 242, 242, 0) 100%);
     background-size: 340px auto, cover;
     position: relative;
+    padding: 24px 16px;
 
     &::after {
       content: "";

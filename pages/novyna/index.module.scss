@@ -71,11 +71,24 @@
 }
 
 .CoverImage {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 60px;
+  position: relative;
   border-radius: 16px;
+  overflow: hidden;
+  height: 480px;
+  margin: 0 auto 60px;
+
+  @include landscape {
+    height: 350px;
+  }
+
+  @include phone {
+    height: 230px;
+  }
+
+  img {
+    @include absolute;
+    object-fit: cover;
+  }
 }
 
 .Content {
@@ -91,11 +104,16 @@
       font-size: 16px;
     }
   }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .Share {
   display: flex;
-  &> * {
+  & > * {
     margin-left: 8px;
   }
 }

@@ -18,13 +18,16 @@ import { useWidthCondition } from "helpers";
 import getNewsBySlug, { GetNewsBySlugResponse } from "api/getNewsBySlug";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useMemo } from "react";
+import { useRouter } from "next/router";
 const cx = classNames.bind(styles);
 
 type Props = {
   newsPostData: GetNewsBySlugResponse;
+  host: string;
 };
 
 const PageNews = ({
+  host,
   newsPostData: {
     title,
     annotation,
@@ -69,7 +72,7 @@ const PageNews = ({
             <IconTime /> {formattedDate}
           </time>
 
-          <Title className={cx("Title")}>Title</Title>
+          <Title className={cx("Title")}>{title}</Title>
 
           <ul className={cx("Tags")}>
             {tags.map((tag, i) => (
@@ -77,10 +80,9 @@ const PageNews = ({
             ))}
           </ul>
 
-          <img
-            className={cx("CoverImage")}
-            src={preview_photo}
-          />
+          <div className={cx("CoverImage")}>
+            <img src={preview_photo} />
+          </div>
 
           <div
             className={cx("Content")}
@@ -93,13 +95,12 @@ const PageNews = ({
   );
 };
 
-const Share = ({ title = "" }) => {
+const Share = ({ title = "", host = "" }) => {
   const [t] = useTranslation();
+  const router = useRouter();
+
   const isLandscapeOrLess = useWidthCondition((w) => w < BREAKPOINT_LANDSCAPE);
-  const url =
-    typeof window !== "undefined"
-      ? window.location.origin + window.location.pathname
-      : "";
+  const url = host + router.asPath;
   const fbLink = `https://www.facebook.com/sharer.php?u=${encodeURIComponent(
     url
   )}&t=${encodeURIComponent(title)}`;
@@ -109,12 +110,19 @@ const Share = ({ title = "" }) => {
 
   return (
     <div className={cx("Share")}>
-      <Button color="sand" iconLeft={<IconFacebook />} tag="a" href={fbLink}>
+      <Button
+        color="sand"
+        iconLeft={<IconFacebook />}
+        target="_blank"
+        tag="a"
+        href={fbLink}
+      >
         {!isLandscapeOrLess && t("global.shareFB")}
       </Button>
       <Button
         color="sand"
         iconLeft={<IconTwitter />}
+        target="_blank"
         tag="a"
         href={twitterLink}
       >
@@ -127,7 +135,13 @@ const Share = ({ title = "" }) => {
 export const getServerSideProps: GetServerSideProps<
   Props,
   { slug: string }
-> = async ({ locale, params: { slug } }) => {
+> = async ({
+  locale,
+  req: {
+    headers: { host },
+  },
+  params: { slug },
+}) => {
   const newsPostData = await getNewsBySlug({
     locale: locale,
     slug,
@@ -143,6 +157,7 @@ export const getServerSideProps: GetServerSideProps<
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
       newsPostData: newsPostData.data,
+      host,
     },
   };
 };
