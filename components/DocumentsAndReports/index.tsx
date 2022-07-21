@@ -18,7 +18,7 @@ const DocumentsAndReports = ({ data }: { data: GetFundsDocumentsResponse }) => {
           {data?.map(({ name, file }) => {
             return (
               <li key={file}>
-                <a href={file} target="_blank">
+                <a href={file} target="_blank" download>
                   <i>
                     <IconDoc />
                   </i>

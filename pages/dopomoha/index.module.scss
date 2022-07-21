@@ -276,6 +276,13 @@
 
       i {
         display: flex;
+
+        &.copied {
+          svg {
+            @include iconColor($color-green);
+          }
+        }
+
         svg {
           @include size(16px);
           @include iconColor($color-text);
