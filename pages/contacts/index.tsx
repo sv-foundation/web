@@ -1,6 +1,8 @@
 import classNames from "classnames/bind";
 import Contacts from "components/Contacts";
 import SEO from "components/SEO";
+import { BREAKPOINT_LANDSCAPE } from "constant";
+import { useWidthCondition } from "helpers";
 import { GetStaticProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -8,6 +10,7 @@ import styles from "./index.module.scss";
 const cx = classNames.bind(styles);
 
 const PageContacts = () => {
+  const isLandscapeOrLess = useWidthCondition((w) => w < BREAKPOINT_LANDSCAPE);
   const [t] = useTranslation();
   return (
     <main className={cx("Page")}>
@@ -23,7 +26,14 @@ const PageContacts = () => {
           <Contacts hideFB withAddress className={cx("Contacts")} />
         </div>
         <div className={cx("Map")}>
-          <img src="/images/contacts_map.png" alt="" />
+          <img
+            src={
+              isLandscapeOrLess
+                ? "/images/contacts_map-phone.jpg"
+                : "/images/contacts_map.png"
+            }
+            alt=""
+          />
         </div>
       </div>
     </main>

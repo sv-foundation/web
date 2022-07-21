@@ -115,7 +115,7 @@ export const getServerSideProps: GetServerSideProps<{
     locale: locale as string,
     offset: (Number(page) - 1) * NEWS_PER_PAGE,
     limit: NEWS_PER_PAGE,
-    tags__name: tag === "all" ? undefined : (tag as string),
+    tags__slug: tag === "all" ? undefined : (tag as string),
   });
 
   const tagsData = await getTags({
