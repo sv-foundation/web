@@ -286,7 +286,7 @@ const News = ({ news }: Pick<Props, "news">) => {
               {news.results.map((post) => {
                 return (
                   <NewsCard
-                    key={post.id}
+                    key={post.slug}
                     tag="div"
                     title={post.title}
                     text={post.annotation}
