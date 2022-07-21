@@ -4,7 +4,7 @@ export type GetNewsArguments = {
   locale: string;
   limit: number;
   offset: number;
-  tags__name?: string;
+  tags__slug?: string;
 };
 
 export type GetNewsResponse = {
@@ -24,12 +24,12 @@ const getNews = async ({
   locale,
   limit,
   offset,
-  tags__name,
+  tags__slug,
 }: GetNewsArguments) => {
   try {
     const res = await fetch(
       `${API}/news?limit=${limit}&offset=${offset}${
-        tags__name ? `&tags__name=${tags__name}` : ""
+        tags__slug ? `&tags__slug=${tags__slug}` : ""
       }`,
       {
         headers: {
