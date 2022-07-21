@@ -18,7 +18,7 @@ import getNewsBySlug, { GetNewsBySlugResponse } from "api/getNewsBySlug";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { MouseEventHandler, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import Gallery from "./Gallery";
+import Gallery from "components/Gallery";
 const cx = classNames.bind(styles);
 
 type Props = {
