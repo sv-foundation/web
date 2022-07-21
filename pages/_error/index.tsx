@@ -7,7 +7,7 @@ import { useTranslation } from "next-i18next";
 import Button from "components/UIKit/Button";
 import { URL_MAP } from "constant";
 import { ErrorProps } from "next/error";
-import { GetStaticProps, NextPageContext } from "next";
+import { NextPageContext } from "next";
 const cx = classNames.bind(styles);
 
 function Error({ statusCode }: ErrorProps) {
