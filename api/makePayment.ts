@@ -2,8 +2,8 @@ import { Tag, API } from "./index";
 
 export type MakePaymentArguments = {
   locale: string;
-  amount?: string;
-  currency?: string;
+  amount: string;
+  currency: string;
 };
 
 export type MakePaymentResponse =
@@ -40,7 +40,7 @@ const makePayment = async ({
     };
   } catch (error) {
     return {
-      error,
+      error: error as Error,
     };
   }
 };

@@ -66,7 +66,7 @@ const FormNeedHelp: FC<{ isIntroPage?: boolean }> = ({ isIntroPage }) => {
     setLoading(true);
 
     const response = await makeHelpRequest({
-      locale,
+      locale: locale!,
       full_name: fullName.value,
       organization_name: organization.value,
       email: email.value,

@@ -38,18 +38,17 @@ const PageNews = ({ news, tags }: Props) => {
     const currentPath = router.pathname;
     const currentQuery = router.query;
     currentQuery.tag = newTag;
-    currentQuery.page = '1'
+    currentQuery.page = "1";
 
     if (!currentQuery.tag) {
-      delete currentQuery.tag
+      delete currentQuery.tag;
     }
-
 
     router.push({
       pathname: currentPath,
       query: currentQuery,
     });
-  }
+  };
 
   return (
     <main className={cx("Page")}>
@@ -100,7 +99,7 @@ const PageNews = ({ news, tags }: Props) => {
         <Pagination
           className={cx("Pagination")}
           page={currentPage - 1}
-          pageCount={Math.ceil((news?.count) / NEWS_PER_PAGE)}
+          pageCount={Math.ceil((news?.count ?? 0) / NEWS_PER_PAGE)}
           onChangePage={onChangePage}
         />
       </Container>
@@ -113,19 +112,19 @@ export const getServerSideProps: GetServerSideProps<{
   tags?: null | GetTagsResponse;
 }> = async ({ locale, query: { page = 1, tag } }) => {
   const newsData = await getNews({
-    locale,
+    locale: locale as string,
     offset: (Number(page) - 1) * NEWS_PER_PAGE,
     limit: NEWS_PER_PAGE,
     tags__name: tag === "all" ? undefined : (tag as string),
   });
 
   const tagsData = await getTags({
-    locale,
+    locale: locale as string,
   });
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale as string, ["common"])),
       news: newsData.error || !newsData.data ? null : newsData.data,
       tags: tagsData.error || !tagsData.data ? null : tagsData.data,
     },

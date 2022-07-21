@@ -6,9 +6,11 @@ import Title from "components/UIKit/Title";
 import { useTranslation } from "next-i18next";
 import Button from "components/UIKit/Button";
 import { URL_MAP } from "constant";
+import { ErrorProps } from "next/error";
+import { NextPageContext } from "next";
 const cx = classNames.bind(styles);
 
-function Error({ statusCode }) {
+function Error({ statusCode }: ErrorProps) {
   const [t] = useTranslation();
   return (
     <main className={cx("Page")}>
@@ -28,14 +30,16 @@ function Error({ statusCode }) {
   );
 }
 
-export async function getStaticProps({ locale, res, err }) {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+export const getStaticProps = async ({ locale, res, err }: NextPageContext) => {
+  let statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+
+  if (statusCode !== 404) statusCode = 500
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-      statusCode,
+      ...(await serverSideTranslations(locale as string, ["common"])),
     },
   };
-}
+};
 
 export default Error;

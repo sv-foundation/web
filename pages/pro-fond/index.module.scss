@@ -223,8 +223,8 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include landscape {
-      grid-template-columns: 1fr;
+    @include phone {
+      grid-template-columns: minmax(auto, 320px);
       justify-content: center;
       grid-gap: 20px;
     }
