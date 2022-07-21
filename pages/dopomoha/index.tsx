@@ -1,14 +1,14 @@
 import classNames from "classnames/bind";
 import ContactsWithMap from "components/ContactsWithMap";
 import DocumentsAndReports from "components/DocumentsAndReports";
-import { IconArrowDown, IconCopy } from "components/Icons";
+import { IconArrowDown, IconCheck, IconCopy } from "components/Icons";
 import Button from "components/UIKit/Button";
 import ButtonLink from "components/UIKit/ButtonLink";
 import Container from "components/UIKit/Container";
 import TextField from "components/UIKit/TextField";
 import Title from "components/UIKit/Title";
 import { useCopy, useDropdown, useFormField } from "helpers";
-import { FC, FormEventHandler, useState } from "react";
+import { FC, FormEventHandler, useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import styles from "./index.module.scss";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -224,8 +224,12 @@ const Requisites = ({ data }: { data: GetPaymentDetailsResponse }) => {
         </div>
 
         <ul className={cx("RequisitesMain")}>
-          {selectedPaymentMethod?.fields?.map(({ name, value }) => (
-            <RequisitesItem name={name} value={value} key={name} />
+          {selectedPaymentMethod?.fields?.map(({ name, value }, i) => (
+            <RequisitesItem
+              name={name}
+              value={value}
+              key={selectedCurrency + name + `${i}` + value}
+            />
           ))}
         </ul>
       </Container>
@@ -238,14 +242,28 @@ const RequisitesItem: FC<{ value: string; name?: string }> = ({
   name,
 }) => {
   const copy = useCopy();
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (copied)  {
+      const tid = setTimeout(() =>  {
+        setCopied(false)
+      }, 2000)
+
+      return () => { 
+        clearTimeout(tid)
+      }
+    }
+  }, [copied])
+
   return (
     <li className={cx("RequisitesItem")}>
-      <button type="button" onClick={() => copy(value)}>
+      <button type="button" onClick={() => copy(value, () => setCopied(true))}>
         {name && <span className={cx("RequisitesItemName")}>{name}</span>}
         <span className={cx("RequisitesItemValue")}>
           <b>{value}</b>
-          <i className={cx("RequisitesItemIcon")}>
-            <IconCopy />
+          <i className={cx("RequisitesItemIcon", { copied })}>
+            {copied ? <IconCheck /> : <IconCopy />}
           </i>
         </span>
       </button>
@@ -258,7 +276,7 @@ export const getServerSideProps: GetServerSideProps<{
   paymentSystemFondy?: null | GetPaymentSystemFondyResponse;
   paymentDetails?: null | GetPaymentDetailsResponse;
 }> = async ({ locale }) => {
-  console.log(locale)
+  console.log(locale);
   const docsData = await getFundDocuments({
     locale,
   });
