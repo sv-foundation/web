@@ -12,12 +12,14 @@ import { useRouter } from "next/router";
 import styles from "./index.module.scss";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import SEO from "components/SEO";
-import getFundDocuments, { GetFundsDocumentsResponse } from "api/getFundDocuments";
+import getFundDocuments, {
+  GetFundsDocumentsResponse,
+} from "api/getFundDocuments";
 import { InferGetServerSidePropsType, GetServerSideProps } from "next";
 const cx = classNames.bind(styles);
 type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 
-const PageAboutFoundation = ({ docs}: Props) => {
+const PageAboutFoundation = ({ docs }: Props) => {
   const { t } = useTranslation();
   const { pathname } = useRouter();
   const hash = useMemo(() => pathname.split("#")[1], [pathname]);
@@ -199,22 +201,21 @@ const PageAboutFoundation = ({ docs}: Props) => {
         </section>
       </Container>
       <ContactsWithMap />
-      <DocumentsAndReports data={docs} />
+      {docs && <DocumentsAndReports data={docs} />}
     </main>
   );
 };
 
-
 export const getServerSideProps: GetServerSideProps<{
-  docs?: null | GetFundsDocumentsResponse
-}> = async ({ locale,}) => {
+  docs?: null | GetFundsDocumentsResponse;
+}> = async ({ locale }) => {
   const docsData = await getFundDocuments({
-    locale,
+    locale: locale as string,
   });
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale as string, ["common"])),
       docs: docsData.error || !docsData.data ? null : docsData.data,
     },
   };

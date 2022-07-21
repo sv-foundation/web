@@ -316,14 +316,14 @@ export const getServerSideProps: GetServerSideProps<{
   news: GetNewsResponse | null;
 }> = async ({ locale }) => {
   const newsData = await getNews({
-    locale,
+    locale: locale as string,
     offset: 0,
     limit: 3,
   });
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale as string, ["common"])),
       news: newsData.error || !newsData.data ? null : newsData.data,
     },
   };

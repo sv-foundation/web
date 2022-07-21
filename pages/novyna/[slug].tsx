@@ -138,13 +138,13 @@ export const getServerSideProps: GetServerSideProps<
 > = async ({
   locale,
   req: {
-    headers: { host },
+    headers: { host = "" },
   },
-  params: { slug },
+  params,
 }) => {
   const newsPostData = await getNewsBySlug({
-    locale: locale,
-    slug,
+    locale: locale as string,
+    slug: params?.slug ?? "",
   });
 
   if (newsPostData.error || !newsPostData.data) {
@@ -155,7 +155,7 @@ export const getServerSideProps: GetServerSideProps<
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale as string, ["common"])),
       newsPostData: newsPostData.data,
       host,
     },

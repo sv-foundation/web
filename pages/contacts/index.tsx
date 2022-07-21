@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 import Contacts from "components/Contacts";
 import SEO from "components/SEO";
+import { GetStaticProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styles from "./index.module.scss";
@@ -29,12 +30,12 @@ const PageContacts = () => {
   );
 };
 
-export async function getStaticProps({ locale }) {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale as string, ["common"])),
     },
   };
-}
+};
 
 export default PageContacts;

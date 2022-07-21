@@ -4,12 +4,11 @@ import { IconArrowDown, IconGlobe } from "components/Icons";
 import ButtonLink from "components/UIKit/ButtonLink";
 import { useDropdown } from "helpers";
 import { FC } from "react";
-import { useTranslation } from "next-i18next";
 import styles from "./index.module.scss";
 import { useRouter } from "next/router";
 const cx = classNames.bind(styles);
 
-export const LANGUAGES_MAP = {
+export const LANGUAGES_MAP: { [key: string]: string } = {
   uk: "Українська",
 };
 
@@ -31,7 +30,7 @@ const LanguageSwitcher: FC<{ className?: string; placement?: Placement }> = ({
       >
         <IconGlobe />
 
-        <span>{LANGUAGES_MAP[router.locale]}</span>
+        <span>{LANGUAGES_MAP[router.locale as string]}</span>
 
         <IconArrowDown className={cx("IconArrow")} />
       </ButtonLink>

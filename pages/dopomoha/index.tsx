@@ -56,7 +56,7 @@ const PageDonate = ({ docs, paymentDetails, paymentSystemFondy }: Props) => {
               {t("pageDonate.donate.description")}
             </p>
           </div>
-          <DonateForm data={paymentSystemFondy} />
+          {paymentSystemFondy && <DonateForm data={paymentSystemFondy} />}
           <div className={cx("FormSectionAdditionalDetails")}>
             <p className={cx("FormSectionDescription")}>
               {t("pageDonate.donate.description")}
@@ -66,9 +66,9 @@ const PageDonate = ({ docs, paymentDetails, paymentSystemFondy }: Props) => {
       </Container>
 
       <Container className={cx("AdditionalContainer")}>
-        <Requisites data={paymentDetails} />
+        {paymentDetails && <Requisites data={paymentDetails} />}
         <ContactsWithMap />
-        <DocumentsAndReports data={docs} />
+        {docs && <DocumentsAndReports data={docs} />}
       </Container>
     </main>
   );
@@ -91,7 +91,7 @@ const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
     setLoading(true);
 
     const response = await makePayment({
-      locale,
+      locale: locale as string,
       amount: Number(amount.value.replace(",", ".")).toFixed(2),
       currency: currency.value,
     });
@@ -108,7 +108,7 @@ const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
           document.location.assign(response.data.checkout_url);
         }
       } else {
-        const error = response.data.amount[0] || response.data.currency[0];
+        const error = response.data.amount?.[0] || response.data.currency?.[0] || ''; 
         amount.changeError(
           t([`pageDonate.donate.form.errors.${error}`, error])
         );
@@ -302,15 +302,19 @@ export const getServerSideProps: GetServerSideProps<{
 }> = async ({ locale }) => {
   console.log(locale);
   const docsData = await getFundDocuments({
-    locale,
+    locale: locale as string,
   });
 
-  const paymentSystemFondyData = await getPaymentSystemFondy({ locale });
-  const paymentDetailsData = await getPaymentDetails({ locale });
+  const paymentSystemFondyData = await getPaymentSystemFondy({
+    locale: locale as string,
+  });
+  const paymentDetailsData = await getPaymentDetails({
+    locale: locale as string,
+  });
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale as string, ["common"])),
       docs: docsData.error || !docsData.data ? null : docsData.data,
       paymentSystemFondy:
         paymentSystemFondyData.error || !paymentSystemFondyData.data
