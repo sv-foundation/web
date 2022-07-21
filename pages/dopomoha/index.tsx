@@ -1,30 +1,36 @@
+import getFundDocuments, {
+  GetFundsDocumentsResponse,
+} from "api/getFundDocuments";
+import getPaymentDetails, {
+  GetPaymentDetailsResponse,
+} from "api/getPaymentDetails";
+import getPaymentSystemFondy, {
+  GetPaymentSystemFondyResponse,
+} from "api/getPaymentSystemFondy";
+import makePayment from "api/makePayment";
 import classNames from "classnames/bind";
 import ContactsWithMap from "components/ContactsWithMap";
 import DocumentsAndReports from "components/DocumentsAndReports";
 import { IconArrowDown, IconCheck, IconCopy } from "components/Icons";
+import SEO from "components/SEO";
 import Button from "components/UIKit/Button";
 import ButtonLink from "components/UIKit/ButtonLink";
 import Container from "components/UIKit/Container";
 import TextField from "components/UIKit/TextField";
 import Title from "components/UIKit/Title";
 import { useCopy, useDropdown, useFormField } from "helpers";
-import { FC, FormEventHandler, useEffect, useState } from "react";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useTranslation } from "next-i18next";
-import styles from "./index.module.scss";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import SEO from "components/SEO";
-import { InferGetServerSidePropsType, GetServerSideProps } from "next";
-import getFundDocuments, {
-  GetFundsDocumentsResponse,
-} from "api/getFundDocuments";
-import makePayment from "api/makePayment";
 import { useRouter } from "next/router";
-import getPaymentSystemFondy, {
-  GetPaymentSystemFondyResponse,
-} from "api/getPaymentSystemFondy";
-import getPaymentDetails, {
-  GetPaymentDetailsResponse,
-} from "api/getPaymentDetails";
+import {
+  ChangeEventHandler,
+  FC,
+  FormEventHandler,
+  useEffect,
+  useState,
+} from "react";
+import styles from "./index.module.scss";
 const cx = classNames.bind(styles);
 
 type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
@@ -112,6 +118,22 @@ const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
     setLoading(false);
   };
 
+  const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    const pattern = /^[1-9]\d*([.,]\d{0,2})?$/;
+    const MAX = 1_000_000;
+
+    let value = e.target.value;
+    if (value && !pattern.test(value)) {
+      value = amount.value;
+    }
+
+    if (!isNaN(+value) && +value > MAX) {
+      value = `${MAX}`;
+    }
+
+    amount.change(value);
+  };
+
   return (
     <form onSubmit={onSubmit} className={cx("DonateForm")}>
       <h6 className={cx("DonateFormTitle")}>
@@ -121,8 +143,10 @@ const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
       <TextField
         label={t("pageDonate.donate.form.amount")}
         value={amount.value}
-        onChange={(e) => amount.change(e.target.value)}
+        onChange={onChange}
+        inputMode="decimal"
         error={amount.error}
+        type="text"
         rightControl={
           <div
             onClick={(e) => e.stopPropagation()}
@@ -245,16 +269,16 @@ const RequisitesItem: FC<{ value: string; name?: string }> = ({
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    if (copied)  {
-      const tid = setTimeout(() =>  {
-        setCopied(false)
-      }, 2000)
+    if (copied) {
+      const tid = setTimeout(() => {
+        setCopied(false);
+      }, 2000);
 
-      return () => { 
-        clearTimeout(tid)
-      }
+      return () => {
+        clearTimeout(tid);
+      };
     }
-  }, [copied])
+  }, [copied]);
 
   return (
     <li className={cx("RequisitesItem")}>

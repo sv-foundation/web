@@ -12,7 +12,6 @@ export type GetNewsResponse = {
   next: string | null;
   previous: string | null;
   results: {
-    id: number;
     slug: string,
     title: string;
     publication_date: string;

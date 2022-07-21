@@ -80,25 +80,23 @@ $subheader-height: 48px;
 }
 
 .NavLink {
-  position: relative;
-
   &.activeLink {
     svg {
       @include iconColor($color-green);
     }
 
-    span {
+    span > span {
+      position: relative;
       color: $color-green;
-    }
-
-    &::after {
-      content: "";
-      width: 100%;
-      height: 1px;
-      background-color: $color-green;
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $color-green;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
     }
   }
 }
@@ -116,7 +114,7 @@ $subheader-height: 48px;
   }
 }
 
-.BtnDonate { 
+.BtnDonate {
   @include landscape {
     display: none;
   }

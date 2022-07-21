@@ -22,12 +22,18 @@ const getNewsBySlug = async ({ slug, locale }: GetNewsBySlugArguments) => {
         "Accept-Language": locale,
       },
     });
+
+    if (res.status !== 200 && res.status !== 201) {
+      throw Error();
+    }
+
     const data = (await res.json()) as GetNewsBySlugResponse;
 
     return {
       data,
     };
   } catch (error) {
+    console.log(error);
     return {
       error,
     };

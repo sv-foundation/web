@@ -268,7 +268,7 @@ const News = ({ news }: Pick<Props, "news">) => {
             >
               {news.results.map((post) => {
                 return (
-                  <SwiperSlide key={post.id} className={cx("NewsCardSlide")}>
+                  <SwiperSlide key={post.slug} className={cx("NewsCardSlide")}>
                     <NewsCard
                       tag="div"
                       title={post.title}

@@ -86,7 +86,7 @@ const PageNews = ({ news, tags }: Props) => {
           {news?.results?.map((post) => {
             return (
               <NewsCard
-                key={post.id}
+                key={post.slug}
                 title={post.title}
                 text={post.annotation}
                 preview={post.preview_photo}
