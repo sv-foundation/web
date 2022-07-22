@@ -16,18 +16,23 @@ import SEO from "components/SEO";
 import { useWidthCondition } from "helpers";
 import getNewsBySlug, { GetNewsBySlugResponse } from "api/getNewsBySlug";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import { MouseEventHandler, useEffect, useMemo, useRef, useState } from "react";
+import {
+  FC,
+  MouseEventHandler,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useRouter } from "next/router";
 import Gallery from "components/Gallery";
 const cx = classNames.bind(styles);
 
 type Props = {
   newsPostData: GetNewsBySlugResponse;
-  host: string;
 };
 
 const PageNews = ({
-  host,
   newsPostData: {
     title,
     annotation,
@@ -136,12 +141,12 @@ const PageNews = ({
   );
 };
 
-const Share = ({ title = "", host = "" }) => {
+const Share: FC<{ title: string }> = ({ title }) => {
   const [t] = useTranslation();
   const router = useRouter();
 
   const isLandscapeOrLess = useWidthCondition((w) => w < BREAKPOINT_LANDSCAPE);
-  const url = host + router.asPath;
+  const url = process.env.NEXT_PUBLIC_CLIENT_URL + router.asPath;
   const fbLink = `https://www.facebook.com/sharer.php?u=${encodeURIComponent(
     url
   )}&t=${encodeURIComponent(title)}`;
@@ -176,13 +181,7 @@ const Share = ({ title = "", host = "" }) => {
 export const getServerSideProps: GetServerSideProps<
   Props,
   { slug: string }
-> = async ({
-  locale,
-  req: {
-    headers: { host = "" },
-  },
-  params,
-}) => {
+> = async ({ locale, params }) => {
   const newsPostData = await getNewsBySlug({
     locale: locale as string,
     slug: params?.slug ?? "",
@@ -198,7 +197,6 @@ export const getServerSideProps: GetServerSideProps<
     props: {
       ...(await serverSideTranslations(locale as string, ["common"])),
       newsPostData: newsPostData.data,
-      host,
     },
   };
 };
