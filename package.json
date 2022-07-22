@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "NEXT_PUBLIC_API_URL=https://api.beta.svfoundation.org.ua/ next dev",
+    "dev": "NEXT_PUBLIC_API_URL=https://api.beta.svfoundation.org.ua/ NEXT_PUBLIC_CLIENT_URL=https://beta.svfoundation.org.ua  next dev",
     "build": "next build",
     "start": "next start"
   },
