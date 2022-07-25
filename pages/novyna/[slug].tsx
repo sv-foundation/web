@@ -38,7 +38,7 @@ const PageNews = ({
     annotation,
     content,
     publication_date,
-    preview_photo,
+    main_photo,
     tags,
   },
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
@@ -99,7 +99,7 @@ const PageNews = ({
 
   return (
     <main className={cx("Page")}>
-      <SEO title={title} description={annotation} ogImage={preview_photo} />
+      <SEO title={title} description={annotation} ogImage={main_photo} />
 
       <Container className={cx("Container")}>
         {Actions}
@@ -117,7 +117,7 @@ const PageNews = ({
           </ul>
 
           <div className={cx("CoverImage")}>
-            <img src={preview_photo} />
+            <img src={main_photo} />
           </div>
 
           <div

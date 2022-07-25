@@ -78,7 +78,10 @@ const Sidemenu: FC<{ close(): void; isOpen: boolean }> = ({
                 onClick={close}
                 tag="link"
                 className={cx("SidebarSubLink")}
-                linkProps={{ href: URL_MAP.aboutFoundation.ourWork }}
+                linkProps={{
+                  href: URL_MAP.aboutFoundation.ourWork,
+                  shallow: true,
+                }}
               >
                 <Fragment>{t("header.nav.aboutFoundation.ourWork")}</Fragment>
               </ButtonLink>
@@ -86,7 +89,10 @@ const Sidemenu: FC<{ close(): void; isOpen: boolean }> = ({
                 onClick={close}
                 tag="link"
                 className={cx("SidebarSubLink")}
-                linkProps={{ href: URL_MAP.aboutFoundation.team }}
+                linkProps={{
+                  href: URL_MAP.aboutFoundation.team,
+                  shallow: true,
+                }}
               >
                 <Fragment> {t("header.nav.aboutFoundation.team")}</Fragment>
               </ButtonLink>
@@ -94,7 +100,10 @@ const Sidemenu: FC<{ close(): void; isOpen: boolean }> = ({
                 onClick={close}
                 tag="link"
                 className={cx("SidebarSubLink")}
-                linkProps={{ href: URL_MAP.aboutFoundation.docs }}
+                linkProps={{
+                  href: URL_MAP.aboutFoundation.docs,
+                  shallow: true,
+                }}
               >
                 <Fragment> {t("header.nav.aboutFoundation.docs")}</Fragment>
               </ButtonLink>

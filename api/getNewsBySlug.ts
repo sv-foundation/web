@@ -10,7 +10,7 @@ export type GetNewsBySlugResponse = {
   title: string;
   publication_date: string;
   annotation: string;
-  preview_photo: string;
+  main_photo: string;
   content: string;
   tags: Tag[];
 };

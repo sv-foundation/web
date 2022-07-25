@@ -1,0 +1,27 @@
+@import "~scss/variables";
+
+.Btn {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: $z-index-header;
+  @include size(30px);
+  border-radius: 7px;
+  background: $color-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(100%);
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  svg {
+    transform: rotate(180deg);
+    @include size(16px);
+    @include iconColor($color-black);
+  }
+}
