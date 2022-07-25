@@ -22,6 +22,7 @@ COPY . .
 # ENV NEXT_TELEMETRY_DISABLED 1
 ENV NEXT_PUBLIC_API_URL https://api.beta.svfoundation.org.ua
 ENV NEXT_PUBLIC_CLIENT_URL https://beta.svfoundation.org.ua
+ENV NEXT_PUBLIC_GA G-601E3JVHL6
 # RUN yarn build
 
 # If using npm comment out above and use below instead

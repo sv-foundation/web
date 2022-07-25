@@ -7,4 +7,6 @@ interface Window {
   overflowController: {
     [key in string]: HTMLElement | boolean | undefined;
   };
+
+  gtag(...args: any[]): void
 }

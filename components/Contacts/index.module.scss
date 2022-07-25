@@ -38,10 +38,17 @@
     display: block;
     font-style: normal;
     white-space: pre-wrap;
-  
-    & > * {
-      align-items: flex-start;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: $color-text;
+
+    svg {
+      display: inline-block;
+      @include size(16px);
+      margin-right: 8px;
+      @include iconColor($color-text);
     }
   }
 }
-

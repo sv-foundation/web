@@ -27,4 +27,4 @@ export const BREAKPOINT_LAPTOP = 1440;
 
 export const CONTACT_PHONE = '+380 50 352 23 24'
 export const CONTACT_MAIL = 'info@svfoundation.org.ua'
-export const CONTACT_FACEBOOK = ''
+export const CONTACT_FACEBOOK = 'https://www.facebook.com/svfoundation.org.ua'

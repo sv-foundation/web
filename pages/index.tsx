@@ -2,7 +2,12 @@ import classNames from "classnames/bind";
 import styles from "./index.module.scss";
 import { Trans, useTranslation } from "next-i18next";
 import Button from "components/UIKit/Button";
-import { BREAKPOINT_LANDSCAPE, BREAKPOINT_TABLET, URL_MAP } from "constant";
+import {
+  BREAKPOINT_LANDSCAPE,
+  BREAKPOINT_TABLET,
+  CONTACT_MAIL,
+  URL_MAP,
+} from "constant";
 import {
   IconArrowDown,
   IconBox,
@@ -215,8 +220,8 @@ const Home = ({ news }: Props) => {
                   <ButtonLink
                     fontWeight="bold"
                     color="green"
-                    tag="link"
-                    linkProps={{ href: URL_MAP.donate }}
+                    tag="a"
+                    href={`mailto:${CONTACT_MAIL}`}
                   >
                     <span>{t("pageHome.donate.items.2.link")}</span>
                     <IconArrowDown className={cx("DonateItemsIcon")} />

@@ -5,7 +5,7 @@ import { IconBox, IconCar, IconChicken, IconMedicine } from "components/Icons";
 import Button from "components/UIKit/Button";
 import Container from "components/UIKit/Container";
 import Title from "components/UIKit/Title";
-import { URL_MAP } from "constant";
+import { CONTACT_MAIL, URL_MAP } from "constant";
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
@@ -21,13 +21,26 @@ type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 
 const PageAboutFoundation = ({ docs }: Props) => {
   const { t } = useTranslation();
-  const { pathname } = useRouter();
-  const hash = useMemo(() => pathname.split("#")[1], [pathname]);
-
+  const { asPath } = useRouter();
+  const hash = useMemo(() => asPath.split("#")[1], [asPath]);
   useEffect(() => {
-    const targetElement = document.getElementById(hash);
+    const targetElement = document.getElementById(
+      hash + "-section"
+    ) as HTMLElement;
+
     if (hash && targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      const headerHeight = document.getElementById("header")?.offsetHeight ?? 0;
+      const top =
+        targetElement.offsetTop -
+        Math.max(
+          headerHeight -
+            parseInt(window.getComputedStyle(targetElement).paddingTop),
+          0
+        );
+      window.scrollTo({
+        behavior: "smooth",
+        top,
+      });
     }
   }, [hash]);
 
@@ -67,7 +80,7 @@ const PageAboutFoundation = ({ docs }: Props) => {
       </Container>
 
       <Container>
-        <section id="ourWork" className={cx("Section", "Activity")}>
+        <section id="ourWork-section" className={cx("Section", "Activity")}>
           <Title tag="h2" className={cx("Title")}>
             {t("pageAboutFoundation.activity.title")}
           </Title>
@@ -92,7 +105,7 @@ const PageAboutFoundation = ({ docs }: Props) => {
             <li>
               <div>
                 <i>
-                  <IconBox />
+                  <IconMedicine />
                 </i>
                 <h3>{t("pageAboutFoundation.activity.items.1.title")}</h3>
                 <p>{t("pageAboutFoundation.activity.items.1.description")}</p>
@@ -115,18 +128,14 @@ const PageAboutFoundation = ({ docs }: Props) => {
                 <p>{t("pageAboutFoundation.activity.items.2.description")}</p>
               </div>
 
-              <Button
-                color="secondary"
-                tag="link"
-                linkProps={{ href: URL_MAP.donate }}
-              >
+              <Button color="secondary" tag="a" href={`mailto:${CONTACT_MAIL}`}>
                 {t("pageAboutFoundation.activity.items.2.btn")}
               </Button>
             </li>
             <li>
               <div>
                 <i>
-                  <IconMedicine />
+                  <IconBox />
                 </i>
                 <h3>{t("pageAboutFoundation.activity.items.3.title")}</h3>
                 <p>{t("pageAboutFoundation.activity.items.3.description")}</p>
@@ -142,7 +151,7 @@ const PageAboutFoundation = ({ docs }: Props) => {
           </ul>
         </section>
 
-        <section id="team" className={cx("Section", "Team")}>
+        <section id="team-section" className={cx("Section", "Team")}>
           <Title tag="h2" className={cx("Title")}>
             {t("pageAboutFoundation.team.title")}
           </Title>
