@@ -1,4 +1,4 @@
-import { Tag, API } from "./index";
+import { API } from "./index";
 
 export type MakePaymentArguments = {
   locale: string;

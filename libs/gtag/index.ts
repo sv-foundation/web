@@ -1,5 +1,8 @@
+const GA = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
+
 export const pageview = (url: string): void => {
-  window.gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
-    page_path: url,
-  });
+  if (GA)
+    window.gtag("config", GA, {
+      page_path: url,
+    });
 };
