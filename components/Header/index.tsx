@@ -116,7 +116,7 @@ const Nav = () => {
           data-open={dropdown.open || undefined}
         >
           <li>
-            <Link scroll={false} shallow href={URL_MAP.aboutFoundation.ourWork}>
+            <Link scroll={false} href={URL_MAP.aboutFoundation.ourWork}>
               <a onClick={dropdown.toggle}>
                 <span tabIndex={-1}>
                   <span>{t("header.nav.aboutFoundation.ourWork")}</span>
@@ -125,7 +125,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link scroll={false} shallow href={URL_MAP.aboutFoundation.team}>
+            <Link scroll={false} href={URL_MAP.aboutFoundation.team}>
               <a onClick={dropdown.toggle}>
                 <span tabIndex={-1}>
                   <span>{t("header.nav.aboutFoundation.team")}</span>
@@ -134,7 +134,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link scroll={false} shallow href={URL_MAP.aboutFoundation.docs}>
+            <Link scroll={false} href={URL_MAP.aboutFoundation.docs}>
               <a onClick={dropdown.toggle}>
                 <span tabIndex={-1}>
                   <span>{t("header.nav.aboutFoundation.docs")}</span>
