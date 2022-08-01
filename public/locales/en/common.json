@@ -1,6 +1,6 @@
 {
   "global": {
-    "help": "Help",
+    "help": "Donate",
     "address": "Ukraine, 81340\nLviv region\nMostytskii district\nSudova Vyshnia\nLisozavodska street 2/1",
     "shareFB": "Share on Facebook",
     "shareTwitter": "Share on Twitter",
@@ -14,7 +14,7 @@
   "documentsAndReports": { "title": "Our Documents" },
   "header": {
     "nav": {
-      "home": "Main Page",
+      "home": "Home",
       "aboutFoundation": {
         "main": "About Foundation",
         "ourWork": "Our Work",
@@ -28,7 +28,7 @@
   },
   "pageHome": {
     "seo": {
-      "title": "Main Page",
+      "title": "Home",
       "description": "We are working to meet the urgent needs of the military and medical personnel defending Ukraine on the front lines, and the civilian population in the liberated settlements."
     },
 
@@ -65,13 +65,13 @@
           "title": "Location",
           "description": "Located 29 km to the Ukrainian-Polish border, the possibility of receiving goods in the buffer zone."
         },
-        { "title": "Warehouses and vehicle service stations." },
+        { "title": "Warehouses and vehicle service stations" },
         {
           "title": "Logistics",
           "description": "Ability to send up to 15 tons of humanitarian aid daily."
         },
         {
-          "title": "Support of the Sudova Vyshnya city territorial community."
+          "title": "Support of the Sudova Vyshnya city territorial community"
         }
       ]
     },
@@ -81,7 +81,7 @@
         {
           "title": "Financial aid",
           "description": "We are directing the collected funds to help Ukrainians in the liberated settlements, as well as to fulfill the requests of doctors and the military in the hottest places, on the front lines.",
-          "link": "Help"
+          "link": "Donate"
         },
         {
           "title": "Humanitarian help",
@@ -231,7 +231,7 @@
       "description": "As much as you can,\nin the way that works best for you.",
       "form": {
         "title": "Payment by card",
-        "amount": "Specify the amount of the fee",
+        "amount": "Amount",
         "submit": "Pay {{amount}} {{currency}}",
 
         "errors": {
