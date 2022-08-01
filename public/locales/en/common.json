@@ -1,266 +1,267 @@
 {
   "global": {
-    "help": "Допомогти",
-    "address": "Україна, 81340\nЛьвівська область\nМостиський район\nм Судова Вишня\nвул. Лісозаводська б.2/1",
-    "shareFB": "Поділіться на Facebook",
-    "shareTwitter": "Поділіться на Twitter",
+    "help": "Help",
+    "address": "Ukraine, 81340\nLviv region\nMostytskii district\nSudova Vyshnia\nLisozavodska street 2/1",
+    "shareFB": "Share on Facebook",
+    "shareTwitter": "Share on Twitter",
 
     "seo": {
-      "title": "БФ Судовишнянської ТГ",
-      "siteName": "БФ Судовишнянської ТГ",
-      "description": "Благодійних Фонд Судовишнянської територіальної громади створено для підтримки українців, що постраждали внаслідок російської агресії."
+      "title": "CO CF OF THE SUDOVYSHNYANSK TC",
+      "siteName": "CO CF OF THE SUDOVYSHNYANSK TC",
+      "description": "The Charitable Foundation of the Sudovyshnyansk Territorial Community was established to support Ukrainians affected by the russian invasion."
     }
   },
-  "documentsAndReports": { "title": "Документи та звіти" },
+  "documentsAndReports": { "title": "Our Documents" },
   "header": {
     "nav": {
-      "home": "Головна",
+      "home": "Main Page",
       "aboutFoundation": {
-        "main": "Про фонд",
-        "ourWork": "Наша діяльність",
-        "team": "Команда",
-        "docs": "Документи та звіти"
+        "main": "About Foundation",
+        "ourWork": "Our Work",
+        "team": "Team",
+        "docs": "Our Documents"
       },
-      "needHelp": "Потребую допомоги",
-      "news": "Новини",
-      "contacts": "Контакти"
+      "needHelp": "Need Help",
+      "news": "News",
+      "contacts": "Contacts"
     }
   },
   "pageHome": {
     "seo": {
-      "title": "Головна",
-      "description": ""
+      "title": "Main Page",
+      "description": "We are working to meet the urgent needs of the military and medical personnel defending Ukraine on the front lines, and the civilian population in the liberated settlements."
     },
 
     "intro": {
-      "title": "Україна <b>переможе!</b>",
+      "title": "Ukraine <b>will win!</b>",
       "text": [
-        "Благодійний фонд Судовишнянської територіальної громади створено для підтримки українців, що постраждали внаслідок вторгнення росії.",
-        "Ми працюємо над задовільненням нагальних потреб військових та медиків, що боронять Україну на передовій, та цивільного населення у звільнених населенних пунктах.",
-        "Ви можете допомогти просто зараз!"
+        "The Charitable Foundation of the Sudovyshnyansk Territorial Community was established to support Ukrainians affected by the russian invasion.",
+        "We are working to meet the urgent needs of the military and medical personnel defending Ukraine on the front lines, and the civilian population in the liberated settlements.",
+        "You can help right now!"
       ],
-      "btnDetails": "Докладніше"
+      "btnDetails": "Details"
     },
     "activity": {
-      "title": "Напрямки діяльності\nблагодійного фонду",
+      "title": "Areas of activity\nof the charitable foundationу",
       "items": [
         {
-          "title": "Допомога військовим",
-          "description": "Cпецтранспорт та автомобілі для потреб ЗСУ, екіпірування та спорядження."
+          "title": "Military Assistance",
+          "description": "Special vehicles and cars for the needs of the Armed Forces, equipment and gear."
         },
         {
-          "title": "Гуманітарна допомога",
-          "description": "Харчування та засоби гігієни на передовій і у звільнених населених пунктах України."
+          "title": "Humanitarian help",
+          "description": "Food and hygiene products at the forefront and in the liberated settlements of Ukraine."
         },
         {
-          "title": "Медицина",
-          "description": "Ліки, медичні засоби та обладнання для лікарень, госпіталів та на передову."
+          "title": "Medicine",
+          "description": "Medicines, medical devices and equipment for hospitals, hospitals and advanced."
         }
       ]
     },
     "resources": {
-      "title": "Ресурси фонду\nта його ефективність",
+      "title": "Resources and\nEffectiveness of our Foundation",
       "items": [
         {
-          "title": "Локація",
-          "description": "Розташування у 29 км до українсько-польського кордону, можливість отримання вантажів у буферній зоні."
+          "title": "Location",
+          "description": "Located 29 km to the Ukrainian-Polish border, the possibility of receiving goods in the buffer zone."
         },
-        { "title": "Власні склади та СТО" },
+        { "title": "Warehouses and vehicle service stations." },
         {
-          "title": "Логістика",
-          "description": "Можливість відправляти до 15 тон гумунітарної допомоги щоденно."
+          "title": "Logistics",
+          "description": "Ability to send up to 15 tons of humanitarian aid daily."
         },
         {
-          "title": "Підтримка міської територіальної\nгромади м. Судова Вишня."
+          "title": "Support of the Sudova Vyshnya city territorial community."
         }
       ]
     },
     "donate": {
-      "title": "Ви можете допомогти\nпросто зараз",
+      "title": "You can help\nright now",
       "items": [
         {
-          "title": "Фінансова допомога",
-          "description": "Спрямовуємо зібрані кошти на допомогу українцям у звільнених населених пунктах, а також на виконання запитів медиків та військових у найгарячіших місцях, на передовій.",
-          "link": "Допомогти"
+          "title": "Financial aid",
+          "description": "We are directing the collected funds to help Ukrainians in the liberated settlements, as well as to fulfill the requests of doctors and the military in the hottest places, on the front lines.",
+          "link": "Help"
         },
         {
-          "title": "Гуманітарна допомога",
-          "description": "Доставляємо те, що потрібно, туди, де це найбільш необхідно. Працюємо з запитами від лікарень, військових частин, ОВА, волонтерських організацій.",
-          "link": "Допомогти"
+          "title": "Humanitarian help",
+          "description": "We deliver what is needed where it is most needed. We work with inquiries from hospitals, military units, city hall, volunteer organizations.",
+          "link": "Help"
         },
         {
-          "title": "Волонтерство",
-          "description": "Ми мріємо допомогти якомога більшій кількості людей. Ваша праця та навички можуть значно підсилити наші логістичні та організаційний ресурси. Напишіть нам.",
-          "link": "Написати"
+          "title": "Volunteering",
+          "description": "We dream of helping as many people as possible. Your work and skills can greatly enhance our logistics and organizational resources. Contact us for more details.",
+          "link": "Send email"
         }
       ]
     },
-    "news": { "title": "Новини", "btnMore": "Всі новини" }
+    "news": { "title": "News", "btnMore": "More" }
   },
   "formNeedHelp": {
-    "title": "Потрібна допомога?",
+    "title": "Need help?",
     "description": [
-      "Війна вимагає особливої гнучкості та швидкості. Щоб забезпечити найактуальніші потреби лікарень, госпіталів, військових частин, ОВА та волонтерських організацій ми опрацьовуємо ваші запити щодня.",
-      "Будь ласка, надайте повну інформацію про нагальні потреби: найменування, деталізацію, кількість. Для того, щоб ваш запит було опрацьовано якнайшвидше, додайте файли з переліком необхідного у таблиці excel та скан-копію офіційного запиту."
+      "War requires special flexibility and speed. To process the most urgent needs of hospitals, hospitals, military units, regional military administrations and volunteer organizations, we process your inquiries on a daily basis.",
+      "Please provide complete information on urgent needs: name, details, quantity. In order for your query to be processed as quickly as possible, add files with a list of required in the excel spreadsheet and a scanned copy of the official query."
     ],
     "formFields": {
-      "fullName": "Ім’я та прізвище *",
-      "organization": "Назва організації *",
+      "fullName": "Name and surname *",
+      "organization": "Name of organization *",
       "email": "Email *",
-      "phone": "Номер телефону *",
-      "message": "Додати повідомлення *",
+      "phone": "Phone number *",
+      "message": "Add a message *",
       "attachments": {
-        "label": "Додати файл",
-        "description": "Виберіть файл або перетягніть сюди",
-        "dragHint": "Перетягніть файли сюди",
-        "remove": "Видалити"
+        "label": "Add a file",
+        "description": "Select the file or drag it here",
+        "dragHint": "Drag the files here",
+        "remove": "Delete"
       }
     },
-    "btnSubmit": "Надіслати",
+    "btnSubmit": "Send",
 
     "error": { 
-      "title": "Помилка",
-      "description": "Під час відправки повідомлення виникла помилка.",
-      "btn": "Спробувати ще раз"
+      "title": "Error",
+      "description": "An error occurred while sending a message.",
+      "btn": "Try again"
     },
     
     "success": { 
-      "title": "Дякуємо!",
-      "description": "Ваше повідомлення успішно відправлено!\nМи зв'яжемося з вами у найближчий час."
+      "title": "Thank you!",
+      "description": "Your notification has been successfully sent!\nWe will get back to you as soon as possible."
     }
   },
   "pageContacts": {
     "seo": {
-      "title": "Наші контакти",
-      "description": ""
+      "title": "Our contacts",
+      "description": "We need your help. Contact us to find out about the main needs of Ukrainian soldiers, hospitals and Ukrainians who have suffered from the russian invasion. Let's win the victory together!"
     },
 
-    "title": "Наші контакти",
-    "description": "Благодійний фонд Судовишнянської\nтериторіальної громади"
+    "title": "Our contacts",
+    "description": "The Charitable Foundation of the\nSudovyshnyansk Territorial Community"
   },
   "pageNews": {
     "seo": {
-      "title": "Новини",
-      "description": ""
+      "title": "News",
+      "description": "Targeted Humanitarian Aid - is in safe hands! We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, hospitals and volunteer organizations"
     },
-    "title": "Новини",
-    "tags": { "all": "Всі новини" }
+    "title": "News",
+    "tags": { "all": "All news" }
   },
   "pageAboutFoundation": {
     "seo": {
-      "title": "Про фонд",
-      "description": ""
+      "title": "About Foundation",
+      "description": "We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, hospitals and volunteer organizations."
     },
 
     "intro": {
-      "title": "Адресна допомога\nу надійні руки",
+      "title": "Targeted Humanitarian Aid -\nis in safe hands",
       "text": [
-        "Благодійних Фонд Судовишнянської територіальної громади створено для підтримки українців, що постраждали внаслідок російської агресії.",
-        "Завдяки підтримці світу, Україна отримує чималу кількість гуманітарної допомоги, яка задовольняють потреби звільнених міст.",
-        "Ми спрямовуємо свої сили на підтримку цивільних і військових саме там, де це найбільш необхідно. Опрацьовуємо конкретні запити від військових частин, ОВА, лікарень та волонтерських організацій"
+        "The Charitable Foundation of the Sudovyshnyansk Territorial Community was established to support Ukrainians affected by russian aggression.",
+        "Thanks to the support of the world, Ukraine receives a considerable amount of humanitarian aid that meets the needs of liberated cities.",
+        "We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, city halls, hospitals and volunteer organizations."
       ],
-      "btnNeedHelp": "Надіслати запит на допомогу",
-      "btnDonate": "Підтримати фінансово"
+      "btnNeedHelp": "Send a request for help",
+      "btnDonate": "Support financially"
     },
     "activity": {
-      "title": "Напрямки діяльності\nблагодійного фонду",
+      "title": "Areas of activity\nof the charitable foundation",
       "items": [
         {
-          "title": "Транспорт та інші потреби військових",
-          "description": "Транспортування, фарбування автівок для потреб ЗСУ та ТРО.",
-          "btn": "Підтримати"
+          "title": "Transport and other military needs",
+          "description": "Transportation, painting of cars for the needs of the Armed Forces",
+          "btn": "Support"
         },
         {
-          "title": "Гуманітарна допомога",
-          "description": "Засоби особистої гігієни, дитячі товари, одяг та взуття, тощо",
-          "btn": "Підтримати"
+          "title": "Medicine",
+          "description": "Providing hospitals and physicians at the frontline and in liberated cities",
+          "btn": "Support"
         },
         {
-          "title": "Продукти харчування",
-          "description": "Їжа та продукти для звільнених міст, евакуйованого населення, тощо",
-          "btn": "Запропонувати допомогу "
+          "title": "Food",
+          "description": "Food and products for liberated cities, evacuees, etc.",
+          "btn": "Offer help"
         },
+        
         {
-          "title": "Медицина",
-          "description": "Забезпечення лікарень та медиків на передовій і у звільнених містах",
-          "btn": "Підтримати"
+          "title": "Humanitarian help",
+          "description": "Personal hygiene products, baby products, clothes and shoes, etc.",
+          "btn": "Support"
         }
       ]
     },
     "team": {
-      "title": "Наша команда",
+      "title": "Our team",
       "members": {
         "Lesko": {
-          "name": "Марія Лесько",
-          "role": "Директор фонду, засновник"
+          "name": "Maria Lesko",
+          "role": "Director of the foundation, Founder"
         },
         "Karnauh": {
-          "name": "Олексій Карнаух",
-          "role": "Президент фонду, засновник"
+          "name": "Oleksii Karnaukh",
+          "role": "President of the foundation, Founder"
         },
         "Slobodyanuk": {
-          "name": "Павло Слободянюк",
-          "role": "Засновник фонду, меценат"
+          "name": "Pavlo Slobodianiuk",
+          "role": "Founder of the foundation, patron"
         },
         "Pojidaev": {
-          "name": "Владислав Пожидаєв",
-          "role": "Засновник фонду, меценат"
+          "name": "Vladyslav Pozhydaiev",
+          "role": "Founder of the foundation, patron"
         },
         "IValah": {
-          "name": "Ірина Валах",
-          "role": "Засновник фонду, волонтер"
+          "name": "Iryna Valakh",
+          "role": "Founder of the foundation, volunteer"
         },
         "VValah": {
-          "name": "Віталій Валах",
-          "role": "Засновник фонду, волонтер"
+          "name": "Vitalii Valakh",
+          "role": "Founder of the foundation, volunteer"
         },
-        "SArinshtein": { "name": "Станіслав Арінштейн", "role": "Волонтер" },
-        "DArinshtein": { "name": "Дар'я Арінштейн", "role": "Волонтер" }
+        "SArinshtein": { "name": "Stanislav Arinshtein", "role": "Volunteer" },
+        "DArinshtein": { "name": "Daria Arinshtein", "role": "Volunteer" }
       }
     }
   },
   "pageDonate": {
     "seo": {
-      "title": "Фінансова допомога",
-      "description": ""
+      "title": "Financial aid",
+      "description": "We are directing the collected funds to help Ukrainians in the liberated settlements, as well as to fulfill the requests of doctors and the military in the hottest places, on the front lines."
     },
 
     "donate": {
-      "title": "Фінансова\nдопомога",
-      "description": "Cтільки — скільки зможеш,\nу такий спосіб — який тобі зручніший",
+      "title": "Financial\naid",
+      "description": "As much as you can,\nin the way that works best for you.",
       "form": {
-        "title": "Оплата карткою",
-        "amount": "Вкажіть суму внеску",
-        "submit": "Оплатити {{amount}} {{currency}}",
+        "title": "Payment by card",
+        "amount": "Specify the amount of the fee",
+        "submit": "Pay {{amount}} {{currency}}",
 
         "errors": {
-          "globalError": "Виникла помилка. Спробуйте пізніше",
-          "Invalid amount": "Сума внеску некоректна",
-          "Invalid currency": "Валюта внеску некоректна"
+          "globalError": "Error. Try again later",
+          "Invalid amount": "Incorrect amount",
+          "Invalid currency": "Incorrect currency"
         }
       }
     },
     "requisites": {
-      "title": "Реквізити",
-      "description": "Тут ви можете знайти наші реквізити.\nНатисніть на рядок, щоб скопіювати його."
+      "title": "Donate",
+      "description": "Here you can find details for payment.\nClick on the line to copy it."
     }
   },
   "pageNeedHelp": {
     "seo": {
-      "title": "Потрібна допомога?",
-      "description": ""
+      "title": "Need help?",
+      "description": "War requires special flexibility and speed. To process the most urgent needs of hospitals, hospitals, military units and volunteer organizations, we process your inquiries on a daily basis."
     }
   },
   "pageError": {
     "404": {
-      "title": "Сторінка не знайдена",
-      "description": "Ймовірно, сторінка не існує або ви помилилися,\nколи вводили адресу в рядку браузера",
-      "btn": "Перейти на головну"
+      "title": "Page not found",
+      "description": "The page probably doesn't exist or you have made a mistake by typing the address in your browser",
+      "btn": "Go to Home"
     },
     "500": {
-      "title": "Виникла внутрішня помилка",
-      "description": "На сервері сталася помилка. Зачекайте, будь ласка, вона\nнезабаром буде виправлена.",
-      "btn": "Перейти на головну"
+      "title": "Internal error",
+      "description": "Error on the server. Please wait,\nit will be fixed soon.",
+      "btn": "Go to Home"
     }
   }
 }
