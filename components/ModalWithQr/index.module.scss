@@ -1,0 +1,79 @@
+@import "~scss/variables";
+
+$padding-v-desktop: 32px;
+$padding-v-ipad: 24px;
+$padding-v-landscape: 0;
+
+.Component {
+  position: fixed;
+  z-index: $z-index-header + 10;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  display: flex;
+  top: 0;
+  padding: $padding-v-desktop 50px;
+  left: 0;
+  background: rgba($color-black, 0);
+  transition: all cubic-bezier(0.645, 0.045, 0.355, 1);
+  scrollbar-width: none;
+
+  /* FIREFOX FIX for https://bugzilla.mozilla.org/show_bug.cgi?id=748518 */
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: $padding-v-desktop;
+  }
+
+  @include ipad {
+    padding: $padding-v-ipad 24px;
+
+    &::after {
+      padding-bottom: $padding-v-ipad;
+    }
+  }
+
+  @include landscape {
+    padding: $padding-v-landscape 0;
+
+    &::after {
+      padding-bottom: $padding-v-landscape;
+    }
+  }
+
+  &.show {
+    background: rgba($color-black, 0.4);
+
+    .BtnClose,
+    .Modal {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+}
+
+.Modal {
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: $color-white;
+  border-radius: 16px;
+  transform: translateY(50%);
+  opacity: 0;
+  transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  max-height: 100%;
+  width: 288px;
+  padding: 32px;
+}
+
+.BtnClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  transform: translateY(50%);
+  opacity: 0;
+}
