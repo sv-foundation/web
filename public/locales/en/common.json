@@ -243,7 +243,8 @@
     },
     "requisites": {
       "title": "Donate",
-      "description": "Here you can find details for payment.\nClick on the line to copy it."
+      "description": "Here you can find details for payment.\nClick on the line to copy it.",
+      "cryptoCurrency": "Crypto"
     }
   },
   "pageNeedHelp": {

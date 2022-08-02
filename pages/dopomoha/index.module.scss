@@ -34,7 +34,6 @@
     margin-bottom: 40px;
     flex-direction: column;
     align-items: stretch;
-
   }
 
   &Details,
@@ -103,7 +102,6 @@
     color: $color-text;
     margin: 0;
     white-space: pre-wrap;
-
 
     @include landscape {
       white-space: unset;
@@ -248,16 +246,66 @@
   }
 
   &Item {
-    button {
-      text-align: left;
-    }
-
     &Name {
       font-weight: 500;
       font-size: 14px;
       line-height: 150%;
       letter-spacing: -0.02em;
       color: $color-green;
+    }
+
+    &Icon {
+      display: block;
+      line-height: 1em;
+      margin-bottom: 8px;
+    }
+
+    &Action {
+      cursor: pointer;
+      display: flex;
+
+      svg {
+        @include size(16px);
+        @include iconColor($color-text);
+
+        path {
+          transition: 0.2s;
+        }
+      }
+
+      @include hover {
+        svg {
+          @include iconColor($color-black);
+        }
+      }
+
+      &:focus {
+        svg {
+          @include iconColor($color-black);
+        }
+      }
+
+      &:active,
+      &.copied {
+        svg {
+          @include iconColor($color-green);
+        }
+      }
+
+      &Group {
+        display: flex;
+        align-items: center;
+        margin-top: 4px;
+        margin-left: 8px;
+
+        & > * {
+          margin-left: 8px;
+
+          @include ipad {
+            margin-left: 16px;
+          }
+        }
+      }
     }
 
     &Value {
@@ -270,23 +318,29 @@
         line-height: 150%;
         letter-spacing: -0.02em;
         color: $color-black;
-        margin-right: 24px;
         word-break: break-word;
       }
+    }
+  }
 
-      i {
-        display: flex;
+  &Dropdown {
+    &Content {
+      background: $color-white;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      transition: 0.2s;
+      overflow: hidden;
+      z-index: 5;
 
-        &.copied {
-          svg {
-            @include iconColor($color-green);
-          }
-        }
+      &:not([data-open]) {
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+      }
 
-        svg {
-          @include size(16px);
-          @include iconColor($color-text);
-        }
+      @include phone {
+        display: none;
       }
     }
   }

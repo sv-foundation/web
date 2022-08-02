@@ -11,14 +11,22 @@ import makePayment from "api/makePayment";
 import classNames from "classnames/bind";
 import ContactsWithMap from "components/ContactsWithMap";
 import DocumentsAndReports from "components/DocumentsAndReports";
-import { IconArrowDown, IconCheck, IconCopy } from "components/Icons";
+import { IconArrowDown, IconCheck, IconCopy, IconQr } from "components/Icons";
+import ModalWithQr from "components/ModalWithQr";
+import QR from "components/QR";
 import SEO from "components/SEO";
 import Button from "components/UIKit/Button";
 import ButtonLink from "components/UIKit/ButtonLink";
 import Container from "components/UIKit/Container";
 import TextField from "components/UIKit/TextField";
 import Title from "components/UIKit/Title";
-import { useCopy, useDropdown, useFormField } from "helpers";
+import {
+  BREAKPOINT_PHONE,
+  CRYPTO_ADDRESS_BTC,
+  CRYPTO_ADDRESS_ERC20,
+  CRYPTO_ADDRESS_TRX20,
+} from "constant";
+import { useCopy, useDropdown, useFormField, useWidthCondition } from "helpers";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -28,6 +36,7 @@ import {
   FC,
   FormEventHandler,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 import styles from "./index.module.scss";
@@ -108,7 +117,8 @@ const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
           document.location.assign(response.data.checkout_url);
         }
       } else {
-        const error = response.data.amount?.[0] || response.data.currency?.[0] || ''; 
+        const error =
+          response.data.amount?.[0] || response.data.currency?.[0] || "";
         amount.changeError(
           t([`pageDonate.donate.form.errors.${error}`, error])
         );
@@ -212,14 +222,48 @@ const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
   );
 };
 
+const CRYPTO_CURRENCY = "crypto";
 const Requisites = ({ data }: { data: GetPaymentDetailsResponse }) => {
   const [t] = useTranslation();
   const [selectedCurrency, setSelectedCurrency] = useState(
-    data?.[0]?.currency_code
+    data?.[0]?.currency_code ?? CRYPTO_CURRENCY
   );
+
+  const isCryptoSelected = CRYPTO_CURRENCY === selectedCurrency;
+
   const selectedPaymentMethod = data?.find(
     ({ currency_code }) => currency_code === selectedCurrency
-  );
+  )?.fields;
+
+  const cryptoAddresses = useMemo(() => {
+    return [
+      {
+        name: "USDT (TRC 20)",
+        value: CRYPTO_ADDRESS_TRX20,
+        icon: <img src="/images/crypto-usdt.svg" />,
+      },
+      {
+        name: "Tron (TRX)",
+        value: CRYPTO_ADDRESS_TRX20,
+        icon: <img src="/images/crypto-trx.svg" />,
+      },
+      {
+        name: "Bitcoin (BTC)",
+        value: CRYPTO_ADDRESS_BTC,
+        icon: <img src="/images/crypto-btc.svg" />,
+      },
+      {
+        name: "USDT (ERC 20)",
+        value: CRYPTO_ADDRESS_ERC20,
+        icon: <img src="/images/crypto-usdt.svg" />,
+      },
+      {
+        name: "Etherium (ETH)",
+        value: CRYPTO_ADDRESS_ERC20,
+        icon: <img src="/images/crypto-eth.svg" />,
+      },
+    ];
+  }, []);
 
   return (
     <section className={cx("Requisites")}>
@@ -244,29 +288,45 @@ const Requisites = ({ data }: { data: GetPaymentDetailsResponse }) => {
                 {currency_code}
               </Button>
             ))}
+
+            <Button
+              color={isCryptoSelected ? "primary" : "grey"}
+              onClick={() => setSelectedCurrency(CRYPTO_CURRENCY)}
+            >
+              {t("pageDonate.requisites.cryptoCurrency")}
+            </Button>
           </div>
         </div>
 
         <ul className={cx("RequisitesMain")}>
-          {selectedPaymentMethod?.fields?.map(({ name, value }, i) => (
-            <RequisitesItem
-              name={name}
-              value={value}
-              key={selectedCurrency + name + `${i}` + value}
-            />
-          ))}
+          {isCryptoSelected
+            ? cryptoAddresses.map((data, i) => {
+                return <RequisitesItem {...data} withQr key={i} />;
+              })
+            : selectedPaymentMethod?.map(({ name, value }, i) => (
+                <RequisitesItem
+                  name={name}
+                  value={value}
+                  key={selectedCurrency + name + `${i}` + value}
+                />
+              ))}
         </ul>
       </Container>
     </section>
   );
 };
 
-const RequisitesItem: FC<{ value: string; name?: string }> = ({
-  value,
-  name,
-}) => {
+const RequisitesItem: FC<{
+  value: string;
+  name?: string;
+  icon?: JSX.Element;
+  withQr?: boolean;
+}> = ({ value, name, withQr, icon }) => {
   const copy = useCopy();
+  const isPhone = useWidthCondition((w) => w < BREAKPOINT_PHONE);
   const [copied, setCopied] = useState(false);
+  const qrDropdown = useDropdown({ popperOptions: { placement: "bottom" } });
+  const [qrModalShow, setQrModalShow] = useState(false);
 
   useEffect(() => {
     if (copied) {
@@ -282,15 +342,56 @@ const RequisitesItem: FC<{ value: string; name?: string }> = ({
 
   return (
     <li className={cx("RequisitesItem")}>
-      <button type="button" onClick={() => copy(value, () => setCopied(true))}>
-        {name && <span className={cx("RequisitesItemName")}>{name}</span>}
+      <span role="button" onClick={() => copy(value, () => setCopied(true))}>
+        {name && (
+          <span className={cx("RequisitesItemName")}>
+            {icon && <span className={cx("RequisitesItemIcon")}>{icon}</span>}
+
+            {name}
+          </span>
+        )}
         <span className={cx("RequisitesItemValue")}>
           <b>{value}</b>
-          <i className={cx("RequisitesItemIcon", { copied })}>
-            {copied ? <IconCheck /> : <IconCopy />}
-          </i>
+          <span className={cx("RequisitesItemActionGroup")}>
+            {withQr && (
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className={cx("RequisitesDropdown")}
+                ref={qrDropdown.setRef}
+              >
+                <i
+                  role="button"
+                  onClick={
+                    isPhone ? () => setQrModalShow(true) : qrDropdown.toggle
+                  }
+                  className={cx("RequisitesItemAction")}
+                >
+                  <IconQr />
+                </i>
+
+                <div
+                  ref={qrDropdown.setPopperRef}
+                  style={qrDropdown.popper.styles.popper}
+                  {...qrDropdown.popper.attributes.popper}
+                  className={cx("RequisitesDropdownContent")}
+                  data-open={qrDropdown.open || undefined}
+                >
+                  <QR data={value} />
+                </div>
+              </div>
+            )}
+            <i className={cx("RequisitesItemAction", { copied })}>
+              {copied ? <IconCheck /> : <IconCopy />}
+            </i>
+          </span>
         </span>
-      </button>
+      </span>
+
+      <ModalWithQr
+        data={value}
+        isOpen={qrModalShow}
+        close={() => setQrModalShow(false)}
+      />
     </li>
   );
 };
