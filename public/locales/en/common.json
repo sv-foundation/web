@@ -141,7 +141,7 @@
   "pageNews": {
     "seo": {
       "title": "News",
-      "description": "Targeted Humanitarian Aid - is in safe hands! We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, hospitals and volunteer organizations"
+      "description": "Targeted Aid - is in safe hands! We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, hospitals and volunteer organizations"
     },
     "title": "News",
     "tags": { "all": "All news" }
@@ -153,7 +153,7 @@
     },
 
     "intro": {
-      "title": "Targeted Humanitarian Aid -\nis in safe hands",
+      "title": "Targeted Aid -\nis in safe hands",
       "text": [
         "The Charitable Foundation of the Sudovyshnyansk Territorial Community was established to support Ukrainians affected by russian aggression.",
         "Thanks to the support of the world, Ukraine receives a considerable amount of humanitarian aid that meets the needs of liberated cities.",
@@ -166,7 +166,7 @@
       "title": "Areas of activity\nof the charitable foundation",
       "items": [
         {
-          "title": "Transport and other military needs",
+          "title": "Transport",
           "description": "Transportation, painting of cars for the needs of the Armed Forces",
           "btn": "Support"
         },
