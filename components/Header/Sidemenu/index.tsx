@@ -19,7 +19,7 @@ const Sidemenu: FC<{ close(): void; isOpen: boolean }> = ({
 }) => {
   const [t] = useTranslation();
   const isLandscapeOrLess = useWidthCondition((w) => w < BREAKPOINT_LANDSCAPE);
-  const { pathname } = useRouter();
+  const { pathname, locale } = useRouter();
   const isActivePage = (target = "") => {
     return target === pathname.split("#")[0];
   };
@@ -32,9 +32,12 @@ const Sidemenu: FC<{ close(): void; isOpen: boolean }> = ({
       close={close}
     >
       <header className={cx("SidebarHeader")}>
-        <Link onClick={close} className={cx("SidebarLogo")} href={URL_MAP.home}>
-          <a>
-            <img src="/images/logo.svg" alt="SV Foundation" />
+        <Link href={URL_MAP.home}>
+          <a onClick={close} className={cx("SidebarLogo")}>
+            <img
+              src={`/images/logo${locale === "uk" ? "" : "-en"}.svg`}
+              alt="SV Foundation"
+            />
           </a>
         </Link>
 

@@ -3,6 +3,13 @@
 .Sidebar {
   flex-basis: 320px !important;
 
+  &Logo {
+    img {
+      width: auto;
+      height: 48px;
+    }
+  }
+
   &Header {
     padding: 16px 16px 40px;
     display: flex;
@@ -60,6 +67,6 @@
   }
 }
 
-.LanguageSwitcher { 
-    margin-bottom: 40px;
+.LanguageSwitcher {
+  margin-bottom: 40px;
 }

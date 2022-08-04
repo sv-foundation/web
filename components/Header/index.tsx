@@ -17,6 +17,7 @@ const cx = classNames.bind(styles);
 
 const Header = () => {
   const { t } = useTranslation();
+  const { locale } = useRouter();
   const isIpadOrLess = useWidthCondition((w) => w < BREAKPOINT_IPAD);
   const [showSidemenu, setShowSidemenu] = useState(false);
 
@@ -30,9 +31,12 @@ const Header = () => {
       </div>
       <header id="header" className={cx("Header")}>
         <div className={cx("Container")}>
-          <Link className={cx("Logo")} href={URL_MAP.home}>
-            <a>
-              <img src="/images/logo.svg" alt="SV Foundation" />
+          <Link href={URL_MAP.home}>
+            <a className={cx("Logo")}>
+              <img
+                src={`/images/logo${locale === "uk" ? "" : "-en"}.svg`}
+                alt="SV Foundation"
+              />
             </a>
           </Link>
 
