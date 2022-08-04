@@ -3,6 +3,7 @@ import Contacts from "components/Contacts";
 import { IconHeart } from "components/Icons";
 import Button from "components/UIKit/Button";
 import { URL_MAP } from "constant";
+import { useRouter } from "next/router";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./index.module.scss";
@@ -11,6 +12,7 @@ const cx = classNames.bind(styles);
 
 const Footer = () => {
   const [t] = useTranslation();
+  const { locale } = useRouter();
   const year = useMemo(() => new Date().getFullYear(), []);
 
   return (
@@ -18,7 +20,7 @@ const Footer = () => {
       <div className={cx("Container")}>
         <div className={cx("Logo")}>
           <img
-            src="/images/logo.svg"
+            src={`/images/logo${locale === "uk" ? "" : "-en"}.svg`}
             alt="SV Foundation"
           />
         </div>
@@ -28,7 +30,7 @@ const Footer = () => {
           <Button
             color="primary"
             tag="link"
-            linkProps={{href: URL_MAP.donate}}
+            linkProps={{ href: URL_MAP.donate }}
             iconLeft={<IconHeart />}
           >
             {t("global.help")}
