@@ -33,11 +33,12 @@ function Error({ statusCode }: ErrorProps) {
 export const getStaticProps = async ({ locale, res, err }: NextPageContext) => {
   let statusCode = res ? res.statusCode : err ? err.statusCode : 404;
 
-  if (statusCode !== 404) statusCode = 500
+  if (statusCode !== 404) statusCode = 500;
 
   return {
     props: {
       ...(await serverSideTranslations(locale as string, ["common"])),
+      statusCode,
     },
   };
 };
