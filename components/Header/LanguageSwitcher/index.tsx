@@ -50,7 +50,7 @@ const LanguageSwitcher: FC<{ className?: string; placement?: Placement }> = ({
               <button
                 onClick={() => {
                   dropdown.toggle();
-                  router.push(router.pathname, router.pathname, {
+                  router.push(router.pathname, router.asPath, {
                     locale: code,
                   });
                 }}
