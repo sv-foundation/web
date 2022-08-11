@@ -184,13 +184,13 @@
   }
 
   &Header {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     display: flex;
     align-items: flex-start;
 
     @include tablet {
       flex-direction: column;
-      margin-bottom: 30px;
+      margin-bottom: 22px;
     }
 
     &Main {
@@ -213,6 +213,7 @@
   &CurrencyList {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 
     @include tablet {
       width: 100%;
@@ -220,6 +221,7 @@
 
     & > * {
       margin-right: 8px;
+      margin-bottom: 8px;
       @include tablet {
         flex-grow: 1;
       }
