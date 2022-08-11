@@ -77,8 +77,8 @@ const FormNeedHelp: FC<{ isIntroPage?: boolean }> = ({ isIntroPage }) => {
 
     if (response.error) {
       setError(response.error.message);
-    } else if (!response.data) {
-      setError(t("formNeedHelp.error.description"));
+    } else if (!response.data || typeof response.data !== "object") {
+      setError(response.data || t("formNeedHelp.error.description"));
     } else {
       if ("id" in response.data) {
         setIsSuccess(true);
