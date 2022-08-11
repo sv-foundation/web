@@ -8,7 +8,7 @@ export const URL_MAP = {
     docs: "/pro-fond#docs",
   },
 
-  donate: "/dopomoha",
+  donate: "/finansova-dopomoha",
 
   needHelp: "/potrebuiu-dopomohy",
   news: "/novyny",
