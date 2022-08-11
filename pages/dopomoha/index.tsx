@@ -107,8 +107,10 @@ const DonateForm = ({ data }: { data: GetPaymentSystemFondyResponse }) => {
 
     if (response.error) {
       amount.changeError(response.error.message);
-    } else if (!response.data) {
-      amount.changeError(t("pageDonate.donate.form.errors.globalError"));
+    } else if (!response.data || typeof response.data !== "object") {
+      amount.changeError(
+        response.data || t("pageDonate.donate.form.errors.globalError")
+      );
     } else {
       if ("checkout_url" in response.data) {
         if (!response.data.checkout_url) {
