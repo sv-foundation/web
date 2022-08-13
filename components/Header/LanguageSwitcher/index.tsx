@@ -13,10 +13,11 @@ export const LANGUAGES_MAP: { [key: string]: string } = {
   en: "English",
 };
 
-const LanguageSwitcher: FC<{ className?: string; placement?: Placement }> = ({
-  className = "",
-  placement = "bottom-end",
-}) => {
+const LanguageSwitcher: FC<{
+  onBeforeChangeLocale?(): void;
+  className?: string;
+  placement?: Placement;
+}> = ({ onBeforeChangeLocale, className = "", placement = "bottom-end" }) => {
   const router = useRouter();
   const dropdown = useDropdown({
     popperOptions: { placement },
@@ -49,6 +50,7 @@ const LanguageSwitcher: FC<{ className?: string; placement?: Placement }> = ({
             <li key={code}>
               <button
                 onClick={() => {
+                  onBeforeChangeLocale?.()
                   dropdown.toggle();
                   router.push(router.pathname, router.asPath, {
                     locale: code,
