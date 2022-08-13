@@ -49,6 +49,7 @@ const Sidemenu: FC<{ close(): void; isOpen: boolean }> = ({
       <main className={cx("SidebarMain")}>
         {isLandscapeOrLess && (
           <LanguageSwitcher
+            onBeforeChangeLocale={close}
             placement="bottom-start"
             className={cx("LanguageSwitcher")}
           />
