@@ -11,6 +11,7 @@ const cx = classNames.bind(styles);
 export const LANGUAGES_MAP: { [key: string]: string } = {
   uk: "Українська",
   en: "English",
+  es: "Español",
 };
 
 const LanguageSwitcher: FC<{
