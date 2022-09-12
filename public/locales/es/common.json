@@ -1,7 +1,7 @@
 {
   "global": {
     "help": "Ayudar",
-    "address": "Ucrania, 81340\nLviv region\nDistrito de Mostiska\nсiudad Sudova  Vyshnya\ncalle Lisozavodska 2/1",
+    "address": "Ucrania, 81340\nLviv región\nDistrito de Mostiska\nсiudad Sudova  Vyshnya\ncalle Lisozavodska 2/1",
     "shareFB": "Compartir en Facebook",
     "shareTwitter": "Compartir en Twitter",
 
@@ -17,7 +17,7 @@
       "home": "Inicio",
       "aboutFoundation": {
         "main": "Sobre la fundación",
-        "ourWork": "Nuestro actividades",
+        "ourWork": "Nuestras actividades",
         "team": "Nuestro equipo",
         "docs": "Documentos de registro"
       },
@@ -71,7 +71,7 @@
           "description": "La posibilidad de mandar hasta 15 toneladas de la ayuda humanitaria diariamente."
         },
         {
-          "title": "El apoyo de Comunidad territotial de Sudova Vyshniya (Lviv region)."
+          "title": "El apoyo de Comunidad territotial de Sudova Vyshniya (Lviv región)."
         }
       ]
     },
@@ -105,7 +105,7 @@
     ],
     "formFields": {
       "fullName": "Nombre y apellido *",
-      "organization": "Titulo de la organización *",
+      "organization": "Título de la organización *",
       "email": "Email *",
       "phone": "Número del telefono *",
       "message": "Añadir el mensaje *",
@@ -141,10 +141,10 @@
   "pageNews": {
     "seo": {
       "title": "News",
-      "description": "Ayuda a una direccion puntual- a las manos seguros! Organización benéfica de la Comunidad territotial de Sudova Vyshniya esta trabajando exclusivamente con los pedidos  de los hospitales, las divisiones militares,  administraciones militares regionales y las organizaciones  voluntarias."
+      "description": "Ayuda a una dirección puntual- a las manos seguros! Organización benéfica de la Comunidad territotial de Sudova Vyshniya esta trabajando exclusivamente con los pedidos  de los hospitales, las divisiones militares,  administraciones militares regionales y las organizaciones  voluntarias."
     },
     "title": "News",
-    "tags": { "all": "Todas las noticiasи" }
+    "tags": { "all": "Todas las noticias" }
   },
   "pageAboutFoundation": {
     "seo": {
@@ -153,7 +153,7 @@
     },
 
     "intro": {
-      "title": "Ayuda a una\ndireccion puntual-",
+      "title": "Ayuda a una\ndirección puntual-",
       "text": [
         "Organización benéfica de la Comunidad territotial de Sudova Vyshniya está creada para sostener a los ucranianos que sufrieron la invasión rusa.",
         "Debido a la ayuda mundial Ucrania recibe una cantidad considerable de ayuda humanitaria que pueda satisfacer las necesidades de las ciudades desocupadas.",
@@ -166,7 +166,7 @@
       "title": "Las actividades\nde la Organización benéfica",
       "items": [
         {
-          "title": "Vehiculos para Fuerzas Armadas",
+          "title": "Vehículos para las Fuerzas Armadas",
           "description": "Comprar, pintar, reparar y transportar máquinas al frente.",
           "btn": "Ayudar"
         },
@@ -213,10 +213,10 @@
         },
         "VValah": {
           "name": "Vitalii Valakh",
-          "role": "Fundador de la organizacion, voluntaria"
+          "role": "Fundador de la organizacion, voluntario"
         },
         "SArinshtein": { "name": "Stanislav Arinshtein", "role": "Voluntario" },
-        "DArinshtein": { "name": "Daria Arinshtein", "role": "Voluntario" }
+        "DArinshtein": { "name": "Daria Arinshtein", "role": "Voluntaria" }
       }
     }
   },
