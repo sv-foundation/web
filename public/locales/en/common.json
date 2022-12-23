@@ -216,7 +216,13 @@
           "role": "Founder of the foundation, volunteer"
         },
         "SArinshtein": { "name": "Stanislav Arinshtein", "role": "Volunteer" },
-        "DArinshtein": { "name": "Daria Arinshtein", "role": "Volunteer" }
+        "DArinshtein": { "name": "Daria Arinshtein", "role": "Volunteer" },
+        "Iarovii": { "name": "Iarovii Iurii", "role": "Volunteer" },
+        "Dyshleviy": { "name": "Artem Dyshleviy", "role": "Volunteer" },
+        "Subbotin": { "name": "Subbotin Aleksei", "role": "Volunteer" },
+        "Dmytrenko": { "name": "Dmytrenko Oleksii ", "role": "Volunteer" },
+        "Khmara": { "name": "Khmara Viacheslav", "role": "Volunteer" },
+        "Reshetnyk": { "name": "Reshetnyk Valentyn", "role": "Volunteer" }
       }
     }
   },

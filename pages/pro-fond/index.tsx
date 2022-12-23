@@ -206,6 +206,54 @@ const PageAboutFoundation = ({ docs }: Props) => {
               <h3>{t("pageAboutFoundation.team.members.DArinshtein.name")}</h3>
               <p>{t("pageAboutFoundation.team.members.DArinshtein.role")}</p>
             </li>
+            <li>
+              <img
+                src="/images/about_foundation_team_Iarovii.jpg"
+                alt=""
+              />
+              <h3>{t("pageAboutFoundation.team.members.Iarovii.name")}</h3>
+              <p>{t("pageAboutFoundation.team.members.Iarovii.role")}</p>
+            </li>
+            <li>
+              <img
+                src="/images/about_foundation_team_Dyshleviy.jpg"
+                alt=""
+              />
+              <h3>{t("pageAboutFoundation.team.members.Dyshleviy.name")}</h3>
+              <p>{t("pageAboutFoundation.team.members.Dyshleviy.role")}</p>
+            </li>
+            <li>
+              <img
+                src="/images/about_foundation_team_Subbotin.jpg"
+                alt=""
+              />
+              <h3>{t("pageAboutFoundation.team.members.Subbotin.name")}</h3>
+              <p>{t("pageAboutFoundation.team.members.Subbotin.role")}</p>
+            </li>
+            <li>
+              <img
+                src="/images/about_foundation_team_Dmytrenko.jpg"
+                alt=""
+              />
+              <h3>{t("pageAboutFoundation.team.members.Dmytrenko.name")}</h3>
+              <p>{t("pageAboutFoundation.team.members.Dmytrenko.role")}</p>
+            </li>
+            <li>
+              <img
+                src="/images/about_foundation_team_Khmara.jpg"
+                alt=""
+              />
+              <h3>{t("pageAboutFoundation.team.members.Khmara.name")}</h3>
+              <p>{t("pageAboutFoundation.team.members.Khmara.role")}</p>
+            </li>
+            <li>
+              <img
+                src="/images/about_foundation_team_Reshetnyk.jpg"
+                alt=""
+              />
+              <h3>{t("pageAboutFoundation.team.members.Reshetnyk.name")}</h3>
+              <p>{t("pageAboutFoundation.team.members.Reshetnyk.role")}</p>
+            </li>
           </ul>
         </section>
       </Container>
