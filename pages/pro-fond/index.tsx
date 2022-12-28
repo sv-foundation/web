@@ -254,6 +254,22 @@ const PageAboutFoundation = ({ docs }: Props) => {
               <h3>{t("pageAboutFoundation.team.members.Reshetnyk.name")}</h3>
               <p>{t("pageAboutFoundation.team.members.Reshetnyk.role")}</p>
             </li>
+            <li>
+              <img
+                src="/images/about_foundation_team_Zlobin.jpg"
+                alt=""
+              />
+              <h3>{t("pageAboutFoundation.team.members.Zlobin.name")}</h3>
+              <p>{t("pageAboutFoundation.team.members.Zlobin.role")}</p>
+            </li>
+            <li>
+              <img
+                src="/images/about_foundation_team_Kuksa.jpg"
+                alt=""
+              />
+              <h3>{t("pageAboutFoundation.team.members.Kuksa.name")}</h3>
+              <p>{t("pageAboutFoundation.team.members.Kuksa.role")}</p>
+            </li>
           </ul>
         </section>
       </Container>

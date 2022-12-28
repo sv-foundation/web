@@ -222,7 +222,9 @@
         "Subbotin": { "name": "Subbotin Aleksei", "role": "Volunteer" },
         "Dmytrenko": { "name": "Dmytrenko Oleksii ", "role": "Volunteer" },
         "Khmara": { "name": "Khmara Viacheslav", "role": "Volunteer" },
-        "Reshetnyk": { "name": "Reshetnyk Valentyn", "role": "Volunteer" }
+        "Reshetnyk": { "name": "Reshetnyk Valentyn", "role": "Volunteer" },
+        "Zlobin": { "name": "Oleksii Zlobin", "role": "Volunteer" },
+        "Kuksa": { "name": "Kuksa Vasyl", "role": "Volunteer" }
       }
     }
   },
