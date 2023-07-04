@@ -1,277 +1,286 @@
 {
   "global": {
-    "help": "Ayudar",
-    "address": "Ucrania, 81340\nLviv región\nDistrito de Mostiska\nсiudad Sudova  Vyshnya\ncalle Lisozavodska 2/1",
-    "shareFB": "Compartir en Facebook",
-    "shareTwitter": "Compartir en Twitter",
+	"help": "Ayudar",
+	"address": "Ucrania, 81340\nLviv región\nDistrito de Mostiska\nсiudad Sudova  Vyshnya\ncalle Lisozavodska 2/1",
+	"shareFB": "Compartir en Facebook",
+	"shareTwitter": "Compartir en Twitter",
 
-    "seo": {
-      "title": "Organización benéfica Comunidad territotial de Sudova Vyshniya",
-      "siteName": "Organización benéfica Comunidad territotial de Sudova Vyshniya",
-      "description": "La Organización benéfica de la Comunidad territotial de Sudova Vyshniya está creada para apoyar a los militares de Fuerzas Armadas de Ucrania y a los ucranianos que han sufrido de invasión rusa."
-    }
+	"seo": {
+	  "title": "Organización benéfica Comunidad territotial de Sudova Vyshniya",
+	  "siteName": "Organización benéfica Comunidad territotial de Sudova Vyshniya",
+	  "description": "La Organización benéfica de la Comunidad territotial de Sudova Vyshniya está creada para apoyar a los militares de Fuerzas Armadas de Ucrania y a los ucranianos que han sufrido de invasión rusa."
+	}
   },
   "documentsAndReports": { "title": "Documentos" },
   "header": {
-    "nav": {
-      "home": "Inicio",
-      "aboutFoundation": {
-        "main": "Sobre la fundación",
-        "ourWork": "Nuestras actividades",
-        "team": "Nuestro equipo",
-        "docs": "Documentos de registro"
-      },
-      "needHelp": "Necesito ayuda",
-      "news": "Noticias",
-      "contacts": "Información del contacto"
-    }
+	"nav": {
+	  "home": "Inicio",
+	  "aboutFoundation": {
+		"main": "Sobre la fundación",
+		"ourWork": "Nuestras actividades",
+		"team": "Nuestro equipo",
+		"docs": "Documentos de registro"
+	  },
+	  "needHelp": "Necesito ayuda",
+	  "news": "Noticias",
+	  "contacts": "Información del contacto"
+	}
   },
   "pageHome": {
-    "seo": {
-      "title": "Inicio",
-      "description": "Estamos trabajando para satisfacer las necesidades urgentes del personal militar y médico que está defendiendo Ucrania en la primera línea del fuego y a las personas civiles en las ciudades desocupadas."
-    },
+	"seo": {
+	  "title": "Inicio",
+	  "description": "Estamos trabajando para satisfacer las necesidades urgentes del personal militar y médico que está defendiendo Ucrania en la primera línea del fuego y a las personas civiles en las ciudades desocupadas."
+	},
 
-    "intro": {
-      "title": "Ucrania <b>vencerá!</b>",
-      "text": [
-        "La Organización benéfica de la Comunidad territotial de Sudova Vyshniya está creada para apoyar a los ucranianos que han sufrido de invasión rusa.",
-        "Estamos trabajando para satisfacer las necesidades urgentes del personal militar y médico que está defendiendo Ucrania en la primera línea del fuego y a las personas civiles en las ciudades desocupadas.",
-        "Usted puede ayudar ahora mismo!"
-      ],
-      "btnDetails": "Detalles"
-    },
-    "activity": {
-      "title": "Las actividades de la Organización benéfica",
-      "items": [
-        {
-          "title": "Ayuda a los militares",
-          "description": "Los vehículos especiales para las Fuerzas Armadas de Ucrania, equipamento y suministros"
-        },
-        {
-          "title": "Ayuda humanitaria",
-          "description": "Productos de alimentación  y artículos de higiene para  la  primera línea del fuego y para las regiones desocupadas"
-        },
-        {
-          "title": "Medicina",
-          "description": "Medicamentos, abastecimiento médico para las clínicas y los hospitales, para aquellos que están en la primera línea del fuego"
-        }
-      ]
-    },
-    "resources": {
-      "title": "Recursos de la Organización\nbenéfica y su eficiencia",
-      "items": [
-        {
-          "title": "Locación",
-          "description": "Está a 29 km de la frontera Ucrania-Polonia con la posibilidad de recibir artículos y carga en una zona buffer."
-        },
-        { "title": "Almacén y estación de servicio" },
-        {
-          "title": "Logística",
-          "description": "La posibilidad de mandar hasta 15 toneladas de la ayuda humanitaria diariamente."
-        },
-        {
-          "title": "El apoyo de Comunidad territotial de Sudova Vyshniya (Lviv región)."
-        }
-      ]
-    },
-    "donate": {
-      "title": "Usted puede ayudar\nahora mismo",
-      "items": [
-        {
-          "title": "Ayuda financiera",
-          "description": "Mandamos los fondos acumulados para ayudar a los ucranianos en las localidades desocupadas y también para cumplir con los pedidos de los médicos y militares de la primera línea del fuego.",
-          "link": "Ayudar"
-        },
-        {
-          "title": "Ayuda humanitaria",
-          "description": "Llevamos lo que se necesita a donde lo mas necesitan. Estamos trabajando con los pedidos de los hospitales y clínicas, de las divisiones militares, administraciones militares regionales, con las organizaciones  voluntarias.",
-          "link": "Ayudar"
-        },
-        {
-          "title": "Acción voluntaria",
-          "description": "Soñamos con ayudar a una cantidad máxima posible de las personas. Su trabajo e inclinaciones pueden sostener mucho nuestros recursos de logística y operación. Comuníquese con nosotros!",
-          "link": "Escribe"
-        }
-      ]
-    },
-    "news": { "title": "Noticias", "btnMore": "Todas las noticias" }
+	"intro": {
+	  "title": "Ucrania <b>vencerá!</b>",
+	  "text": [
+		"La Organización benéfica de la Comunidad territotial de Sudova Vyshniya está creada para apoyar a los ucranianos que han sufrido de invasión rusa.",
+		"Estamos trabajando para satisfacer las necesidades urgentes del personal militar y médico que está defendiendo Ucrania en la primera línea del fuego y a las personas civiles en las ciudades desocupadas.",
+		"Usted puede ayudar ahora mismo!"
+	  ],
+	  "btnDetails": "Detalles"
+	},
+	"activity": {
+	  "title": "Las actividades de la Organización benéfica",
+	  "items": [
+		{
+		  "title": "Ayuda a los militares",
+		  "description": "Los vehículos especiales para las Fuerzas Armadas de Ucrania, equipamento y suministros"
+		},
+		{
+		  "title": "Ayuda humanitaria",
+		  "description": "Productos de alimentación  y artículos de higiene para  la  primera línea del fuego y para las regiones desocupadas"
+		},
+		{
+		  "title": "Medicina",
+		  "description": "Medicamentos, abastecimiento médico para las clínicas y los hospitales, para aquellos que están en la primera línea del fuego"
+		}
+	  ]
+	},
+	"resources": {
+	  "title": "Recursos de la Organización\nbenéfica y su eficiencia",
+	  "items": [
+		{
+		  "title": "Locación",
+		  "description": "Está a 29 km de la frontera Ucrania-Polonia con la posibilidad de recibir artículos y carga en una zona buffer."
+		},
+		{ "title": "Almacén y estación de servicio" },
+		{
+		  "title": "Logística",
+		  "description": "La posibilidad de mandar hasta 15 toneladas de la ayuda humanitaria diariamente."
+		},
+		{
+		  "title": "El apoyo de Comunidad territotial de Sudova Vyshniya (Lviv región)."
+		}
+	  ]
+	},
+	"donate": {
+	  "title": "Usted puede ayudar\nahora mismo",
+	  "items": [
+		{
+		  "title": "Ayuda financiera",
+		  "description": "Mandamos los fondos acumulados para ayudar a los ucranianos en las localidades desocupadas y también para cumplir con los pedidos de los médicos y militares de la primera línea del fuego.",
+		  "link": "Ayudar"
+		},
+		{
+		  "title": "Ayuda humanitaria",
+		  "description": "Llevamos lo que se necesita a donde lo mas necesitan. Estamos trabajando con los pedidos de los hospitales y clínicas, de las divisiones militares, administraciones militares regionales, con las organizaciones  voluntarias.",
+		  "link": "Ayudar"
+		},
+		{
+		  "title": "Acción voluntaria",
+		  "description": "Soñamos con ayudar a una cantidad máxima posible de las personas. Su trabajo e inclinaciones pueden sostener mucho nuestros recursos de logística y operación. Comuníquese con nosotros!",
+		  "link": "Escribe"
+		}
+	  ]
+	},
+	"news": { "title": "Noticias", "btnMore": "Todas las noticias" }
   },
   "formNeedHelp": {
-    "title": "¿Necesitas ayuda?",
-    "description": [
-      "La guerra exige una flexibilidad y rapidez especial. Para cumplir con las necesidades actuales de hospitales y clínicas, de las divisiones militares, administraciones militares regionales y las organizaciones voluntarias  nosotros estamos trabajando con sus pedidos diariamente.",
-      "Por favor, mande la información completa de sus necesidades: el nombramiento, detalles, cantidad. Con el fin de ver su pedido rápido, por favor, ponga los items en una tabla excel y  mande una copia escaneada del pedido oficial."
-    ],
-    "formFields": {
-      "fullName": "Nombre y apellido *",
-      "organization": "Título de la organización *",
-      "email": "Email *",
-      "phone": "Número del telefono *",
-      "message": "Añadir el mensaje *",
-      "attachments": {
-        "label": "Añadir el file *",
-        "description": "Seleccione el archivo o arrástrelo hasta aquí",
-        "dragHint": "Arrastrar el archivo aquí",
-        "remove": "Borrar"
-      }
-    },
-    "btnSubmit": "Mandar",
+	"title": "¿Necesitas ayuda?",
+	"description": [
+	  "La guerra exige una flexibilidad y rapidez especial. Para cumplir con las necesidades actuales de hospitales y clínicas, de las divisiones militares, administraciones militares regionales y las organizaciones voluntarias  nosotros estamos trabajando con sus pedidos diariamente.",
+	  "Por favor, mande la información completa de sus necesidades: el nombramiento, detalles, cantidad. Con el fin de ver su pedido rápido, por favor, ponga los items en una tabla excel y  mande una copia escaneada del pedido oficial."
+	],
+	"formFields": {
+	  "fullName": "Nombre y apellido *",
+	  "organization": "Título de la organización *",
+	  "email": "Email *",
+	  "phone": "Número del telefono *",
+	  "message": "Añadir el mensaje *",
+	  "attachments": {
+		"label": "Añadir el file *",
+		"description": "Seleccione el archivo o arrástrelo hasta aquí",
+		"dragHint": "Arrastrar el archivo aquí",
+		"remove": "Borrar"
+	  }
+	},
+	"btnSubmit": "Mandar",
 
-    "error": {
-      "title": "Error",
-      "description": "Se ha producido un error al enviar el mensaje.",
-      "btn": "Inténtalo de nuevo"
-    },
+	"error": {
+	  "title": "Error",
+	  "description": "Se ha producido un error al enviar el mensaje.",
+	  "btn": "Inténtalo de nuevo"
+	},
 
-    "success": {
-      "title": "Gracias!",
-      "description": "Su mensaje ha sido enviado con éxito.\nNos pondremos en contacto con usted en breve."
-    }
+	"success": {
+	  "title": "Gracias!",
+	  "description": "Su mensaje ha sido enviado con éxito.\nNos pondremos en contacto con usted en breve."
+	}
   },
   "pageContacts": {
-    "seo": {
-      "title": "Información del contacto",
-      "description": "Necesitamos su ayuda! Tomen contacto con nosotros para conocer las necesidades actuales  de los militares de Fuerzas Armadas de Ucrania y los ucranianos que han sufrido de invasión rusa. Juntos hasta la victoria!"
-    },
+	"seo": {
+	  "title": "Información del contacto",
+	  "description": "Necesitamos su ayuda! Tomen contacto con nosotros para conocer las necesidades actuales  de los militares de Fuerzas Armadas de Ucrania y los ucranianos que han sufrido de invasión rusa. Juntos hasta la victoria!"
+	},
 
-    "title": "Información del contacto",
-    "description": "Organización benéfica de la Comunidad\nterritotial de Sudova Vyshniya"
+	"title": "Información del contacto",
+	"description": "Organización benéfica de la Comunidad\nterritotial de Sudova Vyshniya"
   },
   "pageNews": {
-    "seo": {
-      "title": "News",
-      "description": "Ayuda a una dirección puntual- a las manos seguros! Organización benéfica de la Comunidad territotial de Sudova Vyshniya esta trabajando exclusivamente con los pedidos  de los hospitales, las divisiones militares,  administraciones militares regionales y las organizaciones  voluntarias."
-    },
-    "title": "News",
-    "tags": { "all": "Todas las noticias" }
+	"seo": {
+	  "title": "News",
+	  "description": "Ayuda a una dirección puntual- a las manos seguros! Organización benéfica de la Comunidad territotial de Sudova Vyshniya esta trabajando exclusivamente con los pedidos  de los hospitales, las divisiones militares,  administraciones militares regionales y las organizaciones  voluntarias."
+	},
+	"title": "News",
+	"tags": { "all": "Todas las noticias" }
   },
   "pageAboutFoundation": {
-    "seo": {
-      "title": "Sobre la fundación",
-      "description": "Enfocamos nuestros esfuerzos para apoyar a los civiles y  a los militares donde lo mas necesitan. Estamos trabajando con los pedidos  de las divisiones militares, los hospitales, , administraciones militares regionales y las organizaciones  voluntarias."
-    },
+	"seo": {
+	  "title": "Sobre la fundación",
+	  "description": "Enfocamos nuestros esfuerzos para apoyar a los civiles y  a los militares donde lo mas necesitan. Estamos trabajando con los pedidos  de las divisiones militares, los hospitales, , administraciones militares regionales y las organizaciones  voluntarias."
+	},
 
-    "intro": {
-      "title": "Ayuda a una\ndirección puntual-",
-      "text": [
-        "Organización benéfica de la Comunidad territotial de Sudova Vyshniya está creada para sostener a los ucranianos que sufrieron la invasión rusa.",
-        "Debido a la ayuda mundial Ucrania recibe una cantidad considerable de ayuda humanitaria que pueda satisfacer las necesidades de las ciudades desocupadas.",
-        "Nosotros enfocamos nuestras fuerzas en apoyar a los civiles y militares en donde lo mas necesiten. Operamos con los pedidos de las divisiones militares, administraciones militares regionales, hospitales y las organizaciones  voluntarias."
-      ],
-      "btnNeedHelp": "Enviar una solicitud de ayuda",
-      "btnDonate": "Ayudar financieramente"
-    },
-    "activity": {
-      "title": "Las actividades\nde la Organización benéfica",
-      "items": [
-        {
-          "title": "Vehículos para las Fuerzas Armadas",
-          "description": "Comprar, pintar, reparar y transportar máquinas al frente.",
-          "btn": "Ayudar"
-        },
-        {
-          "title": "Medicina",
-          "description": "Suministro de hospitales y médicos en el frente y en las ciudades liberadas",
-          "btn": "Ayudar"
-        },
-        {
-          "title": "Alimentos",
-          "description": "Alimentos para las ciudades liberadas, las poblaciones evacuadas y mucho más.",
-          "btn": "Ofrecer ayuda"
-        },
+	"intro": {
+	  "title": "Ayuda a una\ndirección puntual-",
+	  "text": [
+		"Organización benéfica de la Comunidad territotial de Sudova Vyshniya está creada para sostener a los ucranianos que sufrieron la invasión rusa.",
+		"Debido a la ayuda mundial Ucrania recibe una cantidad considerable de ayuda humanitaria que pueda satisfacer las necesidades de las ciudades desocupadas.",
+		"Nosotros enfocamos nuestras fuerzas en apoyar a los civiles y militares en donde lo mas necesiten. Operamos con los pedidos de las divisiones militares, administraciones militares regionales, hospitales y las organizaciones  voluntarias."
+	  ],
+	  "btnNeedHelp": "Enviar una solicitud de ayuda",
+	  "btnDonate": "Ayudar financieramente"
+	},
+	"activity": {
+	  "title": "Las actividades\nde la Organización benéfica",
+	  "items": [
+		{
+		  "title": "Vehículos para las Fuerzas Armadas",
+		  "description": "Comprar, pintar, reparar y transportar máquinas al frente.",
+		  "btn": "Ayudar"
+		},
+		{
+		  "title": "Medicina",
+		  "description": "Suministro de hospitales y médicos en el frente y en las ciudades liberadas",
+		  "btn": "Ayudar"
+		},
+		{
+		  "title": "Alimentos",
+		  "description": "Alimentos para las ciudades liberadas, las poblaciones evacuadas y mucho más.",
+		  "btn": "Ofrecer ayuda"
+		},
 
-        {
-          "title": "Ayuda humanitaria",
-          "description": "Productos de higiene personal, productos para bebés, ropa y calzado, etc.",
-          "btn": "Ayudar"
-        }
-      ]
-    },
-    "team": {
-      "title": "Nuestro equipo",
-      "members": {
-        "Lesko": {
-          "name": "Maria Lesko",
-          "role": "La Directora, Fundadora"
-        },
-        "Karnauh": {
-          "name": "Oleksii Karnaukh",
-          "role": "El Presidente, Fundador"
-        },
-        "Slobodyanuk": {
-          "name": "Pavlo Slobodianiuk",
-          "role": "Fundador de la organizacion, patrocinador"
-        },
-        "Pojidaev": {
-          "name": "Vladyslav Pozhydaiev",
-          "role": "Fundador de la organizacion, patrocinador"
-        },
-        "IValah": {
-          "name": "Iryna Valakh",
-          "role": "Fundador de la organizacion, voluntaria"
-        },
-        "VValah": {
-          "name": "Vitalii Valakh",
-          "role": "Fundador de la organizacion, voluntario"
-        },
-        "SArinshtein": { "name": "Stanislav Arinshtein", "role": "Voluntario" },
-        "DArinshtein": { "name": "Daria Arinshtein", "role": "Voluntaria" },
-        "Iarovii": { "name": "Iarovii Iurii", "role": "Voluntario" },
-        "Dyshleviy": { "name": "Artem Dyshleviy", "role": "Voluntario" },
-        "Subbotin": { "name": "Subbotin Aleksei", "role": "Voluntario" },
-        "Dmytrenko": { "name": "Dmytrenko Oleksii ", "role": "Voluntario" },
-        "Khmara": { "name": "Khmara Viacheslav", "role": "Voluntario" },
-        "Reshetnyk": { "name": "Reshetnyk Valentyn", "role": "Voluntario" },
-        "Zlobin": { "name": "Oleksii Zlobin", "role": "Voluntario" },
-        "Kuksa": { "name": "Kuksa Vasyl", "role": "Voluntario" },
-        "Zakutniev": { "name": "Zakutniev Artem", "role": "Voluntario" }
-      }
-    }
+		{
+		  "title": "Ayuda humanitaria",
+		  "description": "Productos de higiene personal, productos para bebés, ropa y calzado, etc.",
+		  "btn": "Ayudar"
+		}
+	  ]
+	},
+	"team": {
+	  "title": "Nuestro equipo",
+	  "members": {
+		"Lesko": {
+		  "name": "Maria Lesko",
+		  "role": "La Directora, Fundadora"
+		},
+		"Karnauh": {
+		  "name": "Oleksii Karnaukh",
+		  "role": "El Presidente, Fundador"
+		},
+		"Slobodyanuk": {
+		  "name": "Pavlo Slobodianiuk",
+		  "role": "Fundador de la organizacion, patrocinador"
+		},
+		"Pojidaev": {
+		  "name": "Vladyslav Pozhydaiev",
+		  "role": "Fundador de la organizacion, patrocinador"
+		},
+		"IValah": {
+		  "name": "Iryna Valakh",
+		  "role": "Fundador de la organizacion, voluntaria"
+		},
+		"VValah": {
+		  "name": "Vitalii Valakh",
+		  "role": "Fundador de la organizacion, voluntario"
+		},
+		"SArinshtein": { "name": "Stanislav Arinshtein", "role": "Voluntario" },
+		"DArinshtein": { "name": "Daria Arinshtein", "role": "Voluntaria" },
+		"Iarovii": { "name": "Iarovii Iurii", "role": "Voluntario" },
+		"Dyshleviy": { "name": "Artem Dyshleviy", "role": "Voluntario" },
+		"Subbotin": { "name": "Subbotin Aleksei", "role": "Voluntario" },
+		"Dmytrenko": { "name": "Dmytrenko Oleksii ", "role": "Voluntario" },
+		"Khmara": { "name": "Khmara Viacheslav", "role": "Voluntario" },
+		"Reshetnyk": { "name": "Reshetnyk Valentyn", "role": "Voluntario" },
+		"Zlobin": { "name": "Oleksii Zlobin", "role": "Voluntario" },
+		"Kuksa": { "name": "Kuksa Vasyl", "role": "Voluntario" },
+		"Zakutniev": { "name": "Zakutniev Artem", "role": "Voluntario" },
+		"Tretiak": { "name": "Tretiak Larysa", "role": "Voluntario, Düsseldorf" },
+		"Pantschenko": { "name": "Pantschenko Elvira", "role": "Voluntario, Düsseldorf" },
+		"Faustova-Andriienko": { "name": "Faustova-Andriienko Daria", "role": "Voluntario, Düsseldorf" },
+		"Pushanko": { "name": "Pushanko Oleksandr", "role": "Voluntario, Düsseldorf" },
+		"Dudukal": { "name": "Dudukal Vadym", "role": "Voluntario, Düsseldorf" },
+		"Vigert": { "name": "Eduard Vigert", "role": "Voluntario, Düsseldorf" },
+		"Schiefer": { "name": "Schiefer Maryna", "role": "Coordinadora, Düsseldorf" },
+		"Аvershyn": { "name": "Аvershyn Viacheslav", "role": "Voluntario" },
+		"Yamkovyi": { "name": "Yamkovyi Dmytro", "role": "Voluntario" }
+	  }
+	}
   },
   "pageDonate": {
-    "seo": {
-      "title": "Ayuda financiera",
-      "description": "Mandamos los fondos acumulados para ayudar a los ucranianos en las localidades desocupadas y también para cumplir con los pedidos de los médicos y militares de la primera línea del fuego."
-    },
+	"seo": {
+	  "title": "Ayuda financiera",
+	  "description": "Mandamos los fondos acumulados para ayudar a los ucranianos en las localidades desocupadas y también para cumplir con los pedidos de los médicos y militares de la primera línea del fuego."
+	},
 
-    "donate": {
-      "title": "Ayuda\n financiera",
-      "description": "Todo lo que quieras, de la manera que quieras.",
-      "form": {
-        "title": "Pago con tarjeta",
-        "amount": "Especifique el importe",
-        "submit": "Pagar {{amount}} {{currency}}",
+	"donate": {
+	  "title": "Ayuda\n financiera",
+	  "description": "Todo lo que quieras, de la manera que quieras.",
+	  "form": {
+		"title": "Pago con tarjeta",
+		"amount": "Especifique el importe",
+		"submit": "Pagar {{amount}} {{currency}}",
 
-        "errors": {
-          "globalError": "Se ha producido un error. Por favor, inténtelo más tarde.",
-          "Invalid amount": "Cantidad incorrecta",
-          "Invalid currency": "Moneda incorrecta"
-        }
-      }
-    },
-    "requisites": {
-      "title": "Los requisitos bancarios",
-      "description": "Aquí puede encontrar nuestros datos de pago.\nHaga clic en una línea para copiarla.",
-      "cryptoCurrency": "Criptomoneda"
-    }
+		"errors": {
+		  "globalError": "Se ha producido un error. Por favor, inténtelo más tarde.",
+		  "Invalid amount": "Cantidad incorrecta",
+		  "Invalid currency": "Moneda incorrecta"
+		}
+	  }
+	},
+	"requisites": {
+	  "title": "Los requisitos bancarios",
+	  "description": "Aquí puede encontrar nuestros datos de pago.\nHaga clic en una línea para copiarla.",
+	  "cryptoCurrency": "Criptomoneda"
+	}
   },
   "pageNeedHelp": {
-    "seo": {
-      "title": "¿Necesitas ayuda?",
-      "description": "La guerra exige una flexibilidad y rapidez especial. Para cumplir con las necesidades actuales de hospitales y clínicas, de las divisiones militares, administraciones militares regionales y las organizaciones voluntarias  nosotros estamos trabajando con sus pedidos diariamente."
-    }
+	"seo": {
+	  "title": "¿Necesitas ayuda?",
+	  "description": "La guerra exige una flexibilidad y rapidez especial. Para cumplir con las necesidades actuales de hospitales y clínicas, de las divisiones militares, administraciones militares regionales y las organizaciones voluntarias  nosotros estamos trabajando con sus pedidos diariamente."
+	}
   },
   "pageError": {
-    "404": {
-      "title": "Página no encontrada",
-      "description": "Es probable que la página no exista, o que hayas escrito\nla dirección en tu navegador por error.",
-      "btn": "Ir a la de inicio"
-    },
-    "500": {
-      "title": "Se ha producido un error interno",
-      "description": "Se ha producido un error en el servidor. Por favor, espere,\nlo arreglaremos pronto.",
-      "btn": "Ir a la de inicio"
-    }
+	"404": {
+	  "title": "Página no encontrada",
+	  "description": "Es probable que la página no exista, o que hayas escrito\nla dirección en tu navegador por error.",
+	  "btn": "Ir a la de inicio"
+	},
+	"500": {
+	  "title": "Se ha producido un error interno",
+	  "description": "Se ha producido un error en el servidor. Por favor, espere,\nlo arreglaremos pronto.",
+	  "btn": "Ir a la de inicio"
+	}
   }
 }
