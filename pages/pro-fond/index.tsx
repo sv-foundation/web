@@ -288,7 +288,7 @@ const PageAboutFoundation = ({ docs }: Props) => {
 			</li>
 			<li>
 			  <img
-				src="/images/about_foundation_team_Аvershyn.png"
+				src="/images/about_foundation_team_Avershyn.png"
 				alt=""
 			  />
 			  <h3>{t("pageAboutFoundation.team.members.Аvershyn.name")}</h3>
