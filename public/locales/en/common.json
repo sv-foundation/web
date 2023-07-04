@@ -1,286 +1,286 @@
 {
   "global": {
-    "help": "Donate",
-    "address": "Ukraine, 81340\nLviv region\nMostytskii district\nSudova Vyshnia\nLisozavodska street 2/1",
-    "shareFB": "Share on Facebook",
-    "shareTwitter": "Share on Twitter",
+	"help": "Donate",
+	"address": "Ukraine, 81340\nLviv region\nMostytskii district\nSudova Vyshnia\nLisozavodska street 2/1",
+	"shareFB": "Share on Facebook",
+	"shareTwitter": "Share on Twitter",
 
-    "seo": {
-      "title": "CO CF OF THE SUDOVYSHNYANSK TC",
-      "siteName": "CO CF OF THE SUDOVYSHNYANSK TC",
-      "description": "The Charitable Foundation of the Sudovyshnyansk Territorial Community was established to support Ukrainians affected by the russian invasion."
-    }
+	"seo": {
+	  "title": "CO CF OF THE SUDOVYSHNYANSK TC",
+	  "siteName": "CO CF OF THE SUDOVYSHNYANSK TC",
+	  "description": "The Charitable Foundation of the Sudovyshnyansk Territorial Community was established to support Ukrainians affected by the russian invasion."
+	}
   },
   "documentsAndReports": { "title": "Our Documents" },
   "header": {
-    "nav": {
-      "home": "Home",
-      "aboutFoundation": {
-        "main": "About Foundation",
-        "ourWork": "Our Work",
-        "team": "Team",
-        "docs": "Our Documents"
-      },
-      "needHelp": "Need Help",
-      "news": "News",
-      "contacts": "Contacts"
-    }
+	"nav": {
+	  "home": "Home",
+	  "aboutFoundation": {
+		"main": "About Foundation",
+		"ourWork": "Our Work",
+		"team": "Team",
+		"docs": "Our Documents"
+	  },
+	  "needHelp": "Need Help",
+	  "news": "News",
+	  "contacts": "Contacts"
+	}
   },
   "pageHome": {
-    "seo": {
-      "title": "Home",
-      "description": "We are working to meet the urgent needs of the military and medical personnel defending Ukraine on the front lines, and the civilian population in the liberated settlements."
-    },
+	"seo": {
+	  "title": "Home",
+	  "description": "We are working to meet the urgent needs of the military and medical personnel defending Ukraine on the front lines, and the civilian population in the liberated settlements."
+	},
 
-    "intro": {
-      "title": "Ukraine <b>will win!</b>",
-      "text": [
-        "The Charitable Foundation of the Sudovyshnyansk Territorial Community was established to support Ukrainians affected by the russian invasion.",
-        "We are working to meet the urgent needs of the military and medical personnel defending Ukraine on the front lines, and the civilian population in the liberated settlements.",
-        "You can help right now!"
-      ],
-      "btnDetails": "Details"
-    },
-    "activity": {
-      "title": "Areas of activity\nof the charitable foundationу",
-      "items": [
-        {
-          "title": "Military Assistance",
-          "description": "Special vehicles and cars for the needs of the Armed Forces, equipment and gear."
-        },
-        {
-          "title": "Humanitarian help",
-          "description": "Food and hygiene products at the forefront and in the liberated settlements of Ukraine."
-        },
-        {
-          "title": "Medicine",
-          "description": "Medicines, medical devices and equipment for hospitals, hospitals and advanced."
-        }
-      ]
-    },
-    "resources": {
-      "title": "Resources and\nEffectiveness of our Foundation",
-      "items": [
-        {
-          "title": "Location",
-          "description": "Located 29 km to the Ukrainian-Polish border, the possibility of receiving goods in the buffer zone."
-        },
-        { "title": "Warehouses and vehicle service stations" },
-        {
-          "title": "Logistics",
-          "description": "Ability to send up to 15 tons of humanitarian aid daily."
-        },
-        {
-          "title": "Support of the Sudova Vyshnya city territorial community"
-        }
-      ]
-    },
-    "donate": {
-      "title": "You can help\nright now",
-      "items": [
-        {
-          "title": "Financial aid",
-          "description": "We are directing the collected funds to help Ukrainians in the liberated settlements, as well as to fulfill the requests of doctors and the military in the hottest places, on the front lines.",
-          "link": "Donate"
-        },
-        {
-          "title": "Humanitarian help",
-          "description": "We deliver what is needed where it is most needed. We work with inquiries from hospitals, military units, city hall, volunteer organizations.",
-          "link": "Help"
-        },
-        {
-          "title": "Volunteering",
-          "description": "We dream of helping as many people as possible. Your work and skills can greatly enhance our logistics and organizational resources. Contact us for more details.",
-          "link": "Send email"
-        }
-      ]
-    },
-    "news": { "title": "News", "btnMore": "More" }
+	"intro": {
+	  "title": "Ukraine <b>will win!</b>",
+	  "text": [
+		"The Charitable Foundation of the Sudovyshnyansk Territorial Community was established to support Ukrainians affected by the russian invasion.",
+		"We are working to meet the urgent needs of the military and medical personnel defending Ukraine on the front lines, and the civilian population in the liberated settlements.",
+		"You can help right now!"
+	  ],
+	  "btnDetails": "Details"
+	},
+	"activity": {
+	  "title": "Areas of activity\nof the charitable foundationу",
+	  "items": [
+		{
+		  "title": "Military Assistance",
+		  "description": "Special vehicles and cars for the needs of the Armed Forces, equipment and gear."
+		},
+		{
+		  "title": "Humanitarian help",
+		  "description": "Food and hygiene products at the forefront and in the liberated settlements of Ukraine."
+		},
+		{
+		  "title": "Medicine",
+		  "description": "Medicines, medical devices and equipment for hospitals, hospitals and advanced."
+		}
+	  ]
+	},
+	"resources": {
+	  "title": "Resources and\nEffectiveness of our Foundation",
+	  "items": [
+		{
+		  "title": "Location",
+		  "description": "Located 29 km to the Ukrainian-Polish border, the possibility of receiving goods in the buffer zone."
+		},
+		{ "title": "Warehouses and vehicle service stations" },
+		{
+		  "title": "Logistics",
+		  "description": "Ability to send up to 15 tons of humanitarian aid daily."
+		},
+		{
+		  "title": "Support of the Sudova Vyshnya city territorial community"
+		}
+	  ]
+	},
+	"donate": {
+	  "title": "You can help\nright now",
+	  "items": [
+		{
+		  "title": "Financial aid",
+		  "description": "We are directing the collected funds to help Ukrainians in the liberated settlements, as well as to fulfill the requests of doctors and the military in the hottest places, on the front lines.",
+		  "link": "Donate"
+		},
+		{
+		  "title": "Humanitarian help",
+		  "description": "We deliver what is needed where it is most needed. We work with inquiries from hospitals, military units, city hall, volunteer organizations.",
+		  "link": "Help"
+		},
+		{
+		  "title": "Volunteering",
+		  "description": "We dream of helping as many people as possible. Your work and skills can greatly enhance our logistics and organizational resources. Contact us for more details.",
+		  "link": "Send email"
+		}
+	  ]
+	},
+	"news": { "title": "News", "btnMore": "More" }
   },
   "formNeedHelp": {
-    "title": "Need help?",
-    "description": [
-      "War requires special flexibility and speed. To process the most urgent needs of hospitals, hospitals, military units, regional military administrations and volunteer organizations, we process your inquiries on a daily basis.",
-      "Please provide complete information on urgent needs: name, details, quantity. In order for your query to be processed as quickly as possible, add files with a list of required in the excel spreadsheet and a scanned copy of the official query."
-    ],
-    "formFields": {
-      "fullName": "Name and surname *",
-      "organization": "Name of organization *",
-      "email": "Email *",
-      "phone": "Phone number *",
-      "message": "Add a message *",
-      "attachments": {
-        "label": "Add a file",
-        "description": "Select the file or drag it here",
-        "dragHint": "Drag the files here",
-        "remove": "Delete"
-      }
-    },
-    "btnSubmit": "Send",
+	"title": "Need help?",
+	"description": [
+	  "War requires special flexibility and speed. To process the most urgent needs of hospitals, hospitals, military units, regional military administrations and volunteer organizations, we process your inquiries on a daily basis.",
+	  "Please provide complete information on urgent needs: name, details, quantity. In order for your query to be processed as quickly as possible, add files with a list of required in the excel spreadsheet and a scanned copy of the official query."
+	],
+	"formFields": {
+	  "fullName": "Name and surname *",
+	  "organization": "Name of organization *",
+	  "email": "Email *",
+	  "phone": "Phone number *",
+	  "message": "Add a message *",
+	  "attachments": {
+		"label": "Add a file",
+		"description": "Select the file or drag it here",
+		"dragHint": "Drag the files here",
+		"remove": "Delete"
+	  }
+	},
+	"btnSubmit": "Send",
 
-    "error": { 
-      "title": "Error",
-      "description": "An error occurred while sending a message.",
-      "btn": "Try again"
-    },
-    
-    "success": { 
-      "title": "Thank you!",
-      "description": "Your notification has been successfully sent!\nWe will get back to you as soon as possible."
-    }
+	"error": { 
+	  "title": "Error",
+	  "description": "An error occurred while sending a message.",
+	  "btn": "Try again"
+	},
+	
+	"success": { 
+	  "title": "Thank you!",
+	  "description": "Your notification has been successfully sent!\nWe will get back to you as soon as possible."
+	}
   },
   "pageContacts": {
-    "seo": {
-      "title": "Our contacts",
-      "description": "We need your help. Contact us to find out about the main needs of Ukrainian soldiers, hospitals and Ukrainians who have suffered from the russian invasion. Let's win the victory together!"
-    },
+	"seo": {
+	  "title": "Our contacts",
+	  "description": "We need your help. Contact us to find out about the main needs of Ukrainian soldiers, hospitals and Ukrainians who have suffered from the russian invasion. Let's win the victory together!"
+	},
 
-    "title": "Our contacts",
-    "description": "The Charitable Foundation of the\nSudovyshnyansk Territorial Community"
+	"title": "Our contacts",
+	"description": "The Charitable Foundation of the\nSudovyshnyansk Territorial Community"
   },
   "pageNews": {
-    "seo": {
-      "title": "News",
-      "description": "Targeted Aid - is in safe hands! We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, hospitals and volunteer organizations"
-    },
-    "title": "News",
-    "tags": { "all": "All news" }
+	"seo": {
+	  "title": "News",
+	  "description": "Targeted Aid - is in safe hands! We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, hospitals and volunteer organizations"
+	},
+	"title": "News",
+	"tags": { "all": "All news" }
   },
   "pageAboutFoundation": {
-    "seo": {
-      "title": "About Foundation",
-      "description": "We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, hospitals and volunteer organizations."
-    },
+	"seo": {
+	  "title": "About Foundation",
+	  "description": "We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, hospitals and volunteer organizations."
+	},
 
-    "intro": {
-      "title": "Targeted Aid -\nis in safe hands",
-      "text": [
-        "The Charitable Foundation of the Sudovyshnyansk Territorial Community was established to support Ukrainians affected by russian aggression.",
-        "Thanks to the support of the world, Ukraine receives a considerable amount of humanitarian aid that meets the needs of liberated cities.",
-        "We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, city halls, hospitals and volunteer organizations."
-      ],
-      "btnNeedHelp": "Send a request for help",
-      "btnDonate": "Support financially"
-    },
-    "activity": {
-      "title": "Areas of activity\nof the charitable foundation",
-      "items": [
-        {
-          "title": "Transport",
-          "description": "Transportation, painting of cars for the needs of the Armed Forces",
-          "btn": "Support"
-        },
-        {
-          "title": "Medicine",
-          "description": "Providing hospitals and physicians at the frontline and in liberated cities",
-          "btn": "Support"
-        },
-        {
-          "title": "Food",
-          "description": "Food and products for liberated cities, evacuees, etc.",
-          "btn": "Offer help"
-        },
-        
-        {
-          "title": "Humanitarian help",
-          "description": "Personal hygiene products, baby products, clothes and shoes, etc.",
-          "btn": "Support"
-        }
-      ]
-    },
-    "team": {
-      "title": "Our team",
-      "members": {
-        "Lesko": {
-          "name": "Maria Lesko",
-          "role": "Director of the foundation, Founder"
-        },
-        "Karnauh": {
-          "name": "Oleksii Karnaukh",
-          "role": "President of the foundation, Founder"
-        },
-        "Slobodyanuk": {
-          "name": "Pavlo Slobodianiuk",
-          "role": "Founder of the foundation, patron"
-        },
-        "Pojidaev": {
-          "name": "Vladyslav Pozhydaiev",
-          "role": "Founder of the foundation, patron"
-        },
-        "IValah": {
-          "name": "Iryna Valakh",
-          "role": "Founder of the foundation, volunteer"
-        },
-        "VValah": {
-          "name": "Vitalii Valakh",
-          "role": "Founder of the foundation, volunteer"
-        },
-        "SArinshtein": { "name": "Stanislav Arinshtein", "role": "Volunteer" },
-        "DArinshtein": { "name": "Daria Arinshtein", "role": "Volunteer" },
-        "Iarovii": { "name": "Iarovii Iurii", "role": "Volunteer" },
-        "Dyshleviy": { "name": "Artem Dyshleviy", "role": "Volunteer" },
-        "Subbotin": { "name": "Subbotin Aleksei", "role": "Volunteer" },
-        "Dmytrenko": { "name": "Dmytrenko Oleksii ", "role": "Volunteer" },
-        "Khmara": { "name": "Khmara Viacheslav", "role": "Volunteer" },
-        "Reshetnyk": { "name": "Reshetnyk Valentyn", "role": "Volunteer" },
-        "Zlobin": { "name": "Oleksii Zlobin", "role": "Volunteer" },
-        "Kuksa": { "name": "Kuksa Vasyl", "role": "Volunteer" },
-        "Zakutniev": { "name": "Zakutniev Artem", "role": "Volunteer" },
-        "Tretiak": { "name": "Tretiak Larysa", "role": "Volunteer, Dusseldorf" },
-        "Pantschenko": { "name": "Pantschenko Elvira", "role": "Volunteer, Dusseldorf" },
-        "Faustova-Andriienko": { "name": "Faustova-Andriienko Daria", "role": "Volunteer, Dusseldorf" },
-        "Pushanko": { "name": "Pushanko Oleksandr", "role": "Volunteer, Dusseldorf" },
-        "Dudukal": { "name": "Dudukal Vadym", "role": "Volunteer, Dusseldorf" },
-        "Vigert": { "name": "Eduard Vigert", "role": "Volunteer, Dusseldorf" },
-        "Schiefer": { "name": "Schiefer Maryna", "role": "Coordinator, Dusseldorf" },
-        "Аvershyn": { "name": "Аvershyn Viacheslav", "role": "Volunteer" },
-        "Yamkovyi": { "name": "Yamkovyi Dmytro", "role": "Volunteer" }
-      }
-    }
+	"intro": {
+	  "title": "Targeted Aid -\nis in safe hands",
+	  "text": [
+		"The Charitable Foundation of the Sudovyshnyansk Territorial Community was established to support Ukrainians affected by russian aggression.",
+		"Thanks to the support of the world, Ukraine receives a considerable amount of humanitarian aid that meets the needs of liberated cities.",
+		"We are focusing our support on civilians and the military where it is most needed. We process specific requests from military units, city halls, hospitals and volunteer organizations."
+	  ],
+	  "btnNeedHelp": "Send a request for help",
+	  "btnDonate": "Support financially"
+	},
+	"activity": {
+	  "title": "Areas of activity\nof the charitable foundation",
+	  "items": [
+		{
+		  "title": "Transport",
+		  "description": "Transportation, painting of cars for the needs of the Armed Forces",
+		  "btn": "Support"
+		},
+		{
+		  "title": "Medicine",
+		  "description": "Providing hospitals and physicians at the frontline and in liberated cities",
+		  "btn": "Support"
+		},
+		{
+		  "title": "Food",
+		  "description": "Food and products for liberated cities, evacuees, etc.",
+		  "btn": "Offer help"
+		},
+		
+		{
+		  "title": "Humanitarian help",
+		  "description": "Personal hygiene products, baby products, clothes and shoes, etc.",
+		  "btn": "Support"
+		}
+	  ]
+	},
+	"team": {
+	  "title": "Our team",
+	  "members": {
+		"Lesko": {
+		  "name": "Maria Lesko",
+		  "role": "Director of the foundation, Founder"
+		},
+		"Karnauh": {
+		  "name": "Oleksii Karnaukh",
+		  "role": "President of the foundation, Founder"
+		},
+		"Slobodyanuk": {
+		  "name": "Pavlo Slobodianiuk",
+		  "role": "Founder of the foundation, patron"
+		},
+		"Pojidaev": {
+		  "name": "Vladyslav Pozhydaiev",
+		  "role": "Founder of the foundation, patron"
+		},
+		"IValah": {
+		  "name": "Iryna Valakh",
+		  "role": "Founder of the foundation, volunteer"
+		},
+		"VValah": {
+		  "name": "Vitalii Valakh",
+		  "role": "Founder of the foundation, volunteer"
+		},
+		"SArinshtein": { "name": "Stanislav Arinshtein", "role": "Volunteer" },
+		"DArinshtein": { "name": "Daria Arinshtein", "role": "Volunteer" },
+		"Iarovii": { "name": "Iarovii Iurii", "role": "Volunteer" },
+		"Dyshleviy": { "name": "Artem Dyshleviy", "role": "Volunteer" },
+		"Subbotin": { "name": "Subbotin Aleksei", "role": "Volunteer" },
+		"Dmytrenko": { "name": "Dmytrenko Oleksii ", "role": "Volunteer" },
+		"Khmara": { "name": "Khmara Viacheslav", "role": "Volunteer" },
+		"Reshetnyk": { "name": "Reshetnyk Valentyn", "role": "Volunteer" },
+		"Zlobin": { "name": "Oleksii Zlobin", "role": "Volunteer" },
+		"Kuksa": { "name": "Kuksa Vasyl", "role": "Volunteer" },
+		"Zakutniev": { "name": "Zakutniev Artem", "role": "Volunteer" },
+		"Tretiak": { "name": "Tretiak Larysa", "role": "Volunteer, Dusseldorf" },
+		"Pantschenko": { "name": "Pantschenko Elvira", "role": "Volunteer, Dusseldorf" },
+		"Faustova-Andriienko": { "name": "Faustova-Andriienko Daria", "role": "Volunteer, Dusseldorf" },
+		"Pushanko": { "name": "Pushanko Oleksandr", "role": "Volunteer, Dusseldorf" },
+		"Dudukal": { "name": "Dudukal Vadym", "role": "Volunteer, Dusseldorf" },
+		"Vigert": { "name": "Eduard Vigert", "role": "Volunteer, Dusseldorf" },
+		"Schiefer": { "name": "Schiefer Maryna", "role": "Coordinator, Dusseldorf" },
+		"Аvershyn": { "name": "Аvershyn Viacheslav", "role": "Volunteer" },
+		"Yamkovyi": { "name": "Yamkovyi Dmytro", "role": "Volunteer" }
+	  }
+	}
   },
   "pageDonate": {
-    "seo": {
-      "title": "Financial aid",
-      "description": "We are directing the collected funds to help Ukrainians in the liberated settlements, as well as to fulfill the requests of doctors and the military in the hottest places, on the front lines."
-    },
+	"seo": {
+	  "title": "Financial aid",
+	  "description": "We are directing the collected funds to help Ukrainians in the liberated settlements, as well as to fulfill the requests of doctors and the military in the hottest places, on the front lines."
+	},
 
-    "donate": {
-      "title": "Financial\naid",
-      "description": "As much as you can,\nin the way that works best for you.",
-      "form": {
-        "title": "Payment by card",
-        "amount": "Amount",
-        "submit": "Pay {{amount}} {{currency}}",
+	"donate": {
+	  "title": "Financial\naid",
+	  "description": "As much as you can,\nin the way that works best for you.",
+	  "form": {
+		"title": "Payment by card",
+		"amount": "Amount",
+		"submit": "Pay {{amount}} {{currency}}",
 
-        "errors": {
-          "globalError": "Error. Try again later",
-          "Invalid amount": "Incorrect amount",
-          "Invalid currency": "Incorrect currency"
-        }
-      }
-    },
-    "requisites": {
-      "title": "Donate",
-      "description": "Here you can find details for payment.\nClick on the line to copy it.",
-      "cryptoCurrency": "Crypto"
-    }
+		"errors": {
+		  "globalError": "Error. Try again later",
+		  "Invalid amount": "Incorrect amount",
+		  "Invalid currency": "Incorrect currency"
+		}
+	  }
+	},
+	"requisites": {
+	  "title": "Donate",
+	  "description": "Here you can find details for payment.\nClick on the line to copy it.",
+	  "cryptoCurrency": "Crypto"
+	}
   },
   "pageNeedHelp": {
-    "seo": {
-      "title": "Need help?",
-      "description": "War requires special flexibility and speed. To process the most urgent needs of hospitals, hospitals, military units and volunteer organizations, we process your inquiries on a daily basis."
-    }
+	"seo": {
+	  "title": "Need help?",
+	  "description": "War requires special flexibility and speed. To process the most urgent needs of hospitals, hospitals, military units and volunteer organizations, we process your inquiries on a daily basis."
+	}
   },
   "pageError": {
-    "404": {
-      "title": "Page not found",
-      "description": "The page probably doesn't exist or you have made a mistake by typing the address in your browser",
-      "btn": "Go to Home"
-    },
-    "500": {
-      "title": "Internal error",
-      "description": "Error on the server. Please wait,\nit will be fixed soon.",
-      "btn": "Go to Home"
-    }
+	"404": {
+	  "title": "Page not found",
+	  "description": "The page probably doesn't exist or you have made a mistake by typing the address in your browser",
+	  "btn": "Go to Home"
+	},
+	"500": {
+	  "title": "Internal error",
+	  "description": "Error on the server. Please wait,\nit will be fixed soon.",
+	  "btn": "Go to Home"
+	}
   }
 }
