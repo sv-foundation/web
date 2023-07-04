@@ -216,7 +216,25 @@
           "role": "Founder of the foundation, volunteer"
         },
         "SArinshtein": { "name": "Stanislav Arinshtein", "role": "Volunteer" },
-        "DArinshtein": { "name": "Daria Arinshtein", "role": "Volunteer" }
+        "DArinshtein": { "name": "Daria Arinshtein", "role": "Volunteer" },
+        "Iarovii": { "name": "Iarovii Iurii", "role": "Volunteer" },
+        "Dyshleviy": { "name": "Artem Dyshleviy", "role": "Volunteer" },
+        "Subbotin": { "name": "Subbotin Aleksei", "role": "Volunteer" },
+        "Dmytrenko": { "name": "Dmytrenko Oleksii ", "role": "Volunteer" },
+        "Khmara": { "name": "Khmara Viacheslav", "role": "Volunteer" },
+        "Reshetnyk": { "name": "Reshetnyk Valentyn", "role": "Volunteer" },
+        "Zlobin": { "name": "Oleksii Zlobin", "role": "Volunteer" },
+        "Kuksa": { "name": "Kuksa Vasyl", "role": "Volunteer" },
+        "Zakutniev": { "name": "Zakutniev Artem", "role": "Volunteer" },
+        "Tretiak": { "name": "Tretiak Larysa", "role": "Volunteer, Dusseldorf" },
+        "Pantschenko": { "name": "Pantschenko Elvira", "role": "Volunteer, Dusseldorf" },
+        "Faustova-Andriienko": { "name": "Faustova-Andriienko Daria", "role": "Volunteer, Dusseldorf" },
+        "Pushanko": { "name": "Pushanko Oleksandr", "role": "Volunteer, Dusseldorf" },
+        "Dudukal": { "name": "Dudukal Vadym", "role": "Volunteer, Dusseldorf" },
+        "Vigert": { "name": "Eduard Vigert", "role": "Volunteer, Dusseldorf" },
+        "Schiefer": { "name": "Schiefer Maryna", "role": "Coordinator, Dusseldorf" },
+        "Аvershyn": { "name": "Аvershyn Viacheslav", "role": "Volunteer" },
+        "Yamkovyi": { "name": "Yamkovyi Dmytro", "role": "Volunteer" }
       }
     }
   },
